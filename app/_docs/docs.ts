@@ -39,6 +39,13 @@ export const docs: Doc[] = [
     item: "form-dialog",
   },
   {
+    group: "區塊",
+    slug: "empty-state",
+    title: "空狀態",
+    description: "清單沒有資料或搜尋沒有結果時，統一的一句話與下一步。",
+    item: "empty-state",
+  },
+  {
     group: "元件",
     slug: "button",
     title: "按鈕",
