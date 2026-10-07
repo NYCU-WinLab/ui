@@ -11,10 +11,11 @@ Every WinLab app is one centered column framed by four fixed corners, 24px in fr
 | Top left | Where you are | Breadcrumb: the lab (portal home), then the app (its home) |
 | Top right | Where you can go | The app's pages; the current one in `foreground` |
 | Bottom left | Who you are | The signed-in member (to their profile) and the theme toggle |
-| Bottom right | Whose it is | © year NYCU WinLab |
+| Bottom right | Whose it is | © year; its tip says NYCU WinLab |
 
 - Actions are not navigation: a "新增訂單" button goes in the page header next to the content it changes, never in a corner.
 - A corner with nothing to show stays empty.
+- Every corner item can carry a tip that says what its label leaves out (where a link goes, what a page holds, who owns the site). A tip never repeats the label. Tips open at once, toward the page, lined up with the corner's outer edge; touch never opens them, so nothing depends on one.
 - Corner text is `text-body` in `muted-foreground`, links turn `foreground` on hover and when current.
 - Content that scrolls under the corners fades into a 64px band of frosted glass at the top and bottom edges.
 - No menu button: an app keeps its pages few enough to fit beside the breadcrumb on a phone.
