@@ -47,15 +47,15 @@ import {
 import { Textarea } from "@/registry/winlab/ui/textarea"
 
 const categories = [
-  { value: "travel", label: "Travel" },
-  { value: "meals", label: "Meals" },
-  { value: "equipment", label: "Equipment" },
+  { value: "travel", label: "交通" },
+  { value: "meals", label: "餐費" },
+  { value: "equipment", label: "設備" },
 ]
 
 const receipts = [
-  { date: "11/03", item: "Taxi to Zhubei", amount: "285" },
-  { date: "11/05", item: "Lunch boxes, 12", amount: "1,320" },
-  { date: "11/07", item: "HDMI adapter", amount: "459" },
+  { date: "11/03", item: "計程車到竹北", amount: "285" },
+  { date: "11/05", item: "便當 12 份", amount: "1,320" },
+  { date: "11/07", item: "HDMI 轉接頭", amount: "459" },
 ]
 
 const swatches = [
@@ -72,19 +72,19 @@ export default function Page() {
       <header className="flex flex-col gap-2">
         <h1 className="text-title font-medium">WinLab UI</h1>
         <p className="text-muted-foreground">
-          The WinLab design system, distributed as a shadcn registry.
+          WinLab 設計系統，以 shadcn registry 發佈。
         </p>
       </header>
 
       <section className="flex flex-col gap-6">
-        <h2 className="font-semibold">Start a project</h2>
+        <h2 className="font-semibold">開始使用</h2>
         <pre className="overflow-x-auto rounded-control bg-muted p-4 font-mono text-body">
           npx shadcn@latest init https://ui.winlab.tw/r/base.json
         </pre>
       </section>
 
       <section className="flex flex-col gap-6">
-        <h2 className="font-semibold">Colors</h2>
+        <h2 className="font-semibold">色彩</h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
           {swatches.map((swatch) => (
             <div
@@ -98,13 +98,13 @@ export default function Page() {
       </section>
 
       <section className="flex flex-col gap-6">
-        <h2 className="font-semibold">Buttons</h2>
+        <h2 className="font-semibold">按鈕</h2>
         <div className="flex flex-wrap gap-3">
           <Button>Default</Button>
           <Button variant="outline">Outline</Button>
           <Button variant="ghost">Ghost</Button>
           <Button variant="destructive">Destructive</Button>
-          <Button size="icon" variant="outline" aria-label="Add">
+          <Button size="icon" variant="outline" aria-label="新增">
             <PlusIcon />
           </Button>
           <MenuDemo />
@@ -112,32 +112,32 @@ export default function Page() {
       </section>
 
       <section className="flex flex-col gap-6">
-        <h2 className="font-semibold">Badges</h2>
+        <h2 className="font-semibold">徽章</h2>
         <div className="flex flex-wrap gap-2">
           <Badge>Default</Badge>
           <Badge variant="muted">Muted</Badge>
           <Badge variant="outline">Outline</Badge>
-          <Badge variant="success">Approved</Badge>
-          <Badge variant="warning">Pending</Badge>
-          <Badge variant="destructive">Rejected</Badge>
+          <Badge variant="success">已核准</Badge>
+          <Badge variant="warning">待簽核</Badge>
+          <Badge variant="destructive">已退回</Badge>
         </div>
       </section>
 
       <section className="flex flex-col gap-6">
-        <h2 className="font-semibold">Form</h2>
+        <h2 className="font-semibold">表單</h2>
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
-            <Label htmlFor="item">Item</Label>
+            <Label htmlFor="item">項目</Label>
             <div className="flex gap-3">
-              <Input id="item" placeholder="Taxi, stationery" />
-              <Button>Add</Button>
+              <Input id="item" placeholder="例如：計程車、文具" />
+              <Button>新增</Button>
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <Label>Category</Label>
+            <Label>類別</Label>
             <Select items={categories}>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Choose a category" />
+                <SelectValue placeholder="選擇類別" />
               </SelectTrigger>
               <SelectContent>
                 {categories.map((category) => (
@@ -149,30 +149,25 @@ export default function Page() {
             </Select>
           </div>
           <div className="flex flex-col gap-2">
-            <Label>Attendee</Label>
+            <Label>與會者</Label>
             <ComboboxDemo />
           </div>
           <div className="flex flex-col gap-2">
-            <Label htmlFor="note">Note</Label>
-            <Textarea
-              id="note"
-              placeholder="Anything the approver should know"
-            />
-            <p className="text-muted-foreground">
-              Shown to the approver with the receipt.
-            </p>
+            <Label htmlFor="note">備註</Label>
+            <Textarea id="note" placeholder="想讓簽核人知道的事" />
+            <p className="text-muted-foreground">簽核人會連同收據一起看到。</p>
           </div>
         </div>
       </section>
 
       <section className="flex flex-col gap-6">
-        <h2 className="font-semibold">Table</h2>
+        <h2 className="font-semibold">表格</h2>
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Date</TableHead>
-              <TableHead>Item</TableHead>
-              <TableHead className="text-right">Amount</TableHead>
+              <TableHead>日期</TableHead>
+              <TableHead>項目</TableHead>
+              <TableHead className="text-right">金額</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -192,46 +187,46 @@ export default function Page() {
       </section>
 
       <section className="flex flex-col gap-6">
-        <h2 className="font-semibold">Dialogs</h2>
+        <h2 className="font-semibold">對話框</h2>
         <div className="flex flex-wrap gap-3">
           <Dialog>
             <DialogTrigger render={<Button variant="outline" />}>
-              Add item
+              新增項目
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Add item</DialogTitle>
+                <DialogTitle>新增項目</DialogTitle>
                 <DialogDescription>
-                  The approver sees this with the receipt.
+                  簽核人會連同收據一起看到。
                 </DialogDescription>
               </DialogHeader>
               <div className="flex flex-col gap-2">
-                <Label htmlFor="dialog-item">Item</Label>
-                <Input id="dialog-item" placeholder="Taxi, stationery" />
+                <Label htmlFor="dialog-item">項目</Label>
+                <Input id="dialog-item" placeholder="例如：計程車、文具" />
               </div>
               <DialogFooter>
                 <DialogClose render={<Button variant="outline" />}>
-                  Cancel
+                  取消
                 </DialogClose>
-                <Button>Add</Button>
+                <Button>新增</Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>
           <AlertDialog>
             <AlertDialogTrigger render={<Button variant="destructive" />}>
-              Delete
+              刪除
             </AlertDialogTrigger>
             <AlertDialogContent>
               <AlertDialogHeader>
-                <AlertDialogTitle>Delete this receipt?</AlertDialogTitle>
+                <AlertDialogTitle>刪除這張收據？</AlertDialogTitle>
                 <AlertDialogDescription>
-                  The approver will no longer see it. This cannot be undone.
+                  簽核人將看不到這張收據，刪除後無法復原。
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
-                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogCancel>取消</AlertDialogCancel>
                 <AlertDialogAction variant="destructive">
-                  Delete
+                  刪除
                 </AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
@@ -240,7 +235,7 @@ export default function Page() {
       </section>
 
       <section className="flex flex-col gap-6">
-        <h2 className="font-semibold">Loading</h2>
+        <h2 className="font-semibold">載入中</h2>
         <div className="flex flex-col gap-2">
           <Skeleton className="h-6 w-1/2" />
           <Skeleton className="h-10 w-full" />
@@ -248,7 +243,7 @@ export default function Page() {
       </section>
 
       <footer className="text-body text-muted-foreground">
-        Press <kbd className="font-mono">d</kbd> to toggle dark mode.
+        按 <kbd className="font-mono">d</kbd> 切換深色模式。
       </footer>
     </main>
   )
