@@ -35,7 +35,16 @@ npx shadcn@latest add @winlab/<component>
 
 | Item | Type | What it gives you |
 |------|------|-------------------|
-| `base` | `registry:base` | Ultramarine brand tokens (Pantone 286 C, `#0033A0`) on a neutral scale, light and dark; `--radius: 1rem` |
+| `base` | `registry:base` | Ultramarine brand tokens (Pantone 286 C, `#0033A0`) on a neutral scale, light and dark; `--radius: 1rem`; the font stacks below |
+| `font-inter` | `registry:font` | Inter for Latin text and numbers |
+| `font-noto-sans-jp` | `registry:font` | Noto Sans JP for kanji and punctuation (Japanese forms: `，。` sit in the lower left) |
+| `font-noto-sans-tc` | `registry:font` | Noto Sans TC for the Traditional Chinese characters Noto Sans JP lacks |
+| `font-jetbrains-mono` | `registry:font` | JetBrains Mono for code and IDs, ligatures on |
+
+Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Noto Sans TC. `font-mono` puts JetBrains Mono in front of the same CJK fonts. Use Inter's `tabular-nums` for amounts and table figures, not `font-mono`.
+
+> [!NOTE]
+> A project created with `-t next` keeps the template's Geist imports in `app/layout.tsx`. They are unused by the WinLab stacks; delete them to skip the extra download.
 
 ## Tech stack
 

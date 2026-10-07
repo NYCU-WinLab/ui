@@ -26,7 +26,11 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "utils",
+        "https://ui.winlab.tw/r/font-inter.json",
+        "https://ui.winlab.tw/r/font-noto-sans-jp.json",
+        "https://ui.winlab.tw/r/font-noto-sans-tc.json",
+        "https://ui.winlab.tw/r/font-jetbrains-mono.json"
       ],
       "devDependencies": [
         "tw-animate-css",
@@ -48,7 +52,11 @@
         }
       },
       "cssVars": {
-        "theme": {},
+        "theme": {
+          "font-sans": "var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-tc), sans-serif",
+          "font-heading": "var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-tc), sans-serif",
+          "font-mono": "var(--font-jetbrains-mono), var(--font-noto-sans-jp), var(--font-noto-sans-tc), monospace"
+        },
         "light": {
           "radius": "1rem",
           "background": "oklch(1 0 0)",
@@ -116,6 +124,66 @@
           "sidebar-border": "oklch(1 0 0 / 10%)",
           "sidebar-ring": "oklch(0.68 0.168 262.5)"
         }
+      }
+    },
+    {
+      "name": "font-inter",
+      "type": "registry:font",
+      "title": "Inter",
+      "font": {
+        "family": "'Inter Variable', sans-serif",
+        "provider": "google",
+        "import": "Inter",
+        "variable": "--font-inter",
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource-variable/inter"
+      }
+    },
+    {
+      "name": "font-noto-sans-jp",
+      "type": "registry:font",
+      "title": "Noto Sans JP",
+      "font": {
+        "family": "'Noto Sans JP Variable', sans-serif",
+        "provider": "google",
+        "import": "Noto_Sans_JP",
+        "variable": "--font-noto-sans-jp",
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource-variable/noto-sans-jp"
+      }
+    },
+    {
+      "name": "font-noto-sans-tc",
+      "type": "registry:font",
+      "title": "Noto Sans TC",
+      "font": {
+        "family": "'Noto Sans TC Variable', sans-serif",
+        "provider": "google",
+        "import": "Noto_Sans_TC",
+        "variable": "--font-noto-sans-tc",
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource-variable/noto-sans-tc"
+      }
+    },
+    {
+      "name": "font-jetbrains-mono",
+      "type": "registry:font",
+      "title": "JetBrains Mono",
+      "font": {
+        "family": "'JetBrains Mono Variable', monospace",
+        "provider": "google",
+        "import": "JetBrains_Mono",
+        "variable": "--font-jetbrains-mono",
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource-variable/jetbrains-mono"
       }
     }
   ]
