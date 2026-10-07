@@ -13,6 +13,7 @@ import { Demo as StatusPageDemo } from "@/app/_docs/demos/status-page"
 import { Demo as DatePickerDemo } from "@/app/_docs/demos/date-picker"
 import { Demo as Wide } from "@/app/_docs/demos/wide"
 import { Demo as ActionPanelDemo } from "@/app/_docs/demos/action-panel"
+import { Demo as FileUploadDemo } from "@/app/_docs/demos/file-upload"
 import { Demo as Button } from "@/app/_docs/demos/button"
 import { Demo as Badge } from "@/app/_docs/demos/badge"
 import { Demo as Input } from "@/app/_docs/demos/input"
@@ -52,6 +53,7 @@ export const demos: Record<string, ComponentType> = {
   "status-page": StatusPageDemo,
   "date-picker": DatePickerDemo,
   "action-panel": ActionPanelDemo,
+  "file-upload": FileUploadDemo,
   button: Button,
   badge: Badge,
   input: Input,

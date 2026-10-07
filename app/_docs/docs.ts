@@ -105,6 +105,13 @@ export const docs: Doc[] = [
     item: "action-panel",
   },
   {
+    group: "區塊",
+    slug: "file-upload",
+    title: "上傳檔案",
+    description: "拖放、貼上或點選檔案，送出前可以檢查和移除。",
+    item: "file-upload",
+  },
+  {
     group: "元件",
     slug: "button",
     title: "按鈕",
