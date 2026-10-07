@@ -8,7 +8,8 @@ const css = await readFile(
   "utf8"
 )
 const base = registry.items.find((item) => item.name === "base")
-if (!base) throw new Error("registry.json has no base item")
+const baseVars = base && "cssVars" in base ? base.cssVars : undefined
+if (!baseVars) throw new Error("registry.json has no base item with cssVars")
 
 function readBlock(selector: string) {
   const start = css.indexOf(`${selector} {`)
@@ -23,8 +24,18 @@ function readBlock(selector: string) {
 }
 
 const pairs = [
-  ["light", readBlock(":root"), base.cssVars.light],
-  ["dark", readBlock(".dark"), base.cssVars.dark],
+  // @theme inline also maps colors and radii; only the font stacks come from the base.
+  [
+    "theme",
+    Object.fromEntries(
+      Object.entries(readBlock("@theme inline")).filter(([name]) =>
+        name.startsWith("font-")
+      )
+    ),
+    baseVars.theme,
+  ],
+  ["light", readBlock(":root"), baseVars.light],
+  ["dark", readBlock(".dark"), baseVars.dark],
 ] as const
 
 let failed = false

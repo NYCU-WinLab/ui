@@ -1,15 +1,29 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import {
+  Inter,
+  JetBrains_Mono,
+  Noto_Sans_JP,
+  Noto_Sans_TC,
+} from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
-
-const fontMono = Geist_Mono({
+// Same fonts and variables as the registry's font items; the stack order
+// (Inter, then Noto Sans JP, then Noto Sans TC) lives in globals.css.
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const notoSansJp = Noto_Sans_JP({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-noto-sans-jp",
+})
+const notoSansTc = Noto_Sans_TC({
+  subsets: ["latin"],
+  variable: "--font-noto-sans-tc",
+})
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
 })
 
 export const metadata: Metadata = {
@@ -28,9 +42,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn(
         "antialiased",
-        fontMono.variable,
-        "font-sans",
-        geist.variable
+        inter.variable,
+        notoSansJp.variable,
+        notoSansTc.variable,
+        jetbrainsMono.variable
       )}
     >
       <body>
