@@ -18,14 +18,14 @@ export default function Page() {
       </header>
 
       <section className="flex flex-col gap-3">
-        <h2 className="font-medium">Start a project</h2>
+        <h2 className="font-semibold">Start a project</h2>
         <pre className="overflow-x-auto rounded-lg bg-muted p-4 font-mono text-sm">
           npx shadcn@latest init https://ui.winlab.tw/r/base.json
         </pre>
       </section>
 
       <section className="flex flex-col gap-3">
-        <h2 className="font-medium">Colors</h2>
+        <h2 className="font-semibold">Colors</h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {swatches.map((swatch) => (
             <div
@@ -39,7 +39,7 @@ export default function Page() {
       </section>
 
       <section className="flex flex-col gap-3">
-        <h2 className="font-medium">Buttons</h2>
+        <h2 className="font-semibold">Buttons</h2>
         <div className="flex flex-wrap gap-3">
           <Button>Primary</Button>
           <Button variant="secondary">Secondary</Button>

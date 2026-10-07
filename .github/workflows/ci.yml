@@ -13,6 +13,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - run: bun run theme:check
+      - run: bun run typography:check
       - run: bun run lint
       - run: bun run typecheck
       - run: bun run format:check
@@ -51,6 +52,8 @@ jobs:
           grep -q '@import "shadcn/tailwind.css"' app/globals.css
           grep -q -- '--font-sans: var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-tc), sans-serif' app/globals.css
           grep -q 'Noto_Sans_JP' app/layout.tsx
+          grep -q -- '--text-sm: 1rem' app/globals.css
+          grep -q -- '--text-4xl: 1.5rem' app/globals.css
           bun run build
       - if: always()
         run: docker compose logs

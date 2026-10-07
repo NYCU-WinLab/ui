@@ -43,6 +43,12 @@ npx shadcn@latest add @winlab/<component>
 
 Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Noto Sans TC. `font-mono` puts JetBrains Mono in front of the same CJK fonts. Use Inter's `tabular-nums` for amounts and table figures, not `font-mono`.
 
+### Type scale
+
+Two sizes only: **24px** (`text-2xl`, line height 32px) for titles and **16px** (`text-base`, line height 24px) for everything else. Every other `text-*` utility maps onto one of them, so stock components cannot drift: `text-xs` to `text-xl` render at 16px, `text-3xl` and up at 24px. Hierarchy below a page title comes from weight, the muted color, and layout patterns, not size.
+
+`bun run typography:check` rejects arbitrary sizes (`text-[13px]`) and raw `font-size` in this repo.
+
 > [!NOTE]
 > A project created with `-t next` keeps the template's Geist imports in `app/layout.tsx`. They are unused by the WinLab stacks; delete them to skip the extra download.
 
