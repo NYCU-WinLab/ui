@@ -67,6 +67,13 @@ export const docs: Doc[] = [
     item: "member-combobox",
   },
   {
+    group: "區塊",
+    slug: "field-list",
+    title: "明細清單",
+    description: "一筆資料的欄位與值，名稱在左、內容在右。",
+    item: "field-list",
+  },
+  {
     group: "元件",
     slug: "button",
     title: "按鈕",

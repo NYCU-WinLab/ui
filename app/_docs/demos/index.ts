@@ -8,6 +8,7 @@ import { Demo as EmptyStateDemo } from "@/app/_docs/demos/empty-state"
 import { Demo as PageHeaderDemo } from "@/app/_docs/demos/page-header"
 import { Demo as ListSkeletonDemo } from "@/app/_docs/demos/list-skeleton"
 import { Demo as MemberComboboxDemo } from "@/app/_docs/demos/member-combobox"
+import { Demo as FieldListDemo } from "@/app/_docs/demos/field-list"
 import { Demo as Button } from "@/app/_docs/demos/button"
 import { Demo as Badge } from "@/app/_docs/demos/badge"
 import { Demo as Input } from "@/app/_docs/demos/input"
@@ -40,6 +41,7 @@ export const demos: Record<string, ComponentType> = {
   "page-header": PageHeaderDemo,
   "list-skeleton": ListSkeletonDemo,
   "member-combobox": MemberComboboxDemo,
+  "field-list": FieldListDemo,
   button: Button,
   badge: Badge,
   input: Input,
