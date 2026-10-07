@@ -12,6 +12,7 @@ import { Demo as FieldListDemo } from "@/app/_docs/demos/field-list"
 import { Demo as StatusPageDemo } from "@/app/_docs/demos/status-page"
 import { Demo as DatePickerDemo } from "@/app/_docs/demos/date-picker"
 import { Demo as Wide } from "@/app/_docs/demos/wide"
+import { Demo as ActionPanelDemo } from "@/app/_docs/demos/action-panel"
 import { Demo as Button } from "@/app/_docs/demos/button"
 import { Demo as Badge } from "@/app/_docs/demos/badge"
 import { Demo as Input } from "@/app/_docs/demos/input"
@@ -49,6 +50,7 @@ export const demos: Record<string, ComponentType> = {
   "field-list": FieldListDemo,
   "status-page": StatusPageDemo,
   "date-picker": DatePickerDemo,
+  "action-panel": ActionPanelDemo,
   button: Button,
   badge: Badge,
   input: Input,

@@ -117,6 +117,8 @@ jobs:
           grep -q 'react-day-picker' package.json
           bunx shadcn@latest add http://localhost:8099/r/date-picker.json -y -o
           grep -q 'toDateString' components/date-picker.tsx
+          bunx shadcn@latest add http://localhost:8099/r/action-panel.json -y -o
+          grep -q 'doneLabel' components/action-panel.tsx
           bun run build
       - if: always()
         run: docker compose logs
