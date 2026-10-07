@@ -8,7 +8,7 @@ const swatches = [
 
 export function Demo() {
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
+    <div className="grid w-full grid-cols-2 gap-3 sm:grid-cols-5">
       {swatches.map((swatch) => (
         <div
           key={swatch.name}

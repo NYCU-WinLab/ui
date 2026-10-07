@@ -33,15 +33,21 @@ type User = { name: string; href: string; image?: string; tip?: string }
 //   bottom right the copyright year; the tip names the owner
 // Every item can carry a tip, opening toward the page and lined up with the
 // corner's outer edge so it never leaves the viewport.
+// Two page layouts:
+//   column     read top to bottom: home, lists, tables, long forms
+//   spotlight  one thing, centered between the corners: a detail, sign-in,
+//              a result, an empty state; taller content scrolls as a column
 function AppShell({
   breadcrumb,
   nav = [],
   user,
+  layout = "column",
   children,
 }: {
   breadcrumb: Crumb[]
   nav?: NavItem[]
   user?: User
+  layout?: "column" | "spotlight"
   children: React.ReactNode
 }) {
   const pathname = usePathname()
@@ -133,9 +139,15 @@ function AppShell({
         </CornerTip>
       </div>
 
-      <main className="mx-auto w-full max-w-4xl px-6 pt-24 pb-24">
-        {children}
-      </main>
+      {layout === "spotlight" ? (
+        <main className="flex min-h-svh w-full items-center justify-center px-6 py-24">
+          <div className="w-full max-w-2xl">{children}</div>
+        </main>
+      ) : (
+        <main className="mx-auto w-full max-w-4xl px-6 pt-24 pb-24">
+          {children}
+        </main>
+      )}
     </TooltipProvider>
   )
 }

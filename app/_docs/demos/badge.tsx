@@ -2,7 +2,7 @@ import { Badge } from "@/registry/winlab/ui/badge"
 
 export function Demo() {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap justify-center gap-2">
       <Badge>Default</Badge>
       <Badge variant="muted">Muted</Badge>
       <Badge variant="outline">Outline</Badge>

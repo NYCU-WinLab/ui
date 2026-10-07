@@ -9,7 +9,7 @@ import {
 
 export function Demo() {
   return (
-    <Tabs defaultValue="summary">
+    <Tabs defaultValue="summary" className="w-full items-center">
       <TabsList>
         <TabsTrigger value="summary">概要</TabsTrigger>
         <TabsTrigger value="items">明細</TabsTrigger>

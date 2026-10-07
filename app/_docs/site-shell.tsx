@@ -3,13 +3,16 @@ import { AppShell } from "@/registry/winlab/blocks/app-shell/app-shell"
 // The site's own corners: every page sits under WinLab / UI.
 export function SiteShell({
   page,
+  layout,
   children,
 }: {
   page?: { label: string; href: string }
+  layout?: "column" | "spotlight"
   children: React.ReactNode
 }) {
   return (
     <AppShell
+      layout={layout}
       breadcrumb={[
         {
           label: "WinLab",

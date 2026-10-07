@@ -20,6 +20,17 @@ Every WinLab app is one centered column framed by four fixed corners, 24px in fr
 - Content that scrolls under the corners fades into a 64px band of frosted glass at the top and bottom edges.
 - No menu button: an app keeps its pages few enough to fit beside the breadcrumb on a phone.
 
+## Page layouts
+
+Two, chosen per page with `app-shell`'s `layout`:
+
+| Layout | For | Shape |
+|--------|-----|-------|
+| `column` | Pages read top to bottom: home, lists, tables, long forms | One centered column (`max-w-4xl`) starting under the top corners |
+| `spotlight` | Pages about one thing: a single item, sign-in, a result, an empty state, a not-found, a component's doc page | The content centered horizontally and vertically between the corners (`max-w-2xl`); taller content scrolls as a column |
+
+In a spotlight, the title and description center above the focal content; text that is the focus itself stays left-aligned when it runs to more than one line.
+
 ## Two layers
 
 The interface is flat and has exactly two layers.
@@ -34,6 +45,7 @@ The interface is flat and has exactly two layers.
 - Controls keep their own outline: inputs, selects and outline buttons are controls, not containers. A segmented tab list may use the `muted` fill: it is one control.
 - Tooltips are the one inverted overlay (`bg-foreground text-background`): a few words over any content must stay legible, so they are not frosted.
 - A form either is the page (layer 1, no frame) or is called up in a `dialog` (layer 2). Short edits, such as adding one item or changing one field of a row, go in a dialog; a form that is the purpose of the page stays on the page.
+- No helper text under a field. If a field needs explaining, its label says it ("備註（簽核人看得到）"); errors go in a toast.
 - A section title on a page is followed by more space (`gap-6`) than a field label (`gap-2`), so the two never read as the same level.
 
 ## Type
