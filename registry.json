@@ -711,6 +711,19 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "status-page",
+      "type": "registry:block",
+      "title": "Status Page",
+      "description": "A page that says what happened and the way out: not found, an error, no access.",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/status-page/status-page.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

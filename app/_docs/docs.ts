@@ -74,6 +74,13 @@ export const docs: Doc[] = [
     item: "field-list",
   },
   {
+    group: "區塊",
+    slug: "status-page",
+    title: "狀態頁",
+    description: "找不到、出錯、沒有權限時，說明發生什麼事和下一步。",
+    item: "status-page",
+  },
+  {
     group: "元件",
     slug: "button",
     title: "按鈕",

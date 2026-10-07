@@ -73,6 +73,7 @@ npx shadcn@latest add @winlab/button
 | `list-skeleton` | `registry:block` | Placeholder rows for a list (`ListSkeleton`) or a table body (`TableSkeleton`) on first load only, split by the same dividers as the real rows |
 | `member-combobox` | `registry:block` | Pick lab members by name or email; one member closes on choice, `multiple` keeps the menu open and toggles |
 | `field-list` | `registry:block` | One record's fields as a `dl`: muted names in a left column, values beside them (under them on a phone), split by dividers |
+| `status-page` | `registry:block` | A spotlight page that says what happened and the way out: not found, an error, no access; the site's own 404 uses it |
 | `badge` | `registry:ui` | Status label; variants `default`, `muted`, `outline`, `destructive`, `success`, `warning` |
 
 Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Noto Sans TC. `font-mono` puts JetBrains Mono in front of the same CJK fonts. Use Inter's `tabular-nums` for amounts and table figures, not `font-mono`.
