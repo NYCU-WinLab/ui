@@ -1,6 +1,6 @@
 import { Button as ButtonPrimitive } from "@base-ui/react/button"
 import { cva, type VariantProps } from "class-variance-authority"
-import { cn } from "cn"
+import { cn } from "@/registry/winlab/lib/utils"
 
 // One height for text and icon buttons; variants follow what WinLab apps use.
 const buttonVariants = cva(

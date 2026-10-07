@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "cn"
+import { cn } from "@/registry/winlab/lib/utils"
 
 type ActionPanelProps = {
   /** The verb: "開門". */

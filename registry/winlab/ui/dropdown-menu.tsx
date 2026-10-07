@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Menu as MenuPrimitive } from "@base-ui/react/menu"
-import { cn } from "cn"
+import { cn } from "@/registry/winlab/lib/utils"
 import { ChevronRightIcon } from "lucide-react"
 
 const menuSurface =

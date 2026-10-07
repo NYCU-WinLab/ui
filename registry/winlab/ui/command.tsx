@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Command as CommandPrimitive } from "cmdk"
-import { cn } from "cn"
+import { cn } from "@/registry/winlab/lib/utils"
 import { CheckIcon, SearchIcon } from "lucide-react"
 
 // Searchable list for a popover (combobox). It has no surface of its own:
