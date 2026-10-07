@@ -35,13 +35,13 @@ jobs:
           ! curl -sI localhost:8080/ | grep -qi "server: nginx/"
 
       # Install the base into a fresh project, the same way a WinLab app would.
-      # The base pulls its font items by absolute URL; point those at the
-      # files inside this image so unreleased items resolve.
+      # Items depend on each other by absolute URL; point those at the files
+      # inside this image so unreleased items resolve.
       - name: Smoke test shadcn init
         run: |
           mkdir -p "$RUNNER_TEMP/registry"
           docker compose cp web:/usr/share/nginx/html/r "$RUNNER_TEMP/registry/r"
-          sed -i 's#https://ui.winlab.tw/r/font-#http://localhost:8099/r/font-#g' "$RUNNER_TEMP"/registry/r/*.json
+          sed -i 's#https://ui.winlab.tw/r/\([a-z-]*\)\.json#http://localhost:8099/r/\1.json#g' "$RUNNER_TEMP"/registry/r/*.json
           (cd "$RUNNER_TEMP/registry" && python3 -m http.server 8099 > /dev/null 2>&1 &)
           for i in $(seq 1 10); do curl -sf localhost:8099/r/base.json > /dev/null && break; sleep 1; done
           mkdir -p "$RUNNER_TEMP/consumer" && cd "$RUNNER_TEMP/consumer"
@@ -60,6 +60,9 @@ jobs:
           bunx shadcn@latest add http://localhost:8099/r/button.json -y -o
           grep -q 'text-body' components/ui/button.tsx
           ! grep -q 'text-sm' components/ui/button.tsx
+          bunx shadcn@latest add http://localhost:8099/r/dialog.json http://localhost:8099/r/alert-dialog.json -y -o
+          grep -q 'text-title' components/ui/dialog.tsx
+          grep -q 'from "@/components/ui/button"' components/ui/dialog.tsx
           bun run build
       - if: always()
         run: docker compose logs
