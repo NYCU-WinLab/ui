@@ -97,6 +97,8 @@ jobs:
           grep -q 'NYCU WinLab' components/app-shell.tsx
           bunx shadcn@latest add http://localhost:8099/r/confirm-dialog.json -y -o
           grep -q 'useTransition' components/confirm-dialog.tsx
+          bunx shadcn@latest add http://localhost:8099/r/form-dialog.json -y -o
+          grep -q 'fieldset' components/form-dialog.tsx
           bun run build
       - if: always()
         run: docker compose logs

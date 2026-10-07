@@ -32,6 +32,13 @@ export const docs: Doc[] = [
     item: "confirm-dialog",
   },
   {
+    group: "區塊",
+    slug: "form-dialog",
+    title: "表單對話框",
+    description: "短表單叫出在頁面上方，送出中鎖住欄位，完成才關閉。",
+    item: "form-dialog",
+  },
+  {
     group: "元件",
     slug: "button",
     title: "按鈕",
