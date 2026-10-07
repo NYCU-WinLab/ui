@@ -3,6 +3,7 @@ import type { ComponentType } from "react"
 import { Demo as Colors } from "@/app/_docs/demos/colors"
 import { Demo as AppShell } from "@/app/_docs/demos/app-shell"
 import { Demo as ConfirmDialog } from "@/app/_docs/demos/confirm-dialog"
+import { Demo as FormDialogDemo } from "@/app/_docs/demos/form-dialog"
 import { Demo as Button } from "@/app/_docs/demos/button"
 import { Demo as Badge } from "@/app/_docs/demos/badge"
 import { Demo as Input } from "@/app/_docs/demos/input"
@@ -30,6 +31,7 @@ export const demos: Record<string, ComponentType> = {
   colors: Colors,
   "app-shell": AppShell,
   "confirm-dialog": ConfirmDialog,
+  "form-dialog": FormDialogDemo,
   button: Button,
   badge: Badge,
   input: Input,

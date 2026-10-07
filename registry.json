@@ -615,6 +615,24 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "form-dialog",
+      "type": "registry:block",
+      "title": "Form Dialog",
+      "description": "A short form in a dialog: fields lock while it submits, and it closes when the submit finishes.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/dialog.json",
+        "https://ui.winlab.tw/r/button.json",
+        "https://ui.winlab.tw/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/form-dialog/form-dialog.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
