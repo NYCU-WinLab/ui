@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "cn"
+import { cn } from "@/registry/winlab/lib/utils"
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
 import { DayPicker, type DayButton } from "react-day-picker"
 import { zhTW } from "react-day-picker/locale"

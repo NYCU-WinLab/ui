@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "cn"
+import { cn } from "@/registry/winlab/lib/utils"
 import { CalendarIcon } from "lucide-react"
 import type { Matcher } from "react-day-picker"
 

@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Dialog as DialogPrimitive } from "@base-ui/react/dialog"
 import { cva, type VariantProps } from "class-variance-authority"
-import { cn } from "cn"
+import { cn } from "@/registry/winlab/lib/utils"
 import { XIcon } from "lucide-react"
 
 import { Button } from "@/registry/winlab/ui/button"

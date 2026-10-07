@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { cn } from "cn"
+import { cn } from "@/registry/winlab/lib/utils"
 
 import {
   Avatar,

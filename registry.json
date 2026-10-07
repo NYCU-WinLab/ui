@@ -187,7 +187,7 @@
       "name": "utils",
       "type": "registry:lib",
       "title": "Utils",
-      "description": "cn re-exported at @/lib/utils.",
+      "description": "cn at @/lib/utils, aware of the text-title / text-body sizes.",
       "dependencies": [
         "cn"
       ],
@@ -225,6 +225,9 @@
           "path": "registry/winlab/ui/button.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -240,6 +243,9 @@
           "path": "registry/winlab/ui/label.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -256,6 +262,9 @@
           "path": "registry/winlab/ui/input.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -271,6 +280,9 @@
           "path": "registry/winlab/ui/textarea.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -286,6 +298,9 @@
           "path": "registry/winlab/ui/skeleton.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -303,6 +318,9 @@
           "path": "registry/winlab/ui/badge.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -317,6 +335,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json",
         "https://ui.winlab.tw/r/button.json"
       ],
       "files": [
@@ -336,6 +355,7 @@
         "cn"
       ],
       "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json",
         "https://ui.winlab.tw/r/button.json"
       ],
       "files": [
@@ -362,6 +382,7 @@
         }
       ],
       "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json",
         "https://ui.winlab.tw/r/field.json"
       ]
     },
@@ -378,6 +399,9 @@
           "path": "registry/winlab/ui/table.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -394,6 +418,9 @@
           "path": "registry/winlab/ui/popover.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -411,6 +438,9 @@
           "path": "registry/winlab/ui/command.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -428,6 +458,9 @@
           "path": "registry/winlab/ui/dropdown-menu.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -445,6 +478,9 @@
           "path": "registry/winlab/ui/checkbox.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -461,6 +497,9 @@
           "path": "registry/winlab/ui/switch.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -477,6 +516,9 @@
           "path": "registry/winlab/ui/tabs.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -493,6 +535,9 @@
           "path": "registry/winlab/ui/avatar.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -509,6 +554,9 @@
           "path": "registry/winlab/ui/tooltip.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -525,6 +573,9 @@
           "path": "registry/winlab/ui/separator.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -541,6 +592,9 @@
           "path": "registry/winlab/ui/collapsible.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     },
     {
@@ -569,6 +623,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json",
         "https://ui.winlab.tw/r/field.json",
         "https://ui.winlab.tw/r/popover.json",
         "https://ui.winlab.tw/r/command.json"
@@ -591,6 +646,7 @@
         "react-day-picker"
       ],
       "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json",
         "https://ui.winlab.tw/r/button.json"
       ],
       "files": [
@@ -609,6 +665,7 @@
         "cn"
       ],
       "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json",
         "https://ui.winlab.tw/r/avatar.json",
         "https://ui.winlab.tw/r/tooltip.json"
       ],
@@ -756,6 +813,7 @@
         "react-day-picker"
       ],
       "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json",
         "https://ui.winlab.tw/r/field.json",
         "https://ui.winlab.tw/r/calendar.json",
         "https://ui.winlab.tw/r/popover.json"
@@ -780,6 +838,9 @@
           "path": "registry/winlab/blocks/action-panel/action-panel.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
       ]
     }
   ]

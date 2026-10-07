@@ -14,6 +14,8 @@ jobs:
       - run: bun install --frozen-lockfile
       - run: bun run theme:check
       - run: bun run tokens:check
+      - name: cn keeps the type scale next to a text color
+        run: bun -e 'import { cn } from "./registry/winlab/lib/utils"; const out = cn("text-body text-title", "text-foreground"); if (out !== "text-title text-foreground") throw new Error(out)'
       - run: bun run lint
       - run: bun run typecheck
       - run: bun run format:check
@@ -98,6 +100,8 @@ jobs:
           grep -q 'layout === "wide"' components/app-shell.tsx
           bunx shadcn@latest add http://localhost:8099/r/confirm-dialog.json -y -o
           grep -q 'useTransition' components/confirm-dialog.tsx
+          grep -q 'createCn' lib/utils.ts
+          grep -q 'from "@/lib/utils"' components/ui/button.tsx
           bunx shadcn@latest add http://localhost:8099/r/form-dialog.json -y -o
           grep -q 'fieldset' components/form-dialog.tsx
           bunx shadcn@latest add http://localhost:8099/r/empty-state.json -y -o
