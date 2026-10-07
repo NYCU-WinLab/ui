@@ -58,6 +58,8 @@ jobs:
           grep -q -- '--success: oklch(0.52 0.09 185)' app/globals.css
           grep -q -- '--color-warning: var(--warning)' app/globals.css
           grep -q '@utility w-menu' app/globals.css
+          grep -q '@utility duration-overlay' app/globals.css
+          grep -q 'prefers-reduced-motion' app/globals.css
           bunx shadcn@latest add http://localhost:8099/r/button.json -y -o
           grep -q 'text-body' components/ui/button.tsx
           ! grep -q 'text-sm' components/ui/button.tsx

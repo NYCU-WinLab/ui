@@ -29,6 +29,12 @@ const patterns = [
     regex:
       /\brounded(?:-(?:t|r|b|l|s|e|tl|tr|br|bl|ss|se|es|ee))?(?:-(?:none|xs|sm|md|lg|xl|[2-4]xl))?\b(?!-)/g,
   },
+  // Motion comes from duration-state / duration-overlay only.
+  {
+    name: "duration or easing outside the tokens",
+    regex:
+      /\b(?:duration-(?:\d+|\()|ease-(?:linear|in|out|in-out)\b|delay-\d+)/g,
+  },
   {
     name: "palette color",
     regex: new RegExp(`\\b(?:${colorUtilities})-(?:${palette})\\b`, "g"),
