@@ -12,7 +12,8 @@ The interface is flat and has exactly two layers.
 | 2. Overlay | Anything called up on top of the page: `dialog`, `alert-dialog`, the `select` menu, popovers and menus | No fill: frosted glass (`bg-transparent backdrop-blur-md`, 12px), a border, a shadow, `rounded-surface` or `rounded-menu`. The dialog overlay is the same frosted glass with no tint |
 
 - Group page content with spacing and, where a line helps, a divider (`border-t` / `border-b`). Never wrap a group in a frame.
-- Controls keep their own outline: inputs, selects and outline buttons are controls, not containers.
+- Controls keep their own outline: inputs, selects and outline buttons are controls, not containers. A segmented tab list may use the `muted` fill: it is one control.
+- Tooltips are the one inverted overlay (`bg-foreground text-background`): a few words over any content must stay legible, so they are not frosted.
 - A form either is the page (layer 1, no frame) or is called up in a `dialog` (layer 2). Short edits, such as adding one item or changing one field of a row, go in a dialog; a form that is the purpose of the page stays on the page.
 - A section title on a page is followed by more space (`gap-6`) than a field label (`gap-2`), so the two never read as the same level.
 
@@ -29,7 +30,7 @@ Radii are concentric: an outer corner equals the inner corner plus the padding b
 | `rounded-control` | `--radius` (16px) | Buttons, inputs, select triggers, menu items |
 | `rounded-menu` | control + 4px | Menus with `p-1` around control-radius items |
 | `rounded-surface` | control + 24px | Dialogs with `p-6` around controls |
-| `rounded-full` | pill / circle | Badges, switches, checkboxes |
+| `rounded-full` | pill / circle | Badges, switches, checkboxes, avatars |
 
 A new container picks its radius from this rule, not by eye. If its padding is not 4px or 24px, it either changes padding or adds a token here.
 
