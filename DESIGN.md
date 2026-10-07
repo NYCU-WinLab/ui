@@ -36,3 +36,5 @@ A new container picks its radius from this rule, not by eye. If its padding is n
 ## Color
 
 Use the theme tokens only (`primary`, `muted`, `destructive`, `success`, `warning`, ...). No Tailwind palette colors and no color literals.
+
+Focus follows the component's own color. `--ring` is a neutral gray, so inputs, selects and outline or ghost buttons show a gray focus ring; the primary button shows a primary ring and the destructive button a destructive one. Ultramarine marks the main action, not every focused control.
