@@ -7,7 +7,7 @@ export function SiteShell({
   children,
 }: {
   page?: { label: string; href: string }
-  layout?: "column" | "spotlight"
+  layout?: "column" | "spotlight" | "wide"
   children: React.ReactNode
 }) {
   return (

@@ -7,6 +7,8 @@ export type Doc = {
   description: string
   /** Registry item to install, if the page is about one. */
   item?: string
+  /** The page's app-shell layout; doc pages default to spotlight. */
+  layout?: "spotlight" | "wide"
 }
 
 export const docs: Doc[] = [
@@ -23,6 +25,13 @@ export const docs: Doc[] = [
     description:
       "每個 WinLab app 的四個角，預設是麵包屑、導覽、使用者與版本、版權，也可以換成別的內容。",
     item: "app-shell",
+  },
+  {
+    group: "版面",
+    slug: "wide",
+    title: "寬版面",
+    description: "時段表這類格子用滿四角之間的寬度，文字和清單不用。",
+    layout: "wide",
   },
   {
     group: "區塊",

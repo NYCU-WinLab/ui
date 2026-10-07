@@ -36,9 +36,9 @@ export default async function DocPage({
   return (
     <SiteShell
       page={{ label: doc.title, href: `/${doc.slug}` }}
-      layout="spotlight"
+      layout={doc.layout ?? "spotlight"}
     >
-      <div className="flex flex-col items-center gap-12">
+      <div className="flex w-full flex-col items-center gap-12">
         <header className="flex flex-col items-center gap-2 text-center">
           <h1 className="text-title font-medium">{doc.title}</h1>
           <p className="text-muted-foreground">{doc.description}</p>

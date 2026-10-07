@@ -11,6 +11,7 @@ import { Demo as MemberComboboxDemo } from "@/app/_docs/demos/member-combobox"
 import { Demo as FieldListDemo } from "@/app/_docs/demos/field-list"
 import { Demo as StatusPageDemo } from "@/app/_docs/demos/status-page"
 import { Demo as DatePickerDemo } from "@/app/_docs/demos/date-picker"
+import { Demo as Wide } from "@/app/_docs/demos/wide"
 import { Demo as Button } from "@/app/_docs/demos/button"
 import { Demo as Badge } from "@/app/_docs/demos/badge"
 import { Demo as Input } from "@/app/_docs/demos/input"
@@ -38,6 +39,7 @@ import { Demo as Sonner } from "@/app/_docs/demos/sonner"
 export const demos: Record<string, ComponentType> = {
   colors: Colors,
   "app-shell": AppShell,
+  wide: Wide,
   "confirm-dialog": ConfirmDialog,
   "form-dialog": FormDialogDemo,
   "empty-state": EmptyStateDemo,
