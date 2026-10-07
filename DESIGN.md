@@ -9,7 +9,7 @@ The interface is flat and has exactly two layers.
 | Layer | What lives there | Surface |
 |-------|------------------|---------|
 | 1. Page | Everything that is on the page when it loads: titles, text, lists, tables, long forms | None. No borders around groups, no shadows, no card backgrounds |
-| 2. Overlay | Anything called up on top of the page: `dialog`, `alert-dialog`, the `select` menu, popovers and menus | `bg-popover`, a border, a shadow, `rounded-surface` or `rounded-menu` |
+| 2. Overlay | Anything called up on top of the page: `dialog`, `alert-dialog`, the `select` menu, popovers and menus | The page background, translucent and blurred (`bg-background/70 backdrop-blur-xl`), a border, a shadow, `rounded-surface` or `rounded-menu`. No second surface color |
 
 - Group page content with spacing and, where a line helps, a divider (`border-t` / `border-b`). Never wrap a group in a frame.
 - Controls keep their own outline: inputs, selects and outline buttons are controls, not containers.
