@@ -9,8 +9,8 @@ Every WinLab app is framed by four fixed corners, 24px in from the viewport. `ap
 | Corner | Default job | Default content |
 |--------|-----|---------|
 | Top left | Where you are | Breadcrumb: the lab (portal home), then the app (its home) |
-| Top right | Where you can go | The app's pages; the current one in `foreground` |
-| Bottom left | Who you are, which build | The signed-in member (to their profile), then the short commit of this build, linking to its CD run, with the build time (Asia/Taipei) as its tip |
+| Top right | Where you can go | The app's pages, the current one in `foreground`; last, the account: "登入" when signed out, the member's name when signed in |
+| Bottom left | Which build | The short commit of this build, linking to its CD run, with the build time (Asia/Taipei) as its tip |
 | Bottom right | Whose it is | © year; its tip says NYCU WinLab |
 
 - Actions are not navigation: a "新增訂單" button goes in the page header next to the content it changes, never in a corner.
