@@ -76,6 +76,7 @@ npx shadcn@latest add @winlab/button
 | `field-list` | `registry:block` | One record's fields as a `dl`: muted names in a left column, values beside them (under them on a phone), split by dividers |
 | `status-page` | `registry:block` | A spotlight page that says what happened and the way out: not found, an error, no access; the site's own 404 uses it |
 | `date-picker` | `registry:block` | A date field with the same closed look as `select`; opens a `calendar`, closes on choice, can block days, and posts yyyy-mm-dd under `name` for `form-dialog` |
+| `action-panel` | `registry:block` | A page whose job is one action, such as opening the door: one 192px round button that locks while it runs, turns `success` for a moment, and says why when it cannot be pressed |
 | `badge` | `registry:ui` | Status label; variants `default`, `muted`, `outline`, `destructive`, `success`, `warning` |
 
 Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Noto Sans TC. `font-mono` puts JetBrains Mono in front of the same CJK fonts. Use Inter's `tabular-nums` for amounts and table figures, not `font-mono`.

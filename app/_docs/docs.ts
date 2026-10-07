@@ -97,6 +97,14 @@ export const docs: Doc[] = [
     item: "date-picker",
   },
   {
+    group: "區塊",
+    slug: "action-panel",
+    title: "單一動作",
+    description:
+      "整頁只做一件事，例如開門：一顆大按鈕，執行中鎖住，成功後短暫變色。",
+    item: "action-panel",
+  },
+  {
     group: "元件",
     slug: "button",
     title: "按鈕",
