@@ -57,7 +57,7 @@ const pagePatterns = [
     regex: /(?<![-\w])border(?:-[xy])?(?![-\w])/g,
   },
 ]
-const componentRoot = join("registry", "winlab", "ui")
+const componentRoot = join("registry", "winlab")
 
 async function* files(dir: string): AsyncGenerator<string> {
   const entries = await readdir(dir, { withFileTypes: true }).catch(() => [])

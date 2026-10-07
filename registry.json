@@ -162,6 +162,18 @@
       }
     },
     {
+      "name": "field",
+      "type": "registry:lib",
+      "title": "Field",
+      "description": "Shared class list for pick-a-value triggers.",
+      "files": [
+        {
+          "path": "registry/winlab/lib/field.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
@@ -311,6 +323,9 @@
           "path": "registry/winlab/ui/select.tsx",
           "type": "registry:ui"
         }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/field.json"
       ]
     },
     {
@@ -502,6 +517,27 @@
       "files": [
         {
           "path": "registry/winlab/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Trigger and content for a searchable picker built from Popover and Command.",
+      "dependencies": [
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/field.json",
+        "https://ui.winlab.tw/r/popover.json",
+        "https://ui.winlab.tw/r/command.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/combobox.tsx",
           "type": "registry:ui"
         }
       ]

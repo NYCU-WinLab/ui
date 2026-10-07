@@ -51,6 +51,7 @@ npx shadcn@latest add @winlab/button
 | `table` | `registry:ui` | Data table with muted headers; add `tabular-nums` and `text-right` to number columns |
 | `popover` | `registry:ui` | Frosted menu surface anchored to a trigger; `w-(--anchor-width)` matches the trigger |
 | `command` | `registry:ui` | Searchable list for a combobox inside a `popover` |
+| `combobox` | `registry:ui` | `ComboboxTrigger` (same field look as `select`) and `ComboboxContent` (as wide as the trigger) around a `command` |
 | `dropdown-menu` | `registry:ui` | Action menu: items, labels, separators and submenus |
 | `checkbox` | `registry:ui` | Round 20px checkbox |
 | `switch` | `registry:ui` | On / off toggle, 40 x 24 |
