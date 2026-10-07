@@ -35,6 +35,16 @@ A new container picks its radius from this rule, not by eye. If its padding is n
 
 ## Color
 
-Use the theme tokens only: `background` / `foreground`, `primary`, `muted` (the one neutral fill and the secondary text color), `border` / `input` / `ring`, `destructive`, `success`, `warning`. There is no `secondary` or `accent` (they were the same gray as `muted`) and no `sidebar-*`: a sidebar needs a second surface color, which layer 1 does not have. Navigation lives in the app shell's corners or in an overlay. No Tailwind palette colors and no color literals.
+Use the theme tokens only: `background` / `foreground`, `primary`, `muted` (the one neutral fill and the secondary text color), `border` / `input` / `ring`, `destructive`, `success`, `warning`. There is no `secondary` or `accent` (they were the same gray as `muted`) and no `sidebar-*`: a sidebar needs a second surface color, which layer 1 does not have. Navigation lives in the app shell's corners or in an overlay.
+
+Charts use the same colors, not chart-specific tokens:
+
+| Series | Color |
+|--------|-------|
+| The main series | `primary` |
+| A comparison (last year, average) | `muted-foreground` |
+| A series with a meaning (income, expense, overdue) | `success`, `destructive`, `warning` |
+
+A chart that needs more than two series to be told apart by color is split into small multiples or shown as a table. No Tailwind palette colors and no color literals.
 
 Focus follows the component's own color. `--ring` is a neutral gray, so inputs, selects and outline or ghost buttons show a gray focus ring; the primary button shows a primary ring and the destructive button a destructive one. Ultramarine marks the main action, not every focused control.

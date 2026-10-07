@@ -13,11 +13,6 @@
     --font-sans: var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-tc), sans-serif;
     --font-heading: var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-tc), sans-serif;
     --font-mono: var(--font-jetbrains-mono), var(--font-noto-sans-jp), var(--font-noto-sans-tc), monospace;
-    --color-chart-5: var(--chart-5);
-    --color-chart-4: var(--chart-4);
-    --color-chart-3: var(--chart-3);
-    --color-chart-2: var(--chart-2);
-    --color-chart-1: var(--chart-1);
     --color-ring: var(--ring);
     --color-input: var(--input);
     --color-border: var(--border);
@@ -56,11 +51,6 @@
     --border: oklch(0.922 0 0);
     --input: oklch(0.922 0 0);
     --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
     --radius: 1rem;
 }
 
@@ -81,11 +71,6 @@
     --border: oklch(1 0 0 / 10%);
     --input: oklch(1 0 0 / 15%);
     --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
 }
 
 /* Menus with p-1 sit 4px outside their trigger on both sides. */
