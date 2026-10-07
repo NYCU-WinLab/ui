@@ -698,6 +698,19 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "field-list",
+      "type": "registry:block",
+      "title": "Field List",
+      "description": "One record's fields: muted names on the left, values beside them, split by dividers.",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/field-list/field-list.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
