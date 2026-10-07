@@ -40,3 +40,4 @@ next-env.d.ts
 
 # registry output (built by `shadcn build`)
 /public/r/
+!.env.example

@@ -41,7 +41,7 @@ npx shadcn@latest add @winlab/<component>
 
 | Layer | Choice |
 |-------|--------|
-| Framework | Next.js 16 (App Router) |
+| Framework | Next.js 16 (App Router, static export) |
 | Registry | shadcn CLI (`shadcn build`) |
 | Styling | Tailwind CSS v4 + Base UI |
 | Package manager | Bun |
@@ -57,6 +57,15 @@ bun dev
 Registry items are declared in [`registry.json`](registry.json). `bun run build` runs `shadcn build` into `public/r/` and then builds the site.
 
 The site's own `app/globals.css` must match the `base` item's `cssVars`; `bun run theme:check` fails when they drift.
+
+## Deploy
+
+The site is a static export served by nginx. Each push to `main` publishes `ghcr.io/nycu-winlab/ui:main` and `ghcr.io/nycu-winlab/ui:sha-<commit>`.
+
+```bash
+cp .env.example .env   # pin UI_VERSION to a sha- tag in production
+docker compose pull && docker compose up -d
+```
 
 ## Contributing
 

@@ -1,0 +1,13 @@
+services:
+  web:
+    image: ghcr.io/nycu-winlab/ui:${UI_VERSION:-main}
+    build: .
+    ports:
+      - "${UI_BIND:-127.0.0.1:8080}:8080"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/r/base.json"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s

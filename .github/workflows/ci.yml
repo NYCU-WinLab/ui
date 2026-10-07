@@ -18,15 +18,29 @@ jobs:
       - run: bun run format:check
       - run: bun run build
 
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - name: Start the image with compose
+        run: docker compose up -d --build --wait
+      - name: Serve the site and registry
+        run: |
+          curl -sf localhost:8080/ | grep -q "WinLab UI"
+          curl -sf localhost:8080/r/registry.json | grep -q '"name": "winlab"'
+          curl -sfI localhost:8080/r/base.json | grep -qi "content-type: application/json"
+          test "$(curl -s -o /dev/null -w '%{http_code}' localhost:8080/missing)" = 404
+
       # Install the base into a fresh project, the same way a WinLab app would.
       - name: Smoke test shadcn init
         run: |
-          bun run start -p 4890 &
-          for i in $(seq 1 30); do curl -sf localhost:4890/r/base.json > /dev/null && break; sleep 1; done
           mkdir -p "$RUNNER_TEMP/consumer" && cd "$RUNNER_TEMP/consumer"
-          bunx shadcn@latest init http://localhost:4890/r/base.json -t next -n app --no-monorepo -y
+          bunx shadcn@latest init http://localhost:8080/r/base.json -t next -n app --no-monorepo -y
           cd app
           grep -q '"@winlab": "https://ui.winlab.tw/r/{name}.json"' components.json
           grep -q -- '--primary: oklch(0.378 0.182 262.5)' app/globals.css
           grep -q '@import "shadcn/tailwind.css"' app/globals.css
           bun run build
+      - if: always()
+        run: docker compose logs
