@@ -60,7 +60,9 @@
           "text-body--line-height": "1.5rem",
           "font-sans": "var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-tc), sans-serif",
           "font-heading": "var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-tc), sans-serif",
-          "font-mono": "var(--font-jetbrains-mono), var(--font-noto-sans-jp), var(--font-noto-sans-tc), monospace"
+          "font-mono": "var(--font-jetbrains-mono), var(--font-noto-sans-jp), var(--font-noto-sans-tc), monospace",
+          "color-success": "var(--success)",
+          "color-warning": "var(--warning)"
         },
         "light": {
           "radius": "1rem",
@@ -79,6 +81,8 @@
           "accent": "oklch(0.97 0 0)",
           "accent-foreground": "oklch(0.205 0 0)",
           "destructive": "oklch(0.577 0.245 27.325)",
+          "success": "oklch(0.52 0.09 185)",
+          "warning": "oklch(0.55 0.112 85)",
           "border": "oklch(0.922 0 0)",
           "input": "oklch(0.922 0 0)",
           "ring": "oklch(0.378 0.182 262.5)",
@@ -112,6 +116,8 @@
           "accent": "oklch(0.269 0 0)",
           "accent-foreground": "oklch(0.985 0 0)",
           "destructive": "oklch(0.704 0.191 22.216)",
+          "success": "oklch(0.78 0.1 185)",
+          "warning": "oklch(0.84 0.12 85)",
           "border": "oklch(1 0 0 / 10%)",
           "input": "oklch(1 0 0 / 15%)",
           "ring": "oklch(0.68 0.168 262.5)",
@@ -265,6 +271,23 @@
       "files": [
         {
           "path": "registry/winlab/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Status label: default, secondary, outline, destructive, success, warning.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/badge.tsx",
           "type": "registry:ui"
         }
       ]
