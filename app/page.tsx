@@ -1,5 +1,6 @@
 import { PlusIcon } from "lucide-react"
 
+import { Badge } from "@/registry/winlab/ui/badge"
 import { Button } from "@/registry/winlab/ui/button"
 import { Input } from "@/registry/winlab/ui/input"
 import { Label } from "@/registry/winlab/ui/label"
@@ -11,6 +12,8 @@ const swatches = [
   { name: "secondary", className: "bg-secondary text-secondary-foreground" },
   { name: "muted", className: "bg-muted text-muted-foreground" },
   { name: "destructive", className: "bg-destructive/10 text-destructive" },
+  { name: "success", className: "bg-success/10 text-success" },
+  { name: "warning", className: "bg-warning/10 text-warning" },
 ]
 
 export default function Page() {
@@ -32,7 +35,7 @@ export default function Page() {
 
       <section className="flex flex-col gap-3">
         <h2 className="font-semibold">Colors</h2>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {swatches.map((swatch) => (
             <div
               key={swatch.name}
@@ -54,6 +57,18 @@ export default function Page() {
           <Button size="icon" variant="outline" aria-label="Add">
             <PlusIcon />
           </Button>
+        </div>
+      </section>
+
+      <section className="flex flex-col gap-3">
+        <h2 className="font-semibold">Badges</h2>
+        <div className="flex flex-wrap gap-2">
+          <Badge>Default</Badge>
+          <Badge variant="secondary">Secondary</Badge>
+          <Badge variant="outline">Outline</Badge>
+          <Badge variant="success">Approved</Badge>
+          <Badge variant="warning">Pending</Badge>
+          <Badge variant="destructive">Rejected</Badge>
         </div>
       </section>
 

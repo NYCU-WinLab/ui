@@ -35,7 +35,7 @@ npx shadcn@latest add @winlab/button
 
 | Item | Type | What it gives you |
 |------|------|-------------------|
-| `base` | `registry:base` | Ultramarine brand tokens (Pantone 286 C, `#0033A0`) on a neutral scale, light and dark; `--radius: 1rem`; the font stacks below |
+| `base` | `registry:base` | Ultramarine brand tokens (Pantone 286 C, `#0033A0`) on a neutral scale, light and dark; `success` and `warning` status colors; `--radius: 1rem`; the font stacks below |
 | `font-inter` | `registry:font` | Inter for Latin text and numbers |
 | `font-noto-sans-jp` | `registry:font` | Noto Sans JP for kanji and punctuation (Japanese forms: `，。` sit in the lower left) |
 | `font-noto-sans-tc` | `registry:font` | Noto Sans TC for the Traditional Chinese characters Noto Sans JP lacks |
@@ -45,6 +45,7 @@ npx shadcn@latest add @winlab/button
 | `input` | `registry:ui` | Text input, same height as `button` |
 | `textarea` | `registry:ui` | Multi-line input that grows with its content |
 | `skeleton` | `registry:ui` | Loading placeholder |
+| `badge` | `registry:ui` | Status label; variants `default`, `secondary`, `outline`, `destructive`, `success`, `warning` |
 
 Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Noto Sans TC. `font-mono` puts JetBrains Mono in front of the same CJK fonts. Use Inter's `tabular-nums` for amounts and table figures, not `font-mono`.
 

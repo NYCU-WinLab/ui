@@ -24,12 +24,16 @@ function readBlock(selector: string) {
 }
 
 const pairs = [
-  // @theme inline also maps colors and radii; only fonts and text sizes come from the base.
+  // @theme inline also maps the stock colors and radii; compare fonts, text sizes
+  // and every mapping the base itself declares.
   [
     "theme",
     Object.fromEntries(
       Object.entries(readBlock("@theme inline")).filter(
-        ([name]) => name.startsWith("font-") || name.startsWith("text-")
+        ([name]) =>
+          name.startsWith("font-") ||
+          name.startsWith("text-") ||
+          name in baseVars.theme
       )
     ),
     baseVars.theme,
