@@ -581,6 +581,26 @@
       ]
     },
     {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "A month of days to pick one from, weeks starting on Monday, captions in Chinese.",
+      "dependencies": [
+        "cn",
+        "lucide-react",
+        "react-day-picker"
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "app-shell",
       "type": "registry:block",
       "title": "App Shell",

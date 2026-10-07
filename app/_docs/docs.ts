@@ -131,6 +131,13 @@ export const docs: Doc[] = [
   },
   {
     group: "元件",
+    slug: "calendar",
+    title: "月曆",
+    description: "從月曆選一天，週一開頭。",
+    item: "calendar",
+  },
+  {
+    group: "元件",
     slug: "checkbox",
     title: "勾選框",
     description: "圓形勾選框，可以多選。",
