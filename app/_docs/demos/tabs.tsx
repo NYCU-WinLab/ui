@@ -17,7 +17,7 @@ export function Demo() {
       </TabsList>
       <TabsContent value="summary">本月 3 筆待簽核，共 NT$ 2,064。</TabsContent>
       <TabsContent value="items">計程車、便當、HDMI 轉接頭。</TabsContent>
-      <TabsContent value="history">11/07 陳怡君送出申請。</TabsContent>
+      <TabsContent value="history">11/07 送出申請。</TabsContent>
     </Tabs>
   )
 }
