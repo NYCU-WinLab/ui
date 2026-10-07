@@ -2,6 +2,23 @@
 
 These rules hold for every WinLab app. `bun run tokens:check` enforces the parts a regex can see; the rest is review.
 
+## App shell
+
+Every WinLab app is one centered column framed by four fixed corners, 24px in from the viewport. `app-shell` draws them; each corner has one job and takes nothing else.
+
+| Corner | Job | Content |
+|--------|-----|---------|
+| Top left | Where you are | Breadcrumb: the lab (portal home), then the app (its home) |
+| Top right | Where you can go | The app's pages; the current one in `foreground` |
+| Bottom left | Who you are | The signed-in member (to their profile) and the theme toggle |
+| Bottom right | Whose it is | © year NYCU WinLab |
+
+- Actions are not navigation: a "新增訂單" button goes in the page header next to the content it changes, never in a corner.
+- A corner with nothing to show stays empty.
+- Corner text is `text-body` in `muted-foreground`, links turn `foreground` on hover and when current.
+- Content that scrolls under the corners fades into a 64px band of frosted glass at the top and bottom edges.
+- No menu button: an app keeps its pages few enough to fit beside the breadcrumb on a phone.
+
 ## Two layers
 
 The interface is flat and has exactly two layers.
