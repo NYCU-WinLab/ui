@@ -52,6 +52,8 @@ npx shadcn@latest add @winlab/button
 | `popover` | `registry:ui` | Frosted menu surface anchored to a trigger; `w-(--anchor-width)` matches the trigger |
 | `command` | `registry:ui` | Searchable list for a combobox inside a `popover` |
 | `dropdown-menu` | `registry:ui` | Action menu: items, labels, separators and submenus |
+| `checkbox` | `registry:ui` | Round 20px checkbox |
+| `switch` | `registry:ui` | On / off toggle, 40 x 24 |
 | `badge` | `registry:ui` | Status label; variants `default`, `muted`, `outline`, `destructive`, `success`, `warning` |
 
 Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Noto Sans TC. `font-mono` puts JetBrains Mono in front of the same CJK fonts. Use Inter's `tabular-nums` for amounts and table figures, not `font-mono`.

@@ -16,6 +16,7 @@ import {
 } from "@/registry/winlab/ui/alert-dialog"
 import { Badge } from "@/registry/winlab/ui/badge"
 import { Button } from "@/registry/winlab/ui/button"
+import { Checkbox } from "@/registry/winlab/ui/checkbox"
 import {
   Dialog,
   DialogClose,
@@ -36,6 +37,7 @@ import {
   SelectValue,
 } from "@/registry/winlab/ui/select"
 import { Skeleton } from "@/registry/winlab/ui/skeleton"
+import { Switch } from "@/registry/winlab/ui/switch"
 import {
   Table,
   TableBody,
@@ -151,6 +153,20 @@ export default function Page() {
           <div className="flex flex-col gap-2">
             <Label>與會者</Label>
             <ComboboxDemo />
+          </div>
+          <div className="flex flex-col gap-3">
+            <Label>
+              <Checkbox defaultChecked />
+              記住我的選擇
+            </Label>
+            <Label>
+              <Checkbox />
+              同時寄通知給簽核人
+            </Label>
+            <Label>
+              <Switch defaultChecked />
+              急件
+            </Label>
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="note">備註</Label>
