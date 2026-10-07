@@ -13,7 +13,7 @@ import {
 } from "@/registry/winlab/ui/command"
 import { Popover } from "@/registry/winlab/ui/popover"
 
-const members = ["陳怡君", "林志豪", "吳佳穎", "黃冠宇", "蔡宜庭"]
+const categories = ["交通", "餐費", "文具", "設備", "印刷"]
 
 export function Demo() {
   const [open, setOpen] = React.useState(false)
@@ -21,26 +21,26 @@ export function Demo() {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <ComboboxTrigger placeholder="選擇與會者" className="w-full">
+      <ComboboxTrigger placeholder="選擇報帳類別" className="w-full">
         {value}
       </ComboboxTrigger>
       <ComboboxContent>
         <Command>
-          <CommandInput placeholder="搜尋成員" />
+          <CommandInput placeholder="搜尋類別" />
           <CommandList>
-            <CommandEmpty>找不到成員</CommandEmpty>
+            <CommandEmpty>找不到類別</CommandEmpty>
             <CommandGroup>
-              {members.map((member) => (
+              {categories.map((category) => (
                 <CommandItem
-                  key={member}
-                  value={member}
-                  data-checked={value === member}
+                  key={category}
+                  value={category}
+                  data-checked={value === category}
                   onSelect={() => {
-                    setValue(member)
+                    setValue(category)
                     setOpen(false)
                   }}
                 >
-                  {member}
+                  {category}
                 </CommandItem>
               ))}
             </CommandGroup>
