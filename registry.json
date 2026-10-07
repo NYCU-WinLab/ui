@@ -49,6 +49,9 @@
           "html": {
             "@apply font-sans": {}
           }
+        },
+        "@utility w-menu": {
+          "width": "calc(var(--anchor-width) + 0.5rem)"
         }
       },
       "cssVars": {

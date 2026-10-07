@@ -124,6 +124,11 @@
     --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Menus with p-1 sit 4px outside their trigger on both sides. */
+@utility w-menu {
+  width: calc(var(--anchor-width) + 0.5rem);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
