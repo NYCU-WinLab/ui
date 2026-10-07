@@ -123,6 +123,8 @@ jobs:
           grep -q 'toDateString' components/date-picker.tsx
           bunx shadcn@latest add http://localhost:8099/r/action-panel.json -y -o
           grep -q 'doneLabel' components/action-panel.tsx
+          bunx shadcn@latest add http://localhost:8099/r/attachment.json -y -o
+          grep -q 'rounded-menu' components/ui/attachment.tsx
           bun run build
       - if: always()
         run: docker compose logs

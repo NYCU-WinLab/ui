@@ -21,6 +21,7 @@ import { Demo as Label } from "@/app/_docs/demos/label"
 import { Demo as Select } from "@/app/_docs/demos/select"
 import { Demo as Combobox } from "@/app/_docs/demos/combobox"
 import { Demo as Calendar } from "@/app/_docs/demos/calendar"
+import { Demo as Attachment } from "@/app/_docs/demos/attachment"
 import { Demo as Checkbox } from "@/app/_docs/demos/checkbox"
 import { Demo as Switch } from "@/app/_docs/demos/switch"
 import { Demo as Table } from "@/app/_docs/demos/table"
@@ -59,6 +60,7 @@ export const demos: Record<string, ComponentType> = {
   select: Select,
   combobox: Combobox,
   calendar: Calendar,
+  attachment: Attachment,
   checkbox: Checkbox,
   switch: Switch,
   table: Table,
