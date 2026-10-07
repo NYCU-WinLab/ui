@@ -650,6 +650,19 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "page-header",
+      "type": "registry:block",
+      "title": "Page Header",
+      "description": "The top of a page: title, one line on what it holds, and the page's own actions.",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/page-header/page-header.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

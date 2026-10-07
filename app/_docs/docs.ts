@@ -46,6 +46,13 @@ export const docs: Doc[] = [
     item: "empty-state",
   },
   {
+    group: "區塊",
+    slug: "page-header",
+    title: "頁首",
+    description: "頁面標題、一句說明，與這頁的動作按鈕。",
+    item: "page-header",
+  },
+  {
     group: "元件",
     slug: "button",
     title: "按鈕",

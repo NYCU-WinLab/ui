@@ -69,6 +69,7 @@ npx shadcn@latest add @winlab/button
 | `confirm-dialog` | `registry:block` | Asks before an action runs; the confirm button names the verb, both buttons lock while it runs, and it closes only when the action finishes |
 | `form-dialog` | `registry:block` | A short form in a dialog; `FormField` puts a label over its control, fields and buttons lock while it submits, and it closes only when the submit finishes |
 | `empty-state` | `registry:block` | What a list shows with no rows: "還沒有{noun}" or "找不到符合「{query}」的{noun}", with the next action; `TableEmpty` is the same sentence as a table row |
+| `page-header` | `registry:block` | The top of a page: `text-title` title, one line on what it holds, and the page's own actions on the right (under the title on a phone); `SectionHeader` is the same one level down |
 | `badge` | `registry:ui` | Status label; variants `default`, `muted`, `outline`, `destructive`, `success`, `warning` |
 
 Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Noto Sans TC. `font-mono` puts JetBrains Mono in front of the same CJK fonts. Use Inter's `tabular-nums` for amounts and table figures, not `font-mono`.

@@ -101,6 +101,8 @@ jobs:
           grep -q 'fieldset' components/form-dialog.tsx
           bunx shadcn@latest add http://localhost:8099/r/empty-state.json -y -o
           grep -q '還沒有' components/empty-state.tsx
+          bunx shadcn@latest add http://localhost:8099/r/page-header.json -y -o
+          grep -q 'page-header' components/page-header.tsx
           bun run build
       - if: always()
         run: docker compose logs
