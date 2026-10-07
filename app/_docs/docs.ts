@@ -53,6 +53,13 @@ export const docs: Doc[] = [
     item: "page-header",
   },
   {
+    group: "區塊",
+    slug: "list-skeleton",
+    title: "清單載入",
+    description: "清單和表格第一次載入時的佔位列。",
+    item: "list-skeleton",
+  },
+  {
     group: "元件",
     slug: "button",
     title: "按鈕",
