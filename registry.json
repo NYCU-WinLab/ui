@@ -657,6 +657,26 @@
       ]
     },
     {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "One file as a row: icon or thumbnail, name, detail line and actions, with idle, uploading, error and done states.",
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json",
+        "https://ui.winlab.tw/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/attachment.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "app-shell",
       "type": "registry:block",
       "title": "App Shell",

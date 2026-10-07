@@ -162,6 +162,13 @@ export const docs: Doc[] = [
   },
   {
     group: "元件",
+    slug: "attachment",
+    title: "附件",
+    description: "一個檔案的圖示、檔名與狀態，可以移除或重試。",
+    item: "attachment",
+  },
+  {
+    group: "元件",
     slug: "checkbox",
     title: "勾選框",
     description: "圓形勾選框，可以多選。",

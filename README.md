@@ -58,6 +58,7 @@ npx shadcn@latest add @winlab/button
 | `combobox` | `registry:ui` | `ComboboxTrigger` (same field look as `select`) and `ComboboxContent` (as wide as the trigger) around a `command` |
 | `dropdown-menu` | `registry:ui` | Action menu: items, labels, separators and submenus |
 | `calendar` | `registry:ui` | One month of 40px days to pick a single date; weeks start on Monday, captions read 2026 年 10 月 |
+| `attachment` | `registry:ui` | One file per row: 40px icon or thumbnail, name, a detail line and actions; states `idle` (dashed), `uploading`, `error`, `done` |
 | `checkbox` | `registry:ui` | Round 20px checkbox |
 | `switch` | `registry:ui` | On / off toggle, 40 x 24 |
 | `tabs` | `registry:ui` | Segmented tabs |
