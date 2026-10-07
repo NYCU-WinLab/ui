@@ -1,7 +1,7 @@
 // Every page of the site documents one item. Order here is the order on the
 // home page.
 export type Doc = {
-  group: "基礎" | "版面" | "元件"
+  group: "基礎" | "版面" | "區塊" | "元件"
   slug: string
   title: string
   description: string
@@ -23,6 +23,13 @@ export const docs: Doc[] = [
     description:
       "每個 WinLab app 的四個角，預設是麵包屑、導覽、使用者與版本、版權，也可以換成別的內容。",
     item: "app-shell",
+  },
+  {
+    group: "區塊",
+    slug: "confirm-dialog",
+    title: "確認對話框",
+    description: "執行前先確認，執行中鎖住按鈕，完成才關閉。",
+    item: "confirm-dialog",
   },
   {
     group: "元件",
@@ -104,8 +111,8 @@ export const docs: Doc[] = [
   {
     group: "元件",
     slug: "alert-dialog",
-    title: "確認對話框",
-    description: "刪除這類無法復原的動作前，先請使用者確認。",
+    title: "警示對話框",
+    description: "確認對話框的底層元件：標題、說明、取消與一個動作。",
     item: "alert-dialog",
   },
   {
@@ -180,4 +187,4 @@ export const docs: Doc[] = [
   },
 ]
 
-export const groups = ["基礎", "版面", "元件"] as const
+export const groups = ["基礎", "版面", "區塊", "元件"] as const

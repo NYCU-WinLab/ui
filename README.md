@@ -66,6 +66,7 @@ npx shadcn@latest add @winlab/button
 | `collapsible` | `registry:ui` | Unstyled show / hide region |
 | `sonner` | `registry:ui` | Toasts: frosted surface, status-colored icons, action and cancel buttons |
 | `app-shell` | `registry:block` | The four corners of every WinLab app; set `NEXT_PUBLIC_BUILD_SHA`, `_TIME` and `_URL` at build for the version corner |
+| `confirm-dialog` | `registry:block` | Asks before an action runs; the confirm button names the verb, both buttons lock while it runs, and it closes only when the action finishes |
 | `badge` | `registry:ui` | Status label; variants `default`, `muted`, `outline`, `destructive`, `success`, `warning` |
 
 Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Noto Sans TC. `font-mono` puts JetBrains Mono in front of the same CJK fonts. Use Inter's `tabular-nums` for amounts and table figures, not `font-mono`.

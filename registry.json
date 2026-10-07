@@ -598,6 +598,23 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "confirm-dialog",
+      "type": "registry:block",
+      "title": "Confirm Dialog",
+      "description": "Asks before an action, locks both buttons while it runs and closes when it finishes.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/alert-dialog.json",
+        "https://ui.winlab.tw/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/confirm-dialog/confirm-dialog.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
