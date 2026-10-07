@@ -17,7 +17,12 @@ export default function Page() {
         <section className="flex flex-col gap-6">
           <h2 className="font-semibold">開始使用</h2>
           <pre className="overflow-x-auto rounded-control bg-muted p-4 font-mono">
-            npx shadcn@latest init https://ui.winlab.tw/r/base.json
+            {[
+              "npx create-next-app@latest my-app",
+              "cd my-app",
+              "npx shadcn@latest init https://ui.winlab.tw/r/base.json",
+              "npx shadcn@latest add @winlab/button",
+            ].join("\n")}
           </pre>
         </section>
 
