@@ -1,4 +1,10 @@
+import { PlusIcon } from "lucide-react"
+
 import { Button } from "@/registry/winlab/ui/button"
+import { Input } from "@/registry/winlab/ui/input"
+import { Label } from "@/registry/winlab/ui/label"
+import { Skeleton } from "@/registry/winlab/ui/skeleton"
+import { Textarea } from "@/registry/winlab/ui/textarea"
 
 const swatches = [
   { name: "primary", className: "bg-primary text-primary-foreground" },
@@ -41,9 +47,44 @@ export default function Page() {
       <section className="flex flex-col gap-3">
         <h2 className="font-semibold">Buttons</h2>
         <div className="flex flex-wrap gap-3">
-          <Button>Primary</Button>
-          <Button variant="secondary">Secondary</Button>
+          <Button>Default</Button>
           <Button variant="outline">Outline</Button>
+          <Button variant="ghost">Ghost</Button>
+          <Button variant="destructive">Destructive</Button>
+          <Button size="icon" variant="outline" aria-label="Add">
+            <PlusIcon />
+          </Button>
+        </div>
+      </section>
+
+      <section className="flex flex-col gap-3">
+        <h2 className="font-semibold">Form</h2>
+        <div className="flex flex-col gap-6 rounded-lg border border-border p-6">
+          <div className="flex flex-col gap-2">
+            <Label htmlFor="item">Item</Label>
+            <div className="flex gap-3">
+              <Input id="item" placeholder="Taxi, stationery" />
+              <Button>Add</Button>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2">
+            <Label htmlFor="note">Note</Label>
+            <Textarea
+              id="note"
+              placeholder="Anything the approver should know"
+            />
+            <p className="text-muted-foreground">
+              Shown to the approver with the receipt.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="flex flex-col gap-3">
+        <h2 className="font-semibold">Loading</h2>
+        <div className="flex flex-col gap-2">
+          <Skeleton className="h-6 w-1/2" />
+          <Skeleton className="h-10 w-full" />
         </div>
       </section>
 

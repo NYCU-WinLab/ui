@@ -195,7 +195,7 @@
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
-      "description": "Button with one size and three variants: default, secondary, outline.",
+      "description": "Button in one 40px height: variants default, outline, ghost, destructive; sizes default and icon.",
       "dependencies": [
         "@base-ui/react",
         "class-variance-authority",
@@ -204,6 +204,67 @@
       "files": [
         {
           "path": "registry/winlab/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Form label in text-body, medium weight.",
+      "dependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Text input, 40px tall to match Button.",
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Multi-line input that grows with its content.",
+      "dependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Pulsing placeholder for loading content.",
+      "dependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/skeleton.tsx",
           "type": "registry:ui"
         }
       ]
