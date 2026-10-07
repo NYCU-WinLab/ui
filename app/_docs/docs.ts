@@ -81,6 +81,13 @@ export const docs: Doc[] = [
     item: "status-page",
   },
   {
+    group: "區塊",
+    slug: "date-picker",
+    title: "日期選擇",
+    description: "外觀跟其他欄位一樣，點開是月曆，選了就關。",
+    item: "date-picker",
+  },
+  {
     group: "元件",
     slug: "button",
     title: "按鈕",

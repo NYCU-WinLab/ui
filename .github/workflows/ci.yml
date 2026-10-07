@@ -114,6 +114,8 @@ jobs:
           bunx shadcn@latest add http://localhost:8099/r/calendar.json -y -o
           grep -q 'weekStartsOn' components/ui/calendar.tsx
           grep -q 'react-day-picker' package.json
+          bunx shadcn@latest add http://localhost:8099/r/date-picker.json -y -o
+          grep -q 'toDateString' components/date-picker.tsx
           bun run build
       - if: always()
         run: docker compose logs
