@@ -34,26 +34,23 @@ export default async function DocPage({
   if (!doc || !Demo) notFound()
 
   return (
-    <SiteShell page={{ label: doc.title, href: `/${doc.slug}` }}>
-      <div className="flex flex-col gap-12">
-        <header className="flex flex-col gap-2">
+    <SiteShell
+      page={{ label: doc.title, href: `/${doc.slug}` }}
+      layout="spotlight"
+    >
+      <div className="flex flex-col items-center gap-12">
+        <header className="flex flex-col items-center gap-2 text-center">
           <h1 className="text-title font-medium">{doc.title}</h1>
           <p className="text-muted-foreground">{doc.description}</p>
         </header>
-
-        {doc.item && (
-          <section className="flex flex-col gap-6">
-            <h2 className="font-semibold">安裝</h2>
-            <pre className="overflow-x-auto rounded-control bg-muted p-4 font-mono">
-              {`npx shadcn@latest add @winlab/${doc.item}`}
-            </pre>
-          </section>
-        )}
-
-        <section className="flex flex-col gap-6">
-          <h2 className="font-semibold">範例</h2>
+        <div className="flex w-full justify-center">
           <Demo />
-        </section>
+        </div>
+        {doc.item && (
+          <code className="font-mono text-muted-foreground">
+            {`npx shadcn@latest add @winlab/${doc.item}`}
+          </code>
+        )}
       </div>
     </SiteShell>
   )

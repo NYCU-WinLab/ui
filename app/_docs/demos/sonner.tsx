@@ -6,7 +6,7 @@ import { Button } from "@/registry/winlab/ui/button"
 
 export function Demo() {
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap justify-center gap-3">
       <Button
         variant="outline"
         onClick={() =>

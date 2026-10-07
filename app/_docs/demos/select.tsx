@@ -17,7 +17,7 @@ const categories = [
 
 export function Demo() {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex w-full flex-col gap-2">
       <Label>類別</Label>
       <Select items={categories}>
         <SelectTrigger className="w-full">
