@@ -680,13 +680,12 @@
       "name": "app-shell",
       "type": "registry:block",
       "title": "App Shell",
-      "description": "The four corners of a WinLab app: breadcrumb, page nav, member and build version, copyright year.",
+      "description": "The four corners of a WinLab app: breadcrumb, page nav and account, build version, copyright year.",
       "dependencies": [
         "cn"
       ],
       "registryDependencies": [
         "https://ui.winlab.tw/r/utils.json",
-        "https://ui.winlab.tw/r/avatar.json",
         "https://ui.winlab.tw/r/tooltip.json"
       ],
       "files": [
