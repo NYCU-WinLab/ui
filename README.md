@@ -40,7 +40,11 @@ npx shadcn@latest add @winlab/button
 | `font-noto-sans-jp` | `registry:font` | Noto Sans JP for kanji and punctuation (Japanese forms: `，。` sit in the lower left) |
 | `font-noto-sans-tc` | `registry:font` | Noto Sans TC for the Traditional Chinese characters Noto Sans JP lacks |
 | `font-jetbrains-mono` | `registry:font` | JetBrains Mono for code and IDs, ligatures on |
-| `button` | `registry:ui` | One size (40px tall); variants `default`, `secondary`, `outline` |
+| `button` | `registry:ui` | 40px tall; variants `default`, `outline`, `ghost`, `destructive`; sizes `default`, `icon` |
+| `label` | `registry:ui` | Form label |
+| `input` | `registry:ui` | Text input, same height as `button` |
+| `textarea` | `registry:ui` | Multi-line input that grows with its content |
+| `skeleton` | `registry:ui` | Loading placeholder |
 
 Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Noto Sans TC. `font-mono` puts JetBrains Mono in front of the same CJK fonts. Use Inter's `tabular-nums` for amounts and table figures, not `font-mono`.
 
