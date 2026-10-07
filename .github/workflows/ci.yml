@@ -82,6 +82,8 @@ jobs:
           bunx shadcn@latest add http://localhost:8099/r/combobox.json -y -o
           grep -q 'fieldTriggerClassName' components/ui/combobox.tsx components/ui/select.tsx
           test -f lib/field.ts
+          bunx shadcn@latest add http://localhost:8099/r/app-shell.json -y -o
+          grep -q 'NYCU WinLab' components/app-shell.tsx
           bun run build
       - if: always()
         run: docker compose logs
