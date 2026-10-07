@@ -25,8 +25,35 @@ import {
 } from "@/registry/winlab/ui/dialog"
 import { Input } from "@/registry/winlab/ui/input"
 import { Label } from "@/registry/winlab/ui/label"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/registry/winlab/ui/select"
 import { Skeleton } from "@/registry/winlab/ui/skeleton"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/registry/winlab/ui/table"
 import { Textarea } from "@/registry/winlab/ui/textarea"
+
+const categories = [
+  { value: "travel", label: "Travel" },
+  { value: "meals", label: "Meals" },
+  { value: "equipment", label: "Equipment" },
+]
+
+const receipts = [
+  { date: "11/03", item: "Taxi to Zhubei", amount: "285" },
+  { date: "11/05", item: "Lunch boxes, 12", amount: "1,320" },
+  { date: "11/07", item: "HDMI adapter", amount: "459" },
+]
 
 const swatches = [
   { name: "primary", className: "bg-primary text-primary-foreground" },
@@ -104,6 +131,21 @@ export default function Page() {
             </div>
           </div>
           <div className="flex flex-col gap-2">
+            <Label>Category</Label>
+            <Select items={categories}>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Choose a category" />
+              </SelectTrigger>
+              <SelectContent>
+                {categories.map((category) => (
+                  <SelectItem key={category.value} value={category.value}>
+                    {category.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="flex flex-col gap-2">
             <Label htmlFor="note">Note</Label>
             <Textarea
               id="note"
@@ -114,6 +156,32 @@ export default function Page() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="flex flex-col gap-3">
+        <h2 className="font-semibold">Table</h2>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Date</TableHead>
+              <TableHead>Item</TableHead>
+              <TableHead className="text-right">Amount</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {receipts.map((receipt) => (
+              <TableRow key={receipt.item}>
+                <TableCell className="text-muted-foreground tabular-nums">
+                  {receipt.date}
+                </TableCell>
+                <TableCell>{receipt.item}</TableCell>
+                <TableCell className="text-right tabular-nums">
+                  NT$ {receipt.amount}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </section>
 
       <section className="flex flex-col gap-3">

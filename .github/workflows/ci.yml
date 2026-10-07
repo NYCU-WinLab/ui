@@ -63,6 +63,8 @@ jobs:
           bunx shadcn@latest add http://localhost:8099/r/dialog.json http://localhost:8099/r/alert-dialog.json -y -o
           grep -q 'text-title' components/ui/dialog.tsx
           grep -q 'from "@/components/ui/button"' components/ui/dialog.tsx
+          bunx shadcn@latest add http://localhost:8099/r/select.json http://localhost:8099/r/table.json -y -o
+          ! grep -q 'text-sm' components/ui/select.tsx components/ui/table.tsx
           bun run build
       - if: always()
         run: docker compose logs
