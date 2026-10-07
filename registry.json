@@ -10,7 +10,7 @@
       "description": "WinLab design system base: Ultramarine (Pantone 286 C) brand tokens on a neutral scale.",
       "extends": "none",
       "config": {
-        "style": "base-nova",
+        "style": "winlab",
         "iconLibrary": "lucide",
         "tailwind": {
           "baseColor": "neutral"
@@ -26,7 +26,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils",
+        "https://ui.winlab.tw/r/utils.json",
         "https://ui.winlab.tw/r/font-inter.json",
         "https://ui.winlab.tw/r/font-noto-sans-jp.json",
         "https://ui.winlab.tw/r/font-noto-sans-tc.json",
@@ -182,6 +182,21 @@
         ],
         "dependency": "@fontsource-variable/jetbrains-mono"
       }
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utils",
+      "description": "cn re-exported at @/lib/utils.",
+      "dependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
     },
     {
       "name": "field",

@@ -19,11 +19,15 @@ WinLab apps used to pick their own colors, spacing and component variants. This 
 
 ## Use it
 
-Start a new project with the WinLab base:
+Create a Next.js app, then init it from the WinLab base:
 
 ```bash
+npx create-next-app@latest my-app
+cd my-app
 npx shadcn@latest init https://ui.winlab.tw/r/base.json
 ```
+
+The base sets the style to `winlab`, so every component comes from this registry: a bare `npx shadcn@latest add button` fails on purpose. (`init -t next` also fails, because the template adds shadcn's own button.)
 
 This writes the WinLab tokens into `app/globals.css` and registers the `@winlab` namespace in `components.json`, so later components install with:
 
