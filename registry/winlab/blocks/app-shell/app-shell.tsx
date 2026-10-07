@@ -12,17 +12,27 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/registry/winlab/ui/avatar"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/registry/winlab/ui/tooltip"
 
-type Crumb = { label: string; href: string }
-type NavItem = { label: string; href: string }
-type User = { name: string; href: string; image?: string }
+// A tip says what the label leaves out (where a link goes, what a page
+// holds); it never repeats the label.
+type Crumb = { label: string; href: string; tip?: string }
+type NavItem = { label: string; href: string; tip?: string }
+type User = { name: string; href: string; image?: string; tip?: string }
 
 // The chrome of every WinLab app is its four corners, and each corner has one
 // job. The props are the contract: there is no slot for anything else.
 //   top left     where you are: breadcrumb back to the lab and the app
 //   top right    where you can go: this app's pages
 //   bottom left  who you are: the signed-in member and the theme
-//   bottom right the copyright
+//   bottom right the copyright year; the tip names the owner
+// Every item can carry a tip, opening toward the page and lined up with the
+// corner's outer edge so it never leaves the viewport.
 function AppShell({
   breadcrumb,
   nav = [],
@@ -39,7 +49,7 @@ function AppShell({
     href === "/" ? pathname === "/" : pathname.startsWith(href)
 
   return (
-    <>
+    <TooltipProvider>
       {/* Content scrolling under the corners fades into frosted glass. */}
       <div
         aria-hidden
@@ -61,13 +71,15 @@ function AppShell({
                     /
                   </span>
                 )}
-                <Link
-                  href={crumb.href}
-                  aria-current={last ? "page" : undefined}
-                  className={cn(cornerLink, last && "text-foreground")}
-                >
-                  {crumb.label}
-                </Link>
+                <CornerTip tip={crumb.tip} corner="top-left">
+                  <Link
+                    href={crumb.href}
+                    aria-current={last ? "page" : undefined}
+                    className={cn(cornerLink, last && "text-foreground")}
+                  >
+                    {crumb.label}
+                  </Link>
+                </CornerTip>
               </React.Fragment>
             )
           })}
@@ -80,52 +92,87 @@ function AppShell({
           className="fixed top-6 right-6 z-50 flex items-center gap-4"
         >
           {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={isCurrent(item.href) ? "page" : undefined}
-              className={cn(
-                cornerLink,
-                isCurrent(item.href) && "text-foreground"
-              )}
-            >
-              {item.label}
-            </Link>
+            <CornerTip key={item.href} tip={item.tip} corner="top-right">
+              <Link
+                href={item.href}
+                aria-current={isCurrent(item.href) ? "page" : undefined}
+                className={cn(
+                  cornerLink,
+                  isCurrent(item.href) && "text-foreground"
+                )}
+              >
+                {item.label}
+              </Link>
+            </CornerTip>
           ))}
         </nav>
       )}
 
       <div className="fixed bottom-6 left-6 z-50 flex items-center gap-4">
         {user && (
-          <Link href={user.href} className={cn(cornerLink, "gap-2")}>
-            <Avatar className="size-6">
-              {user.image && <AvatarImage src={user.image} alt="" />}
-              <AvatarFallback>{user.name.slice(0, 1)}</AvatarFallback>
-            </Avatar>
-            {user.name}
-          </Link>
+          <CornerTip tip={user.tip ?? "個人頁面"} corner="bottom-left">
+            <Link href={user.href} className={cn(cornerLink, "gap-2")}>
+              <Avatar className="size-6">
+                {user.image && <AvatarImage src={user.image} alt="" />}
+                <AvatarFallback>{user.name.slice(0, 1)}</AvatarFallback>
+              </Avatar>
+              {user.name}
+            </Link>
+          </CornerTip>
         )}
-        <ThemeToggle />
+        <CornerTip tip="切換深色模式" corner="bottom-left">
+          <ThemeToggle />
+        </CornerTip>
       </div>
 
-      <p className="fixed right-6 bottom-6 z-50 text-muted-foreground">
-        © {new Date().getFullYear()} NYCU WinLab
-      </p>
+      <div className="fixed right-6 bottom-6 z-50">
+        <CornerTip tip="NYCU WinLab" corner="bottom-right">
+          <span tabIndex={0} className={cn(cornerLink, "cursor-default")}>
+            © {new Date().getFullYear()}
+          </span>
+        </CornerTip>
+      </div>
 
       <main className="mx-auto w-full max-w-4xl px-6 pt-24 pb-24">
         {children}
       </main>
-    </>
+    </TooltipProvider>
+  )
+}
+
+type Corner = "top-left" | "top-right" | "bottom-left" | "bottom-right"
+
+function CornerTip({
+  tip,
+  corner,
+  children,
+}: {
+  tip?: string
+  corner: Corner
+  children: React.ReactElement
+}) {
+  if (!tip) return children
+  return (
+    <Tooltip>
+      <TooltipTrigger render={children} />
+      <TooltipContent
+        side={corner.startsWith("top") ? "bottom" : "top"}
+        align={corner.endsWith("left") ? "start" : "end"}
+      >
+        {tip}
+      </TooltipContent>
+    </Tooltip>
   )
 }
 
 const cornerLink =
   "relative inline-flex h-6 items-center text-muted-foreground transition-colors duration-state outline-none after:absolute after:-inset-2 hover:text-foreground focus-visible:text-foreground"
 
-function ThemeToggle() {
+function ThemeToggle(props: React.ComponentProps<"button">) {
   const { resolvedTheme, setTheme } = useTheme()
   return (
     <button
+      {...props}
       type="button"
       aria-label="切換深色模式"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
