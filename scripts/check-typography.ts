@@ -1,11 +1,15 @@
-// The base allows two sizes: 16px for everything and 24px for titles. Every
-// text-* utility already maps onto those, so this only has to catch sizes that
-// bypass the scale: arbitrary text-[...] classes and raw font-size values.
+// The base defines two sizes, text-title (24px) and text-body (16px), and
+// clears Tailwind's default scale. This catches anything else: the old scale
+// names, arbitrary text-[...] classes and raw font-size values.
 import { readdir, readFile } from "node:fs/promises"
 import { join } from "node:path"
 
 const roots = ["app", "components", "registry", "hooks", "lib"]
 const patterns = [
+  {
+    name: "size outside the scale",
+    regex: /\btext-(?:xs|sm|base|lg|xl|[2-9]xl)\b/g,
+  },
   {
     name: "arbitrary text size",
     regex: /\btext-\[(?:\d|calc|clamp|var)[^\]]*\]/g,
@@ -26,6 +30,8 @@ async function* files(dir: string): AsyncGenerator<string> {
 let failed = false
 for (const root of roots) {
   for await (const path of files(root)) {
+    // globals.css defines the scale itself.
+    if (path === join("app", "globals.css")) continue
     const lines = (await readFile(path, "utf8")).split("\n")
     lines.forEach((line, index) => {
       for (const { name, regex } of patterns) {

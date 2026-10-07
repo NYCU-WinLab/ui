@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <main className="mx-auto flex min-h-svh max-w-2xl flex-col gap-10 px-6 py-16">
       <header className="flex flex-col gap-2">
-        <h1 className="text-2xl font-medium">WinLab UI</h1>
+        <h1 className="text-title font-medium">WinLab UI</h1>
         <p className="text-muted-foreground">
           The WinLab design system, distributed as a shadcn registry.
         </p>
@@ -19,7 +19,7 @@ export default function Page() {
 
       <section className="flex flex-col gap-3">
         <h2 className="font-semibold">Start a project</h2>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 font-mono text-sm">
+        <pre className="overflow-x-auto rounded-lg bg-muted p-4 font-mono text-body">
           npx shadcn@latest init https://ui.winlab.tw/r/base.json
         </pre>
       </section>
@@ -30,7 +30,7 @@ export default function Page() {
           {swatches.map((swatch) => (
             <div
               key={swatch.name}
-              className={`flex h-20 items-end rounded-lg p-3 text-sm ${swatch.className}`}
+              className={`flex h-20 items-end rounded-lg p-3 text-body ${swatch.className}`}
             >
               {swatch.name}
             </div>
@@ -47,7 +47,7 @@ export default function Page() {
         </div>
       </section>
 
-      <footer className="text-sm text-muted-foreground">
+      <footer className="text-body text-muted-foreground">
         Press <kbd className="font-mono">d</kbd> to toggle dark mode.
       </footer>
     </main>
