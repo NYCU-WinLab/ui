@@ -60,7 +60,8 @@ Two durations, both ease-out:
 | `duration-state` | 150ms | A control changing state: hover, focus, check, switch, the tab highlight sliding |
 | `duration-overlay` | 200ms | Something appearing or leaving: dialogs, menus, popovers, tooltips, a collapsible opening |
 
-- Overlays fade and zoom in from where they open; a select menu that sits over its trigger only fades.
+- Every animation runs the same way in both directions: what zooms in zooms out, what fades in fades out, at the same duration.
+- Overlays fade and zoom from where they open; a select menu that sits over its trigger only fades, opening and closing.
 - Menu rows highlight instantly, so keyboard navigation never lags.
 - When the system asks for reduced motion (`prefers-reduced-motion: reduce`), every zoom and slide is dropped and the fades stay; sliding highlights and height animations jump instead.
 - `tokens:check` rejects other durations (`duration-300`), easing classes and delays.
