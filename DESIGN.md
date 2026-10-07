@@ -10,10 +10,12 @@ Every WinLab app is framed by four fixed corners, 24px in from the viewport. `ap
 |--------|-----|---------|
 | Top left | Where you are | Breadcrumb: the lab (portal home), then the app (its home) |
 | Top right | Where you can go | The app's pages; the current one in `foreground` |
-| Bottom left | Who you are | The signed-in member (to their profile) and the theme toggle |
+| Bottom left | Who you are, which build | The signed-in member (to their profile), then the short commit of this build, linking to its CD run, with the build time (Asia/Taipei) as its tip |
 | Bottom right | Whose it is | © year; its tip says NYCU WinLab |
 
 - Actions are not navigation: a "新增訂單" button goes in the page header next to the content it changes, never in a corner.
+- There is no theme toggle: the theme follows the system.
+- CD passes `BUILD_SHA`, `BUILD_TIME` and `BUILD_URL` to the image build (`NEXT_PUBLIC_BUILD_*`); without them the version reads `dev`.
 - A corner with nothing to show stays empty.
 - Every corner item can carry a tip that says what its label leaves out (where a link goes, what a page holds, who owns the site). A tip never repeats the label. Tips open at once, toward the page, lined up with the corner's outer edge; touch never opens them, so nothing depends on one.
 - Corner text is `text-body` in `muted-foreground`, links turn `foreground` on hover and when current.

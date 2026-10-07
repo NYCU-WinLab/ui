@@ -4,8 +4,6 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "cn"
-import { ContrastIcon } from "lucide-react"
-import { useTheme } from "next-themes"
 
 import {
   Avatar,
@@ -31,7 +29,8 @@ type User = { name: string; href: string; image?: string; tip?: string }
 // it keeps the corner's look.
 //   top left     where you are: breadcrumb back to the lab and the app
 //   top right    where you can go: this app's pages
-//   bottom left  who you are: the signed-in member and the theme
+//   bottom left  who you are and which build: the signed-in member, then the
+//                commit this build came from (the theme follows the system)
 //   bottom right the copyright year; the tip names the owner
 // Every item can carry a tip, opening toward the page and lined up with the
 // corner's outer edge so it never leaves the viewport.
@@ -139,9 +138,7 @@ function AppShell({
                 </Link>
               </CornerTip>
             )}
-            <CornerTip tip="切換深色模式" corner="bottom-left">
-              <ThemeToggle />
-            </CornerTip>
+            <BuildVersion />
           </>
         )}
       </div>
@@ -197,18 +194,29 @@ function CornerTip({
 const cornerLink =
   "relative inline-flex h-6 items-center text-muted-foreground transition-colors duration-state outline-none after:absolute after:-inset-2 hover:text-foreground focus-visible:text-foreground"
 
-function ThemeToggle(props: React.ComponentProps<"button">) {
-  const { resolvedTheme, setTheme } = useTheme()
+// Which build is running: the short commit, linking to the CD run that built
+// it, with the build time as its tip. CD sets these at build time; without
+// them (local dev) the corner says "dev".
+function BuildVersion() {
+  const sha = process.env.NEXT_PUBLIC_BUILD_SHA
+  const time = process.env.NEXT_PUBLIC_BUILD_TIME
+  const url = process.env.NEXT_PUBLIC_BUILD_URL
+  if (!sha) {
+    return <span className={cornerLink}>dev</span>
+  }
+  const label = <span className="font-mono">{sha}</span>
   return (
-    <button
-      {...props}
-      type="button"
-      aria-label="切換深色模式"
-      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-      className={cn(cornerLink, "[&_svg]:size-4")}
-    >
-      <ContrastIcon />
-    </button>
+    <CornerTip tip={time ? `建置於 ${time}` : undefined} corner="bottom-left">
+      {url ? (
+        <a href={url} className={cornerLink}>
+          {label}
+        </a>
+      ) : (
+        <span tabIndex={0} className={cn(cornerLink, "cursor-default")}>
+          {label}
+        </span>
+      )}
+    </CornerTip>
   )
 }
 

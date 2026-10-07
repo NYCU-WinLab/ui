@@ -569,11 +569,9 @@
       "name": "app-shell",
       "type": "registry:block",
       "title": "App Shell",
-      "description": "The four corners of a WinLab app with tips: breadcrumb, page nav, member and theme, copyright year.",
+      "description": "The four corners of a WinLab app: breadcrumb, page nav, member and build version, copyright year.",
       "dependencies": [
-        "cn",
-        "lucide-react",
-        "next-themes"
+        "cn"
       ],
       "registryDependencies": [
         "https://ui.winlab.tw/r/avatar.json",

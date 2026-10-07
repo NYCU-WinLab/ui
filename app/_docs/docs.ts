@@ -21,7 +21,7 @@ export const docs: Doc[] = [
     slug: "app-shell",
     title: "四角版面",
     description:
-      "每個 WinLab app 的四個角，預設是麵包屑、導覽、使用者、版權，也可以換成別的內容。",
+      "每個 WinLab app 的四個角，預設是麵包屑、導覽、使用者與版本、版權，也可以換成別的內容。",
     item: "app-shell",
   },
   {
