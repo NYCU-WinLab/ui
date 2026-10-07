@@ -71,6 +71,8 @@ jobs:
           grep -q 'cmdk' package.json
           bunx shadcn@latest add http://localhost:8099/r/dropdown-menu.json -y -o
           grep -q 'rounded-menu' components/ui/dropdown-menu.tsx
+          bunx shadcn@latest add http://localhost:8099/r/checkbox.json http://localhost:8099/r/switch.json -y -o
+          grep -q 'rounded-full' components/ui/checkbox.tsx
           bun run build
       - if: always()
         run: docker compose logs
