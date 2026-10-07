@@ -16,7 +16,7 @@ import {
   DropdownMenuTrigger,
 } from "@/registry/winlab/ui/dropdown-menu"
 
-export function MenuDemo() {
+export function Demo() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
