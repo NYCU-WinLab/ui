@@ -35,7 +35,7 @@ npx shadcn@latest add @winlab/<component>
 
 | Item | Type | What it gives you |
 |------|------|-------------------|
-| `base` | `registry:base` | Ultramarine brand tokens (Pantone 286 C, `#0033A0`) on a neutral scale, light and dark |
+| `base` | `registry:base` | Ultramarine brand tokens (Pantone 286 C, `#0033A0`) on a neutral scale, light and dark; `--radius: 1rem` |
 
 ## Tech stack
 
