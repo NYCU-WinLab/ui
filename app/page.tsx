@@ -57,7 +57,6 @@ const receipts = [
 
 const swatches = [
   { name: "primary", className: "bg-primary text-primary-foreground" },
-  { name: "secondary", className: "bg-secondary text-secondary-foreground" },
   { name: "muted", className: "bg-muted text-muted-foreground" },
   { name: "destructive", className: "bg-destructive/10 text-destructive" },
   { name: "success", className: "bg-success/10 text-success" },
@@ -83,7 +82,7 @@ export default function Page() {
 
       <section className="flex flex-col gap-6">
         <h2 className="font-semibold">Colors</h2>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
           {swatches.map((swatch) => (
             <div
               key={swatch.name}
@@ -112,7 +111,7 @@ export default function Page() {
         <h2 className="font-semibold">Badges</h2>
         <div className="flex flex-wrap gap-2">
           <Badge>Default</Badge>
-          <Badge variant="secondary">Secondary</Badge>
+          <Badge variant="muted">Muted</Badge>
           <Badge variant="outline">Outline</Badge>
           <Badge variant="success">Approved</Badge>
           <Badge variant="warning">Pending</Badge>

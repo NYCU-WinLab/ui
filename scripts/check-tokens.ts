@@ -33,6 +33,11 @@ const patterns = [
     name: "palette color",
     regex: new RegExp(`\\b(?:${colorUtilities})-(?:${palette})\\b`, "g"),
   },
+  // secondary and accent were the same gray as muted; the base drops them.
+  {
+    name: "removed color token",
+    regex: /\b[a-z]+-(?:secondary|accent)(?:-foreground)?\b/g,
+  },
   {
     name: "color literal",
     regex: /#[0-9a-fA-F]{3,8}\b|\b(?:rgba?|hsla?|oklch|oklab)\(/g,
