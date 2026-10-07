@@ -20,25 +20,25 @@ export function MenuDemo() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        render={<Button variant="outline" size="icon" aria-label="More" />}
+        render={<Button variant="outline" size="icon" aria-label="更多" />}
       >
         <EllipsisIcon />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Receipt</DropdownMenuLabel>
-          <DropdownMenuItem>Rename</DropdownMenuItem>
-          <DropdownMenuItem>Download</DropdownMenuItem>
+          <DropdownMenuLabel>收據</DropdownMenuLabel>
+          <DropdownMenuItem>重新命名</DropdownMenuItem>
+          <DropdownMenuItem>下載</DropdownMenuItem>
           <DropdownMenuSub>
-            <DropdownMenuSubTrigger>Move to</DropdownMenuSubTrigger>
+            <DropdownMenuSubTrigger>移到</DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
-              <DropdownMenuItem>Travel</DropdownMenuItem>
-              <DropdownMenuItem>Meals</DropdownMenuItem>
+              <DropdownMenuItem>交通</DropdownMenuItem>
+              <DropdownMenuItem>餐費</DropdownMenuItem>
             </DropdownMenuSubContent>
           </DropdownMenuSub>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Delete</DropdownMenuItem>
+        <DropdownMenuItem>刪除</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )

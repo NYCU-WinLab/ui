@@ -28,7 +28,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "WinLab UI",
-  description: "The WinLab design system, distributed as a shadcn registry.",
+  description: "WinLab 設計系統，以 shadcn registry 發佈。",
 }
 
 export default function RootLayout({
@@ -38,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="zh-TW"
       suppressHydrationWarning
       className={cn(
         "antialiased",

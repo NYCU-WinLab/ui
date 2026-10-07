@@ -18,7 +18,7 @@ import {
   PopoverTrigger,
 } from "@/registry/winlab/ui/popover"
 
-const members = ["Alice Chen", "Bob Lin", "Carol Wu", "Dave Huang", "Eve Tsai"]
+const members = ["陳怡君", "林志豪", "吳佳穎", "黃冠宇", "蔡宜庭"]
 
 export function ComboboxDemo() {
   const [open, setOpen] = React.useState(false)
@@ -30,15 +30,15 @@ export function ComboboxDemo() {
         render={<Button variant="outline" className="w-full justify-between" />}
       >
         <span className={value ? "" : "text-muted-foreground"}>
-          {value ?? "Choose an attendee"}
+          {value ?? "選擇與會者"}
         </span>
         <ChevronDownIcon className="text-muted-foreground" />
       </PopoverTrigger>
       <PopoverContent className="w-(--anchor-width)">
         <Command>
-          <CommandInput placeholder="Search members" />
+          <CommandInput placeholder="搜尋成員" />
           <CommandList>
-            <CommandEmpty>No member found.</CommandEmpty>
+            <CommandEmpty>找不到成員</CommandEmpty>
             <CommandGroup>
               {members.map((member) => (
                 <CommandItem
