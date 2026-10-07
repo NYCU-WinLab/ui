@@ -4,9 +4,9 @@ These rules hold for every WinLab app. `bun run tokens:check` enforces the parts
 
 ## App shell
 
-Every WinLab app is one centered column framed by four fixed corners, 24px in from the viewport. `app-shell` draws them; each corner has one job and takes nothing else.
+Every WinLab app is framed by four fixed corners, 24px in from the viewport. `app-shell` draws them. By default each corner has the job below; an app that needs something else in a corner replaces it through `corners`, built from `CornerLink` and `CornerTip` so it keeps the corner's type, color and tips.
 
-| Corner | Job | Content |
+| Corner | Default job | Default content |
 |--------|-----|---------|
 | Top left | Where you are | Breadcrumb: the lab (portal home), then the app (its home) |
 | Top right | Where you can go | The app's pages; the current one in `foreground` |

@@ -11,7 +11,7 @@ import {
 
 export function Demo() {
   return (
-    <Collapsible className="flex flex-col gap-3">
+    <Collapsible className="flex flex-col items-center gap-3 text-center">
       <CollapsibleTrigger render={<Button variant="ghost" className="w-fit" />}>
         更多資訊
         <ChevronDownIcon />
