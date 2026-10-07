@@ -59,6 +59,7 @@ npx shadcn@latest add @winlab/button
 | `tooltip` | `registry:ui` | Short inverted label on hover or focus |
 | `separator` | `registry:ui` | Hairline divider |
 | `collapsible` | `registry:ui` | Unstyled show / hide region |
+| `sonner` | `registry:ui` | Toasts: frosted surface, status-colored icons, action and cancel buttons |
 | `badge` | `registry:ui` | Status label; variants `default`, `muted`, `outline`, `destructive`, `success`, `warning` |
 
 Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Noto Sans TC. `font-mono` puts JetBrains Mono in front of the same CJK fonts. Use Inter's `tabular-nums` for amounts and table figures, not `font-mono`.

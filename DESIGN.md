@@ -29,7 +29,7 @@ Radii are concentric: an outer corner equals the inner corner plus the padding b
 |---------|-------|-----|
 | `rounded-control` | `--radius` (16px) | Buttons, inputs, select triggers, menu items |
 | `rounded-menu` | control + 4px | Menus with `p-1` around control-radius items |
-| `rounded-surface` | control + 24px | Dialogs with `p-6` around controls |
+| `rounded-surface` | control + 24px | Dialogs and toasts with `p-6` around controls |
 | `rounded-full` | pill / circle | Badges, switches, checkboxes, avatars |
 
 A new container picks its radius from this rule, not by eye. If its padding is not 4px or 24px, it either changes padding or adds a token here.

@@ -489,6 +489,22 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner",
+      "description": "Toasts on a frosted surface with status-colored icons.",
+      "dependencies": [
+        "sonner",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

@@ -75,6 +75,8 @@ jobs:
           grep -q 'rounded-full' components/ui/checkbox.tsx
           bunx shadcn@latest add http://localhost:8099/r/tabs.json http://localhost:8099/r/avatar.json http://localhost:8099/r/tooltip.json http://localhost:8099/r/separator.json http://localhost:8099/r/collapsible.json -y -o
           grep -q 'rounded-menu' components/ui/tabs.tsx
+          bunx shadcn@latest add http://localhost:8099/r/sonner.json -y -o
+          grep -q 'unstyled: true' components/ui/sonner.tsx
           bun run build
       - if: always()
         run: docker compose logs
