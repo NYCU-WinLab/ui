@@ -7,6 +7,7 @@ import { Demo as FormDialogDemo } from "@/app/_docs/demos/form-dialog"
 import { Demo as EmptyStateDemo } from "@/app/_docs/demos/empty-state"
 import { Demo as PageHeaderDemo } from "@/app/_docs/demos/page-header"
 import { Demo as ListSkeletonDemo } from "@/app/_docs/demos/list-skeleton"
+import { Demo as MemberComboboxDemo } from "@/app/_docs/demos/member-combobox"
 import { Demo as Button } from "@/app/_docs/demos/button"
 import { Demo as Badge } from "@/app/_docs/demos/badge"
 import { Demo as Input } from "@/app/_docs/demos/input"
@@ -38,6 +39,7 @@ export const demos: Record<string, ComponentType> = {
   "empty-state": EmptyStateDemo,
   "page-header": PageHeaderDemo,
   "list-skeleton": ListSkeletonDemo,
+  "member-combobox": MemberComboboxDemo,
   button: Button,
   badge: Badge,
   input: Input,
