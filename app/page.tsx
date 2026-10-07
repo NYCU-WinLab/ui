@@ -74,20 +74,20 @@ export default function Page() {
         </p>
       </header>
 
-      <section className="flex flex-col gap-3">
+      <section className="flex flex-col gap-6">
         <h2 className="font-semibold">Start a project</h2>
-        <pre className="overflow-x-auto rounded-lg bg-muted p-4 font-mono text-body">
+        <pre className="overflow-x-auto rounded-control bg-muted p-4 font-mono text-body">
           npx shadcn@latest init https://ui.winlab.tw/r/base.json
         </pre>
       </section>
 
-      <section className="flex flex-col gap-3">
+      <section className="flex flex-col gap-6">
         <h2 className="font-semibold">Colors</h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {swatches.map((swatch) => (
             <div
               key={swatch.name}
-              className={`flex h-20 items-end rounded-lg p-3 text-body ${swatch.className}`}
+              className={`flex h-20 items-end rounded-control p-3 text-body ${swatch.className}`}
             >
               {swatch.name}
             </div>
@@ -95,7 +95,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-3">
+      <section className="flex flex-col gap-6">
         <h2 className="font-semibold">Buttons</h2>
         <div className="flex flex-wrap gap-3">
           <Button>Default</Button>
@@ -108,7 +108,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-3">
+      <section className="flex flex-col gap-6">
         <h2 className="font-semibold">Badges</h2>
         <div className="flex flex-wrap gap-2">
           <Badge>Default</Badge>
@@ -120,9 +120,9 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-3">
+      <section className="flex flex-col gap-6">
         <h2 className="font-semibold">Form</h2>
-        <div className="flex flex-col gap-6 rounded-lg border border-border p-6">
+        <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
             <Label htmlFor="item">Item</Label>
             <div className="flex gap-3">
@@ -158,7 +158,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-3">
+      <section className="flex flex-col gap-6">
         <h2 className="font-semibold">Table</h2>
         <Table>
           <TableHeader>
@@ -184,7 +184,7 @@ export default function Page() {
         </Table>
       </section>
 
-      <section className="flex flex-col gap-3">
+      <section className="flex flex-col gap-6">
         <h2 className="font-semibold">Dialogs</h2>
         <div className="flex flex-wrap gap-3">
           <Dialog>
@@ -232,7 +232,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-3">
+      <section className="flex flex-col gap-6">
         <h2 className="font-semibold">Loading</h2>
         <div className="flex flex-col gap-2">
           <Skeleton className="h-6 w-1/2" />

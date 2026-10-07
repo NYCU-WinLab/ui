@@ -69,6 +69,10 @@ The base clears Tailwind's default scale (`--text-*: initial`), so `text-sm`, `t
 > [!NOTE]
 > A project created with `-t next` keeps the template's Geist imports in `app/layout.tsx`. They are unused by the WinLab stacks; delete them to skip the extra download.
 
+## Design rules
+
+The two-layer model, type, radius and color rules are in [DESIGN.md](DESIGN.md).
+
 ## Tech stack
 
 | Layer | Choice |

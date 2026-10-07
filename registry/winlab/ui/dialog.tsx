@@ -42,7 +42,7 @@ function DialogOverlay({
 
 // Two widths replace the per-page pixel width overrides apps used before.
 const dialogContentVariants = cva(
-  "fixed inset-x-4 top-1/2 z-50 mx-auto flex max-h-11/12 -translate-y-1/2 flex-col gap-6 overflow-y-auto rounded-xl border border-border bg-popover p-6 text-body text-popover-foreground shadow-lg duration-100 outline-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+  "fixed inset-x-4 top-1/2 z-50 mx-auto flex max-h-11/12 -translate-y-1/2 flex-col gap-6 overflow-y-auto rounded-surface border border-border bg-popover p-6 text-body text-popover-foreground shadow-lg duration-100 outline-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
   {
     variants: {
       size: {
@@ -82,7 +82,7 @@ function DialogContent({
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute top-4 right-4"
+                className="absolute top-6 right-6"
               />
             }
           >
@@ -99,7 +99,7 @@ function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="dialog-header"
-      className={cn("flex flex-col gap-2 pr-10", className)}
+      className={cn("flex flex-col gap-2 pr-12", className)}
       {...props}
     />
   )

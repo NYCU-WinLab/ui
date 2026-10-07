@@ -1,6 +1,8 @@
 // Everything visual must come from the base tokens. This rejects the ways
-// around them: sizes outside text-title / text-body, arbitrary values,
-// Tailwind palette colors, color literals, inline styles and raw font-size.
+// around them: sizes outside text-title / text-body, radii outside the
+// concentric scale, arbitrary values, Tailwind palette colors, color
+// literals, inline styles and raw font-size. Page code (outside the
+// registry components) also may not draw layer-2 surfaces; see DESIGN.md.
 import { readdir, readFile } from "node:fs/promises"
 import { join } from "node:path"
 
@@ -21,6 +23,12 @@ const patterns = [
     name: "arbitrary value",
     regex: /\b[a-z][\w-]*-\[[^\]\s]+\](?![:/\]])/g,
   },
+  // rounded-control / -menu / -surface / -full only.
+  {
+    name: "radius outside the scale",
+    regex:
+      /\brounded(?:-(?:t|r|b|l|s|e|tl|tr|br|bl|ss|se|es|ee))?(?:-(?:none|xs|sm|md|lg|xl|[2-4]xl))?\b(?!-)/g,
+  },
   {
     name: "palette color",
     regex: new RegExp(`\\b(?:${colorUtilities})-(?:${palette})\\b`, "g"),
@@ -32,6 +40,17 @@ const patterns = [
   { name: "inline style", regex: /\bstyle=\{/g },
   { name: "CSS font-size", regex: /\bfont-size\s*:/g },
 ]
+
+// Layer 1 (the page) groups by spacing and dividers only.
+const pagePatterns = [
+  { name: "shadow on a page", regex: /\bshadow(?:-[\w/]+)?/g },
+  { name: "surface on a page", regex: /\bbg-(?:card|popover)\b/g },
+  {
+    name: "frame on a page (use spacing or border-t / border-b)",
+    regex: /(?<![-\w])border(?:-[xy])?(?![-\w])/g,
+  },
+]
+const componentRoot = join("registry", "winlab", "ui")
 
 async function* files(dir: string): AsyncGenerator<string> {
   const entries = await readdir(dir, { withFileTypes: true }).catch(() => [])
@@ -48,8 +67,10 @@ for (const root of roots) {
     // globals.css defines the tokens themselves.
     if (path === join("app", "globals.css")) continue
     const lines = (await readFile(path, "utf8")).split("\n")
+    const isComponent = path.startsWith(componentRoot)
+    const rules = isComponent ? patterns : [...patterns, ...pagePatterns]
     lines.forEach((line, index) => {
-      for (const { name, regex } of patterns) {
+      for (const { name, regex } of rules) {
         for (const match of line.matchAll(regex)) {
           console.error(`${path}:${index + 1}: ${name}: ${match[0]}`)
           failed = true

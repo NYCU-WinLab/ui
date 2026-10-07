@@ -62,7 +62,10 @@
           "font-heading": "var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-tc), sans-serif",
           "font-mono": "var(--font-jetbrains-mono), var(--font-noto-sans-jp), var(--font-noto-sans-tc), monospace",
           "color-success": "var(--success)",
-          "color-warning": "var(--warning)"
+          "color-warning": "var(--warning)",
+          "radius-control": "var(--radius)",
+          "radius-menu": "calc(var(--radius) + 0.25rem)",
+          "radius-surface": "calc(var(--radius) + 1.5rem)"
         },
         "light": {
           "radius": "1rem",
