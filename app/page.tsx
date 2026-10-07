@@ -3,6 +3,7 @@ import { PlusIcon } from "lucide-react"
 import { ComboboxDemo } from "@/app/_components/combobox-demo"
 import { MenuDemo } from "@/app/_components/menu-demo"
 import { PeopleDemo, TabsDemo } from "@/app/_components/misc-demo"
+import { ToastDemo } from "@/app/_components/toast-demo"
 
 import {
   AlertDialog,
@@ -259,6 +260,11 @@ export default function Page() {
       <section className="flex flex-col gap-6">
         <h2 className="font-semibold">成員</h2>
         <PeopleDemo />
+      </section>
+
+      <section className="flex flex-col gap-6">
+        <h2 className="font-semibold">通知</h2>
+        <ToastDemo />
       </section>
 
       <section className="flex flex-col gap-6">

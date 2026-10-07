@@ -9,6 +9,7 @@ import {
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+import { Toaster } from "@/registry/winlab/ui/sonner"
 
 // Same fonts and variables as the registry's font items; the stack order
 // (Inter, then Noto Sans JP, then Noto Sans TC) lives in globals.css.
@@ -49,7 +50,10 @@ export default function RootLayout({
       )}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   )
