@@ -7,7 +7,6 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -22,7 +21,6 @@ type FormDialogProps = {
   open?: boolean
   onOpenChange?: (open: boolean) => void
   title: string
-  description?: React.ReactNode
   size?: "default" | "wide"
   /** The verb on the submit button: "新增", "儲存". */
   submitLabel: string
@@ -43,7 +41,6 @@ function FormDialog({
   open: openProp,
   onOpenChange,
   title,
-  description,
   size,
   submitLabel,
   pendingLabel = `${submitLabel}中…`,
@@ -84,9 +81,6 @@ function FormDialog({
         <form onSubmit={submit} className="flex flex-col gap-6">
           <DialogHeader className="pr-0">
             <DialogTitle>{title}</DialogTitle>
-            {description && (
-              <DialogDescription>{description}</DialogDescription>
-            )}
           </DialogHeader>
           <fieldset disabled={pending} className="flex min-w-0 flex-col gap-4">
             {children}

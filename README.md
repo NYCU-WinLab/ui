@@ -71,7 +71,7 @@ npx shadcn@latest add @winlab/button
 | `confirm-dialog` | `registry:block` | Asks before an action runs; the confirm button names the verb, both buttons lock while it runs, and it closes only when the action finishes |
 | `form-dialog` | `registry:block` | A short form in a dialog; `FormField` puts a label over its control, fields and buttons lock while it submits, and it closes only when the submit finishes |
 | `empty-state` | `registry:block` | What a list shows with no rows: "還沒有{noun}" or "找不到符合「{query}」的{noun}", with the next action; `TableEmpty` is the same sentence as a table row |
-| `page-header` | `registry:block` | The top of a page: `text-title` title, one line on what it holds, and the page's own actions on the right (under the title on a phone); `SectionHeader` is the same one level down |
+| `page-header` | `registry:block` | The top of a page: `text-title` title, and the page's own actions on the right (under the title on a phone); `SectionHeader` is the same one level down |
 | `list-skeleton` | `registry:block` | Placeholder rows for a list (`ListSkeleton`) or a table body (`TableSkeleton`) on first load only, split by the same dividers as the real rows |
 | `member-combobox` | `registry:block` | Pick lab members by name or email; one member closes on choice, `multiple` keeps the menu open and toggles |
 | `field-list` | `registry:block` | One record's fields as a `dl`: muted names in a left column, values beside them (under them on a phone), split by dividers |

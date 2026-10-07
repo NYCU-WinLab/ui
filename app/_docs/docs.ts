@@ -58,7 +58,7 @@ export const docs: Doc[] = [
     group: "區塊",
     slug: "page-header",
     title: "頁首",
-    description: "頁面標題、一句說明，與這頁的動作按鈕。",
+    description: "頁面標題與這頁的動作按鈕。",
     item: "page-header",
   },
   {
@@ -86,7 +86,7 @@ export const docs: Doc[] = [
     group: "區塊",
     slug: "status-page",
     title: "狀態頁",
-    description: "找不到、出錯、沒有權限時，說明發生什麼事和下一步。",
+    description: "找不到、出錯、沒有權限時的標題與下一步。",
     item: "status-page",
   },
   {
