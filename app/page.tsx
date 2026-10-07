@@ -1,70 +1,55 @@
-import * as React from "react"
-import { OpenInV0Button } from "@/components/open-in-v0-button"
-import { HelloWorld } from "@/registry/new-york/blocks/hello-world/hello-world"
-import { ExampleForm } from "@/registry/new-york/blocks/example-form/example-form"
-import PokemonPage from "@/registry/new-york/blocks/complex-component/page"
-import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example-card"
-// This page displays items from the custom registry.
-// You are free to implement this with your own design as needed.
+import { Button } from "@/components/ui/button"
 
-export default function Home() {
+const swatches = [
+  { name: "primary", className: "bg-primary text-primary-foreground" },
+  { name: "secondary", className: "bg-secondary text-secondary-foreground" },
+  { name: "muted", className: "bg-muted text-muted-foreground" },
+  { name: "destructive", className: "bg-destructive text-white" },
+]
+
+export default function Page() {
   return (
-    <div className="max-w-3xl mx-auto flex flex-col min-h-svh px-4 py-8 gap-8">
-      <header className="flex flex-col gap-1">
-        <h1 className="text-3xl font-bold tracking-tight">Custom Registry</h1>
+    <main className="mx-auto flex min-h-svh max-w-2xl flex-col gap-10 px-6 py-16">
+      <header className="flex flex-col gap-2">
+        <h1 className="text-2xl font-medium">WinLab UI</h1>
         <p className="text-muted-foreground">
-          A custom registry for distributing code using shadcn.
+          The WinLab design system, distributed as a shadcn registry.
         </p>
       </header>
-      <main className="flex flex-col flex-1 gap-8">
-        <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">
-              A simple hello world component
-            </h2>
-            <OpenInV0Button name="hello-world" className="w-fit" />
-          </div>
-          <div className="flex items-center justify-center min-h-[400px] relative">
-            <HelloWorld />
-          </div>
-        </div>
 
-        <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">
-              A contact form with Zod validation.
-            </h2>
-            <OpenInV0Button name="example-form" className="w-fit" />
-          </div>
-          <div className="flex items-center justify-center min-h-[500px] relative">
-            <ExampleForm />
-          </div>
-        </div>
+      <section className="flex flex-col gap-3">
+        <h2 className="font-medium">Start a project</h2>
+        <pre className="overflow-x-auto rounded-lg bg-muted p-4 font-mono text-sm">
+          npx shadcn@latest init https://ui.winlab.tw/r/base.json
+        </pre>
+      </section>
 
-        <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">
-              A complex component showing hooks, libs and components.
-            </h2>
-            <OpenInV0Button name="complex-component" className="w-fit" />
-          </div>
-          <div className="flex items-center justify-center min-h-[400px] relative">
-            <PokemonPage />
-          </div>
+      <section className="flex flex-col gap-3">
+        <h2 className="font-medium">Colors</h2>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {swatches.map((swatch) => (
+            <div
+              key={swatch.name}
+              className={`flex h-20 items-end rounded-lg p-3 text-sm ${swatch.className}`}
+            >
+              {swatch.name}
+            </div>
+          ))}
         </div>
+      </section>
 
-        <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">
-              A login form with a CSS file.
-            </h2>
-            <OpenInV0Button name="example-with-css" className="w-fit" />
-          </div>
-          <div className="flex items-center justify-center min-h-[400px] relative">
-            <ExampleCard />
-          </div>
+      <section className="flex flex-col gap-3">
+        <h2 className="font-medium">Buttons</h2>
+        <div className="flex flex-wrap gap-3">
+          <Button>Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="outline">Outline</Button>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <footer className="text-sm text-muted-foreground">
+        Press <kbd className="font-mono">d</kbd> to toggle dark mode.
+      </footer>
+    </main>
   )
 }
