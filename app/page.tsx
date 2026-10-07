@@ -1,6 +1,7 @@
 import { PlusIcon } from "lucide-react"
 
 import { ComboboxDemo } from "@/app/_components/combobox-demo"
+import { MenuDemo } from "@/app/_components/menu-demo"
 
 import {
   AlertDialog,
@@ -106,6 +107,7 @@ export default function Page() {
           <Button size="icon" variant="outline" aria-label="Add">
             <PlusIcon />
           </Button>
+          <MenuDemo />
         </div>
       </section>
 
