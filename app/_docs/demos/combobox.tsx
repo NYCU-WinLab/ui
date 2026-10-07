@@ -15,7 +15,7 @@ import { Popover } from "@/registry/winlab/ui/popover"
 
 const members = ["陳怡君", "林志豪", "吳佳穎", "黃冠宇", "蔡宜庭"]
 
-export function ComboboxDemo() {
+export function Demo() {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState<string | null>(null)
 

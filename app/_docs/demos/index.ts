@@ -1,0 +1,53 @@
+import type { ComponentType } from "react"
+
+import { Demo as Colors } from "@/app/_docs/demos/colors"
+import { Demo as AppShell } from "@/app/_docs/demos/app-shell"
+import { Demo as Button } from "@/app/_docs/demos/button"
+import { Demo as Badge } from "@/app/_docs/demos/badge"
+import { Demo as Input } from "@/app/_docs/demos/input"
+import { Demo as Textarea } from "@/app/_docs/demos/textarea"
+import { Demo as Label } from "@/app/_docs/demos/label"
+import { Demo as Select } from "@/app/_docs/demos/select"
+import { Demo as Combobox } from "@/app/_docs/demos/combobox"
+import { Demo as Checkbox } from "@/app/_docs/demos/checkbox"
+import { Demo as Switch } from "@/app/_docs/demos/switch"
+import { Demo as Table } from "@/app/_docs/demos/table"
+import { Demo as Dialog } from "@/app/_docs/demos/dialog"
+import { Demo as AlertDialog } from "@/app/_docs/demos/alert-dialog"
+import { Demo as Popover } from "@/app/_docs/demos/popover"
+import { Demo as Command } from "@/app/_docs/demos/command"
+import { Demo as DropdownMenu } from "@/app/_docs/demos/dropdown-menu"
+import { Demo as Tabs } from "@/app/_docs/demos/tabs"
+import { Demo as Avatar } from "@/app/_docs/demos/avatar"
+import { Demo as Tooltip } from "@/app/_docs/demos/tooltip"
+import { Demo as Separator } from "@/app/_docs/demos/separator"
+import { Demo as Collapsible } from "@/app/_docs/demos/collapsible"
+import { Demo as Skeleton } from "@/app/_docs/demos/skeleton"
+import { Demo as Sonner } from "@/app/_docs/demos/sonner"
+
+export const demos: Record<string, ComponentType> = {
+  colors: Colors,
+  "app-shell": AppShell,
+  button: Button,
+  badge: Badge,
+  input: Input,
+  textarea: Textarea,
+  label: Label,
+  select: Select,
+  combobox: Combobox,
+  checkbox: Checkbox,
+  switch: Switch,
+  table: Table,
+  dialog: Dialog,
+  "alert-dialog": AlertDialog,
+  popover: Popover,
+  command: Command,
+  "dropdown-menu": DropdownMenu,
+  tabs: Tabs,
+  avatar: Avatar,
+  tooltip: Tooltip,
+  separator: Separator,
+  collapsible: Collapsible,
+  skeleton: Skeleton,
+  sonner: Sonner,
+}

@@ -29,6 +29,8 @@ jobs:
       - name: Serve the site and registry
         run: |
           curl -sf localhost:8080/ | grep -q "WinLab UI"
+          curl -sf localhost:8080/button | grep -q "npx shadcn@latest add @winlab/button"
+          curl -sf localhost:8080/colors | grep -q "primary"
           curl -sf localhost:8080/r/registry.json | grep -q '"name": "winlab"'
           curl -sfI localhost:8080/r/base.json | grep -qi "content-type: application/json"
           test "$(curl -s -o /dev/null -w '%{http_code}' localhost:8080/missing)" = 404

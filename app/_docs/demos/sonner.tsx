@@ -4,7 +4,7 @@ import { toast } from "sonner"
 
 import { Button } from "@/registry/winlab/ui/button"
 
-export function ToastDemo() {
+export function Demo() {
   return (
     <div className="flex flex-wrap gap-3">
       <Button
