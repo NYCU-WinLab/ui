@@ -5,6 +5,7 @@ import { Demo as AppShell } from "@/app/_docs/demos/app-shell"
 import { Demo as ConfirmDialog } from "@/app/_docs/demos/confirm-dialog"
 import { Demo as FormDialogDemo } from "@/app/_docs/demos/form-dialog"
 import { Demo as EmptyStateDemo } from "@/app/_docs/demos/empty-state"
+import { Demo as PageHeaderDemo } from "@/app/_docs/demos/page-header"
 import { Demo as Button } from "@/app/_docs/demos/button"
 import { Demo as Badge } from "@/app/_docs/demos/badge"
 import { Demo as Input } from "@/app/_docs/demos/input"
@@ -34,6 +35,7 @@ export const demos: Record<string, ComponentType> = {
   "confirm-dialog": ConfirmDialog,
   "form-dialog": FormDialogDemo,
   "empty-state": EmptyStateDemo,
+  "page-header": PageHeaderDemo,
   button: Button,
   badge: Badge,
   input: Input,
