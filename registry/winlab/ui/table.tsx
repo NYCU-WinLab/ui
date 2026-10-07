@@ -2,6 +2,7 @@ import * as React from "react"
 import { cn } from "cn"
 
 // Header text is muted so rows read first; put tabular-nums on number columns.
+// The outer columns have no side padding so text lines up with the page edge.
 function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
     <div
@@ -68,7 +69,7 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
     <th
       data-slot="table-head"
       className={cn(
-        "h-12 px-3 text-left align-middle font-medium whitespace-nowrap text-muted-foreground [&:has([role=checkbox])]:pr-0",
+        "h-12 px-3 text-left align-middle font-medium whitespace-nowrap text-muted-foreground first:pl-0 last:pr-0 [&:has([role=checkbox])]:pr-0",
         className
       )}
       {...props}
@@ -81,7 +82,7 @@ function TableCell({ className, ...props }: React.ComponentProps<"td">) {
     <td
       data-slot="table-cell"
       className={cn(
-        "px-3 py-3 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0",
+        "px-3 py-3 align-middle whitespace-nowrap first:pl-0 last:pr-0 [&:has([role=checkbox])]:pr-0",
         className
       )}
       {...props}
