@@ -33,10 +33,11 @@ const patterns = [
     name: "palette color",
     regex: new RegExp(`\\b(?:${colorUtilities})-(?:${palette})\\b`, "g"),
   },
-  // secondary and accent were the same gray as muted; the base drops them.
+  // secondary and accent were the same gray as muted, and there is no
+  // sidebar in the two-layer model; the base drops all of them.
   {
     name: "removed color token",
-    regex: /\b[a-z]+-(?:secondary|accent)(?:-foreground)?\b/g,
+    regex: /\b[a-z]+-(?:secondary|accent|sidebar)[\w-]*/g,
   },
   {
     name: "color literal",
