@@ -35,7 +35,11 @@ export default async function DocPage({
 
   return (
     <SiteShell
-      page={{ label: doc.title, href: `/${doc.slug}` }}
+      page={{
+        label: doc.title,
+        href: `/${doc.slug}`,
+        tip: doc.item ? `@winlab/${doc.item}` : doc.description,
+      }}
       layout={doc.layout ?? "spotlight"}
     >
       <div className="flex w-full flex-col items-center gap-12">

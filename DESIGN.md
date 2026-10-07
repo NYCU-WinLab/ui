@@ -17,7 +17,7 @@ Every WinLab app is framed by four fixed corners, 24px in from the viewport. `ap
 - There is no theme toggle: the theme follows the system.
 - CD passes `BUILD_SHA`, `BUILD_TIME` and `BUILD_URL` to the image build (`NEXT_PUBLIC_BUILD_*`); without them the version reads `dev`.
 - A corner with nothing to show stays empty.
-- Every corner item can carry a tip that says what its label leaves out (where a link goes, what a page holds, who owns the site). A tip never repeats the label. Tips open at once, toward the page, lined up with the corner's outer edge; touch never opens them, so nothing depends on one.
+- Every corner item has a tip (`tip` is required in `app-shell`, so a missing one fails the type check) that says what its label leaves out (where a link goes, what a page holds, who owns the site). A tip never repeats the label. Tips open at once, toward the page, lined up with the corner's outer edge; touch never opens them, so nothing depends on one.
 - Corner text is `text-body` in `muted-foreground`, links turn `foreground` on hover and when current.
 - Content that scrolls under the corners fades into a 64px band of frosted glass at the top and bottom edges.
 - No menu button: an app keeps its pages few enough to fit beside the breadcrumb on a phone.
