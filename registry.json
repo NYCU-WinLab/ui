@@ -752,7 +752,7 @@
       "name": "page-header",
       "type": "registry:block",
       "title": "Page Header",
-      "description": "The top of a page: title, one line on what it holds, and the page's own actions.",
+      "description": "The top of a page: its title and the page's own actions.",
       "dependencies": [],
       "files": [
         {

@@ -82,6 +82,15 @@ Color means state: something that changes as work moves on. A category (a kind, 
 - Each app maps its status values to these variants in one place, next to the status labels, and every page reads that map.
 - A status that only applies to some rows shows nothing on the others; do not add a "normal" badge.
 
+## Copy
+
+Say it once, in as few words as the thing needs. No sentence explains what the screen already shows.
+
+- Buttons are the verb: "登入", "刪除", "允許". While it runs, the verb + "中…".
+- Titles name the thing or ask the question: "收據", "刪除這張收據？", "找不到這個頁面". There is no subtitle; blocks have no description slot, so a page cannot grow one.
+- Toasts are the outcome or the reason, a few words: "已送出", "檔案超過 10 MB".
+- Field labels carry what a field needs; there is no helper text (see Two layers).
+
 ## Type
 
 Two sizes, by role: `text-title` (24px) for page and dialog titles, `text-body` (16px) for everything else. Weight and the muted color carry the rest: section titles `font-semibold`, labels and buttons `font-medium`, secondary text `text-muted-foreground`.

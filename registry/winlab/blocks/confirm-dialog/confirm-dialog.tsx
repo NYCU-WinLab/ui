@@ -6,7 +6,6 @@ import {
   AlertDialog,
   AlertDialogCancel,
   AlertDialogContent,
-  AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
@@ -21,7 +20,6 @@ type ConfirmDialogProps = {
   open?: boolean
   onOpenChange?: (open: boolean) => void
   title: string
-  description: React.ReactNode
   /** The verb on the confirm button: "刪除", "撤回". Never "確定". */
   confirmLabel: string
   /** Shown while onConfirm runs; defaults to the verb + "中…". */
@@ -40,7 +38,6 @@ function ConfirmDialog({
   open: openProp,
   onOpenChange,
   title,
-  description,
   confirmLabel,
   pendingLabel = `${confirmLabel}中…`,
   variant = "destructive",
@@ -77,7 +74,6 @@ function ConfirmDialog({
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>{title}</AlertDialogTitle>
-          <AlertDialogDescription>{description}</AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel disabled={pending}>取消</AlertDialogCancel>
