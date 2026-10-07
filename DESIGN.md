@@ -50,3 +50,18 @@ Charts use the same colors, not chart-specific tokens:
 A chart that needs more than two series to be told apart by color is split into small multiples or shown as a table. No Tailwind palette colors and no color literals.
 
 Focus follows the component's own color. `--ring` is a neutral gray, so inputs, selects and outline or ghost buttons show a gray focus ring; the primary button shows a primary ring and the destructive button a destructive one. Ultramarine marks the main action, not every focused control.
+
+## Motion
+
+Two durations, both ease-out:
+
+| Utility | Duration | Use |
+|---------|----------|-----|
+| `duration-state` | 150ms | A control changing state: hover, focus, check, switch, the tab highlight sliding |
+| `duration-overlay` | 200ms | Something appearing or leaving: dialogs, menus, popovers, tooltips, a collapsible opening |
+
+- Overlays fade and zoom in from where they open; a select menu that sits over its trigger only fades.
+- Menu rows highlight instantly, so keyboard navigation never lags.
+- When the system asks for reduced motion (`prefers-reduced-motion: reduce`), every zoom and slide is dropped and the fades stay; sliding highlights and height animations jump instead.
+- `tokens:check` rejects other durations (`duration-300`), easing classes and delays.
+- Toasts keep sonner's own timing, which also follows reduced motion.

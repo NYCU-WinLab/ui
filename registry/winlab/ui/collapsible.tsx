@@ -1,6 +1,7 @@
 "use client"
 
 import { Collapsible as CollapsiblePrimitive } from "@base-ui/react/collapsible"
+import { cn } from "cn"
 
 function Collapsible({ ...props }: CollapsiblePrimitive.Root.Props) {
   return <CollapsiblePrimitive.Root data-slot="collapsible" {...props} />
@@ -12,9 +13,20 @@ function CollapsibleTrigger({ ...props }: CollapsiblePrimitive.Trigger.Props) {
   )
 }
 
-function CollapsibleContent({ ...props }: CollapsiblePrimitive.Panel.Props) {
+// Animates its height open and shut; reduced motion makes it instant.
+function CollapsibleContent({
+  className,
+  ...props
+}: CollapsiblePrimitive.Panel.Props) {
   return (
-    <CollapsiblePrimitive.Panel data-slot="collapsible-content" {...props} />
+    <CollapsiblePrimitive.Panel
+      data-slot="collapsible-content"
+      className={cn(
+        "h-(--collapsible-panel-height) overflow-hidden transition-all duration-overlay data-ending-style:h-0 data-starting-style:h-0 motion-reduce:transition-none",
+        className
+      )}
+      {...props}
+    />
   )
 }
 

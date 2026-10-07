@@ -61,6 +61,33 @@
     --ring: oklch(0.556 0 0);
 }
 
+/* Motion: state changes (hover, toggle, tab) take 150ms, overlays 200ms. */
+@utility duration-state {
+  --tw-duration: 150ms;
+  transition-duration: 150ms;
+  --tw-ease: cubic-bezier(0, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+@utility duration-overlay {
+  --tw-duration: 200ms;
+  transition-duration: 200ms;
+  --tw-ease: cubic-bezier(0, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Reduced motion keeps the fades and drops every zoom and slide. */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    --tw-enter-scale: 1 !important;
+    --tw-exit-scale: 1 !important;
+    --tw-enter-translate-x: 0 !important;
+    --tw-enter-translate-y: 0 !important;
+    --tw-exit-translate-x: 0 !important;
+    --tw-exit-translate-y: 0 !important;
+  }
+}
+
 /* Menus with p-1 sit 4px outside their trigger on both sides. */
 @utility w-menu {
   width: calc(var(--anchor-width) + 0.5rem);
