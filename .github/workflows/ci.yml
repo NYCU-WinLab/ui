@@ -35,6 +35,9 @@ jobs:
           curl -sfI localhost:8080/r/base.json | grep -qi "content-type: application/json"
           test "$(curl -s -o /dev/null -w '%{http_code}' localhost:8080/missing)" = 404
           curl -s localhost:8080/missing | grep -q '找不到這個頁面'
+          test "$(curl -s -o /dev/null -w '%{http_code}' localhost:8080/404)" = 404
+          test "$(curl -s -o /dev/null -w '%{http_code}' localhost:8080/404.html)" = 404
+          curl -s localhost:8080/404 | grep -q '找不到這個頁面'
           ! curl -sI localhost:8080/ | grep -qi "server: nginx/"
 
       # Install the base into a fresh project, the same way a WinLab app would.
