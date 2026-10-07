@@ -1,7 +1,28 @@
 import { PlusIcon } from "lucide-react"
 
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/registry/winlab/ui/alert-dialog"
 import { Badge } from "@/registry/winlab/ui/badge"
 import { Button } from "@/registry/winlab/ui/button"
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/registry/winlab/ui/dialog"
 import { Input } from "@/registry/winlab/ui/input"
 import { Label } from "@/registry/winlab/ui/label"
 import { Skeleton } from "@/registry/winlab/ui/skeleton"
@@ -92,6 +113,54 @@ export default function Page() {
               Shown to the approver with the receipt.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="flex flex-col gap-3">
+        <h2 className="font-semibold">Dialogs</h2>
+        <div className="flex flex-wrap gap-3">
+          <Dialog>
+            <DialogTrigger render={<Button variant="outline" />}>
+              Add item
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Add item</DialogTitle>
+                <DialogDescription>
+                  The approver sees this with the receipt.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="dialog-item">Item</Label>
+                <Input id="dialog-item" placeholder="Taxi, stationery" />
+              </div>
+              <DialogFooter>
+                <DialogClose render={<Button variant="outline" />}>
+                  Cancel
+                </DialogClose>
+                <Button>Add</Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+          <AlertDialog>
+            <AlertDialogTrigger render={<Button variant="destructive" />}>
+              Delete
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Delete this receipt?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  The approver will no longer see it. This cannot be undone.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction variant="destructive">
+                  Delete
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </div>
       </section>
 

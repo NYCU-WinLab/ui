@@ -45,6 +45,8 @@ npx shadcn@latest add @winlab/button
 | `input` | `registry:ui` | Text input, same height as `button` |
 | `textarea` | `registry:ui` | Multi-line input that grows with its content |
 | `skeleton` | `registry:ui` | Loading placeholder |
+| `dialog` | `registry:ui` | Modal; sizes `default` (512px) and `wide` (672px), scrolls past 92% of the viewport height |
+| `alert-dialog` | `registry:ui` | Confirmation with Cancel and an action |
 | `badge` | `registry:ui` | Status label; variants `default`, `secondary`, `outline`, `destructive`, `success`, `warning` |
 
 Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Noto Sans TC. `font-mono` puts JetBrains Mono in front of the same CJK fonts. Use Inter's `tabular-nums` for amounts and table figures, not `font-mono`.
