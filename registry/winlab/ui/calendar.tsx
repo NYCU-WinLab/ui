@@ -56,8 +56,9 @@ function Calendar({
   )
 }
 
-// Today is primary text; the chosen day is filled primary; days outside the
-// month and disabled days are muted.
+// Today is primary text; the chosen day is filled primary, including when it
+// is today, and keeps its fill on hover; days outside the month and disabled
+// days are muted.
 function CalendarDayButton({
   className,
   day,
@@ -78,7 +79,7 @@ function CalendarDayButton({
       data-today={modifiers.today || undefined}
       data-outside={modifiers.outside || undefined}
       className={cn(
-        "font-normal tabular-nums data-outside:text-muted-foreground data-today:font-semibold data-today:text-primary data-selected:bg-primary data-selected:text-primary-foreground data-selected:hover:bg-primary/90",
+        "font-normal tabular-nums data-outside:text-muted-foreground data-today:font-semibold data-today:not-data-selected:text-primary data-selected:bg-primary data-selected:text-primary-foreground data-selected:hover:bg-primary",
         className
       )}
       {...props}
