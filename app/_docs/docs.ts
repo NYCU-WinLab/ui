@@ -60,6 +60,13 @@ export const docs: Doc[] = [
     item: "list-skeleton",
   },
   {
+    group: "區塊",
+    slug: "member-combobox",
+    title: "選擇成員",
+    description: "用姓名或信箱搜尋實驗室成員，可單選或多選。",
+    item: "member-combobox",
+  },
+  {
     group: "元件",
     slug: "button",
     title: "按鈕",

@@ -680,6 +680,24 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "member-combobox",
+      "type": "registry:block",
+      "title": "Member Combobox",
+      "description": "Pick lab members by name or email, one or several.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/combobox.json",
+        "https://ui.winlab.tw/r/command.json",
+        "https://ui.winlab.tw/r/popover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/member-combobox/member-combobox.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

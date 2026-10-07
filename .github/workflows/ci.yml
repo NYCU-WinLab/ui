@@ -105,6 +105,8 @@ jobs:
           grep -q 'page-header' components/page-header.tsx
           bunx shadcn@latest add http://localhost:8099/r/list-skeleton.json -y -o
           grep -q 'TableSkeleton' components/list-skeleton.tsx
+          bunx shadcn@latest add http://localhost:8099/r/member-combobox.json -y -o
+          grep -q '搜尋姓名或信箱' components/member-combobox.tsx
           bun run build
       - if: always()
         run: docker compose logs
