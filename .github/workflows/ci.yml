@@ -103,6 +103,8 @@ jobs:
           grep -q '還沒有' components/empty-state.tsx
           bunx shadcn@latest add http://localhost:8099/r/page-header.json -y -o
           grep -q 'page-header' components/page-header.tsx
+          bunx shadcn@latest add http://localhost:8099/r/list-skeleton.json -y -o
+          grep -q 'TableSkeleton' components/list-skeleton.tsx
           bun run build
       - if: always()
         run: docker compose logs

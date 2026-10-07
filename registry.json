@@ -663,6 +663,23 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "list-skeleton",
+      "type": "registry:block",
+      "title": "List Skeleton",
+      "description": "Placeholder rows for a list or a table on its first load, split by the real rows' dividers.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/skeleton.json",
+        "https://ui.winlab.tw/r/table.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/list-skeleton/list-skeleton.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
