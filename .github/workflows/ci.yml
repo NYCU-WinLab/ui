@@ -109,6 +109,8 @@ jobs:
           grep -q '搜尋姓名或信箱' components/member-combobox.tsx
           bunx shadcn@latest add http://localhost:8099/r/field-list.json -y -o
           grep -q 'field-list' components/field-list.tsx
+          bunx shadcn@latest add http://localhost:8099/r/status-page.json -y -o
+          grep -q 'status-page' components/status-page.tsx
           bun run build
       - if: always()
         run: docker compose logs
