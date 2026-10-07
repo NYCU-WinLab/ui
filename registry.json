@@ -331,6 +331,38 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Single-choice dropdown, as tall as Input.",
+      "dependencies": [
+        "@base-ui/react",
+        "cn",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Data table with muted headers.",
+      "dependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
