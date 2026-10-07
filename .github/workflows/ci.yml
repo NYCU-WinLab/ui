@@ -95,6 +95,7 @@ jobs:
           test -f lib/field.ts
           bunx shadcn@latest add http://localhost:8099/r/app-shell.json -y -o
           grep -q 'NYCU WinLab' components/app-shell.tsx
+          grep -q 'layout === "wide"' components/app-shell.tsx
           bunx shadcn@latest add http://localhost:8099/r/confirm-dialog.json -y -o
           grep -q 'useTransition' components/confirm-dialog.tsx
           bunx shadcn@latest add http://localhost:8099/r/form-dialog.json -y -o

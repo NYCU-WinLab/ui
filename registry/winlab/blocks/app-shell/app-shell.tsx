@@ -34,10 +34,12 @@ type User = { name: string; href: string; image?: string; tip?: string }
 //   bottom right the copyright year; the tip names the owner
 // Every item can carry a tip, opening toward the page and lined up with the
 // corner's outer edge so it never leaves the viewport.
-// Two page layouts:
+// Three page layouts:
 //   column     read top to bottom: home, lists, tables, long forms
 //   spotlight  one thing, centered between the corners: a detail, sign-in,
 //              a result, an empty state; taller content scrolls as a column
+//   wide       a grid that needs every pixel, such as a two-week timetable:
+//              the full width between the corners' outer edges
 function AppShell({
   breadcrumb = [],
   nav = [],
@@ -55,7 +57,7 @@ function AppShell({
       React.ReactNode
     >
   >
-  layout?: "column" | "spotlight"
+  layout?: "column" | "spotlight" | "wide"
   children: React.ReactNode
 }) {
   const pathname = usePathname()
@@ -157,6 +159,8 @@ function AppShell({
         <main className="flex min-h-svh w-full items-center justify-center px-6 py-24">
           <div className="w-full max-w-2xl">{children}</div>
         </main>
+      ) : layout === "wide" ? (
+        <main className="w-full px-6 pt-24 pb-24">{children}</main>
       ) : (
         <main className="mx-auto w-full max-w-4xl px-6 pt-24 pb-24">
           {children}

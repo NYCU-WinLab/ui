@@ -24,12 +24,15 @@ Every WinLab app is framed by four fixed corners, 24px in from the viewport. `ap
 
 ## Page layouts
 
-Two, chosen per page with `app-shell`'s `layout`:
+Three, chosen per page with `app-shell`'s `layout`:
 
 | Layout | For | Shape |
 |--------|-----|-------|
 | `column` | Pages read top to bottom: home, lists, tables, long forms | One centered column (`max-w-4xl`) starting under the top corners |
+| `wide` | A grid that needs the whole screen: a two-week timetable, a room schedule | The full width between the corners' outer edges (24px in from the viewport), starting under the top corners |
 | `spotlight` | Pages about one thing: a single item, sign-in, a result, an empty state, a not-found, a component's doc page | The content centered horizontally and vertically between the corners (`max-w-2xl`); taller content scrolls as a column |
+
+Use `wide` only when the content is a grid that loses meaning when squeezed; text and lists stay in `column`, so lines never run across a whole monitor.
 
 In a spotlight, the title and description center above the focal content; text that is the focus itself stays left-aligned when it runs to more than one line.
 

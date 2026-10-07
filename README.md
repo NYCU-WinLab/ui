@@ -66,7 +66,7 @@ npx shadcn@latest add @winlab/button
 | `separator` | `registry:ui` | Hairline divider |
 | `collapsible` | `registry:ui` | Unstyled show / hide region |
 | `sonner` | `registry:ui` | Toasts: frosted surface, status-colored icons, action and cancel buttons |
-| `app-shell` | `registry:block` | The four corners of every WinLab app; set `NEXT_PUBLIC_BUILD_SHA`, `_TIME` and `_URL` at build for the version corner |
+| `app-shell` | `registry:block` | The four corners of every WinLab app and the page layouts `column`, `spotlight` and `wide`; set `NEXT_PUBLIC_BUILD_SHA`, `_TIME` and `_URL` at build for the version corner |
 | `confirm-dialog` | `registry:block` | Asks before an action runs; the confirm button names the verb, both buttons lock while it runs, and it closes only when the action finishes |
 | `form-dialog` | `registry:block` | A short form in a dialog; `FormField` puts a label over its control, fields and buttons lock while it submits, and it closes only when the submit finishes |
 | `empty-state` | `registry:block` | What a list shows with no rows: "還沒有{noun}" or "找不到符合「{query}」的{noun}", with the next action; `TableEmpty` is the same sentence as a table row |
