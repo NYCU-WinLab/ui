@@ -50,6 +50,35 @@ The interface is flat and has exactly two layers.
 - No helper text under a field. If a field needs explaining, its label says it ("備註（簽核人看得到）"); errors go in a toast.
 - A section title on a page is followed by more space (`gap-6`) than a field label (`gap-2`), so the two never read as the same level.
 
+## Lists
+
+- Rows are separated by dividers (`border-b`), never framed: no card per row, no border around the list. A row's text lines up with the page's left edge.
+- Row actions follow how many there are:
+
+| Actions on a row | Shape |
+|------------------|-------|
+| One or two | Ghost icon buttons, each with a tooltip naming the verb ("編輯", "刪除") |
+| Three or more | One `⋯` button opening a `dropdown-menu`; the destructive action last, after a separator |
+
+- A delete button stays muted on the row. Red belongs to the confirmation that follows, not to the trigger.
+- Every action that cannot be undone asks first, in the `confirm-dialog` block. Its confirm button names the verb ("刪除", "撤回"), never "確定".
+
+## Status and categories
+
+Color means state: something that changes as work moves on. A category (a kind, a tag, a group) never gets a color.
+
+| What it is | Badge |
+|------------|-------|
+| Waiting on someone (審核中, 送簽中) | `warning` |
+| Done or accepted (已通過, 已完成) | `success` |
+| Rejected or failed (已拒絕, 失敗) | `destructive` |
+| Open, active, in progress (進行中) | `default` |
+| Closed, inactive, draft (已關閉, 停用, 草稿) | `muted` |
+| A category or tag, not a state | `outline` |
+
+- Each app maps its status values to these variants in one place, next to the status labels, and every page reads that map.
+- A status that only applies to some rows shows nothing on the others; do not add a "normal" badge.
+
 ## Type
 
 Two sizes, by role: `text-title` (24px) for page and dialog titles, `text-body` (16px) for everything else. Weight and the muted color carry the rest: section titles `font-semibold`, labels and buttons `font-medium`, secondary text `text-muted-foreground`.
