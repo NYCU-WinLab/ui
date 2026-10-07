@@ -78,18 +78,18 @@ function SelectContent({
           data-slot="select-content"
           data-align-trigger={alignItemWithTrigger}
           className={cn(
-            "relative isolate z-50 max-h-(--available-height) w-(--anchor-width) min-w-40 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-menu border border-border bg-popover text-popover-foreground shadow-md duration-100 data-[align-trigger=true]:animate-none data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+            "relative isolate z-50 max-h-(--available-height) w-(--anchor-width) min-w-40 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-menu border border-border bg-background/70 text-foreground shadow-md backdrop-blur-xl duration-100 data-[align-trigger=true]:animate-none data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
             className
           )}
           {...props}
         >
-          <SelectPrimitive.ScrollUpArrow className="flex w-full items-center justify-center bg-popover py-1 [&_svg]:size-4">
+          <SelectPrimitive.ScrollUpArrow className="flex w-full items-center justify-center py-1 [&_svg]:size-4">
             <ChevronUpIcon />
           </SelectPrimitive.ScrollUpArrow>
           <SelectPrimitive.List className="p-1">
             {children}
           </SelectPrimitive.List>
-          <SelectPrimitive.ScrollDownArrow className="flex w-full items-center justify-center bg-popover py-1 [&_svg]:size-4">
+          <SelectPrimitive.ScrollDownArrow className="flex w-full items-center justify-center py-1 [&_svg]:size-4">
             <ChevronDownIcon />
           </SelectPrimitive.ScrollDownArrow>
         </SelectPrimitive.Popup>
