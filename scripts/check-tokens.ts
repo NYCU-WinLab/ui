@@ -33,11 +33,13 @@ const patterns = [
     name: "palette color",
     regex: new RegExp(`\\b(?:${colorUtilities})-(?:${palette})\\b`, "g"),
   },
-  // secondary and accent were the same gray as muted, charts use the
-  // existing colors, and there is no sidebar in the two-layer model.
+  // secondary, accent and card duplicated other colors, overlays are
+  // frosted glass instead of popover, charts use the existing colors, and
+  // there is no sidebar in the two-layer model.
   {
     name: "removed color token",
-    regex: /\b[a-z]+-(?:secondary|accent|sidebar|chart)[\w-]*/g,
+    regex:
+      /\b[a-z]+-(?:secondary|accent|card|popover|sidebar|chart)(?![\w])(?:-[\w-]+)?/g,
   },
   {
     name: "color literal",
@@ -50,7 +52,6 @@ const patterns = [
 // Layer 1 (the page) groups by spacing and dividers only.
 const pagePatterns = [
   { name: "shadow on a page", regex: /\bshadow(?:-[\w/]+)?/g },
-  { name: "surface on a page", regex: /\bbg-(?:card|popover)\b/g },
   {
     name: "frame on a page (use spacing or border-t / border-b)",
     regex: /(?<![-\w])border(?:-[xy])?(?![-\w])/g,
