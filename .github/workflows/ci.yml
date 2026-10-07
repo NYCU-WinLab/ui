@@ -66,6 +66,9 @@ jobs:
           grep -q 'from "@/components/ui/button"' components/ui/dialog.tsx
           bunx shadcn@latest add http://localhost:8099/r/select.json http://localhost:8099/r/table.json -y -o
           ! grep -q 'text-sm' components/ui/select.tsx components/ui/table.tsx
+          bunx shadcn@latest add http://localhost:8099/r/popover.json http://localhost:8099/r/command.json -y -o
+          grep -q 'rounded-menu' components/ui/popover.tsx
+          grep -q 'cmdk' package.json
           bun run build
       - if: always()
         run: docker compose logs
