@@ -10,7 +10,7 @@ export function Demo() {
   return (
     <div className="flex items-center gap-3">
       <Avatar>
-        <AvatarImage src="/mascot.svg" alt="" />
+        <AvatarImage src="/mascot.svg" alt="" className="dark:invert" />
         <AvatarFallback>W</AvatarFallback>
       </Avatar>
       <div className="flex flex-col">
