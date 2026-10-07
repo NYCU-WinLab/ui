@@ -633,6 +633,23 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:block",
+      "title": "Empty State",
+      "description": "What a list shows with no rows: one sentence built from its noun, for an empty list or a search that found nothing.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/button.json",
+        "https://ui.winlab.tw/r/table.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/empty-state/empty-state.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
