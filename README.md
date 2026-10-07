@@ -57,6 +57,7 @@ npx shadcn@latest add @winlab/button
 | `command` | `registry:ui` | Searchable list for a combobox inside a `popover` |
 | `combobox` | `registry:ui` | `ComboboxTrigger` (same field look as `select`) and `ComboboxContent` (as wide as the trigger) around a `command` |
 | `dropdown-menu` | `registry:ui` | Action menu: items, labels, separators and submenus |
+| `calendar` | `registry:ui` | One month of 40px days to pick a single date; weeks start on Monday, captions read 2026 年 10 月 |
 | `checkbox` | `registry:ui` | Round 20px checkbox |
 | `switch` | `registry:ui` | On / off toggle, 40 x 24 |
 | `tabs` | `registry:ui` | Segmented tabs |
