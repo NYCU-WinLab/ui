@@ -744,6 +744,28 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:block",
+      "title": "Date Picker",
+      "description": "A date field: closed it looks like every other field, open it is a calendar; posts yyyy-mm-dd.",
+      "dependencies": [
+        "cn",
+        "lucide-react",
+        "react-day-picker"
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/field.json",
+        "https://ui.winlab.tw/r/calendar.json",
+        "https://ui.winlab.tw/r/popover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/date-picker/date-picker.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
