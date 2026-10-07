@@ -862,6 +862,26 @@
       "registryDependencies": [
         "https://ui.winlab.tw/r/utils.json"
       ]
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:block",
+      "title": "File Upload",
+      "description": "A drop area that also opens the picker and takes pasted files, then the chosen files as attachments to check and remove.",
+      "dependencies": [
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json",
+        "https://ui.winlab.tw/r/attachment.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/file-upload/file-upload.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

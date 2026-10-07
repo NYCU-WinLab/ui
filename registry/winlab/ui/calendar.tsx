@@ -75,6 +75,7 @@ function CalendarDayButton({
       ref={ref}
       variant="ghost"
       size="icon"
+      data-day={day.isoDate}
       data-selected={modifiers.selected || undefined}
       data-today={modifiers.today || undefined}
       data-outside={modifiers.outside || undefined}
