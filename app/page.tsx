@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/registry/winlab/ui/button"
 
 const swatches = [
   { name: "primary", className: "bg-primary text-primary-foreground" },
   { name: "secondary", className: "bg-secondary text-secondary-foreground" },
   { name: "muted", className: "bg-muted text-muted-foreground" },
-  { name: "destructive", className: "bg-destructive text-white" },
+  { name: "destructive", className: "bg-destructive/10 text-destructive" },
 ]
 
 export default function Page() {
