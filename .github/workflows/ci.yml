@@ -13,7 +13,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - run: bun run theme:check
-      - run: bun run typography:check
+      - run: bun run tokens:check
       - run: bun run lint
       - run: bun run typecheck
       - run: bun run format:check
@@ -55,6 +55,9 @@ jobs:
           grep -q -- '--text-\*: initial' app/globals.css
           grep -q -- '--text-title: 1.5rem' app/globals.css
           grep -q -- '--text-body: 1rem' app/globals.css
+          bunx shadcn@latest add http://localhost:8099/r/button.json -y -o
+          grep -q 'text-body' components/ui/button.tsx
+          ! grep -q 'text-sm' components/ui/button.tsx
           bun run build
       - if: always()
         run: docker compose logs

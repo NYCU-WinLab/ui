@@ -190,6 +190,23 @@
         ],
         "dependency": "@fontsource-variable/jetbrains-mono"
       }
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Button with one size and three variants: default, secondary, outline.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

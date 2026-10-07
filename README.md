@@ -28,7 +28,7 @@ npx shadcn@latest init https://ui.winlab.tw/r/base.json
 This writes the WinLab tokens into `app/globals.css` and registers the `@winlab` namespace in `components.json`, so later components install with:
 
 ```bash
-npx shadcn@latest add @winlab/<component>
+npx shadcn@latest add @winlab/button
 ```
 
 ## What is in the registry
@@ -40,6 +40,7 @@ npx shadcn@latest add @winlab/<component>
 | `font-noto-sans-jp` | `registry:font` | Noto Sans JP for kanji and punctuation (Japanese forms: `，。` sit in the lower left) |
 | `font-noto-sans-tc` | `registry:font` | Noto Sans TC for the Traditional Chinese characters Noto Sans JP lacks |
 | `font-jetbrains-mono` | `registry:font` | JetBrains Mono for code and IDs, ligatures on |
+| `button` | `registry:ui` | One size (40px tall); variants `default`, `secondary`, `outline` |
 
 Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Noto Sans TC. `font-mono` puts JetBrains Mono in front of the same CJK fonts. Use Inter's `tabular-nums` for amounts and table figures, not `font-mono`.
 
@@ -54,7 +55,7 @@ Two sizes, named by role:
 
 The base clears Tailwind's default scale (`--text-*: initial`), so `text-sm`, `text-2xl` and the rest generate nothing. Components added to this registry use `text-title` and `text-body` only. Hierarchy below a title comes from weight, the muted color and layout patterns, not size.
 
-`bun run typography:check` rejects the old scale names, arbitrary sizes (`text-[13px]`) and raw `font-size` in this repo.
+`bun run tokens:check` rejects anything that bypasses the tokens in this repo: the old scale names, arbitrary values (`rounded-[10px]`, `text-[13px]`), Tailwind palette colors (`bg-blue-500`), color literals, inline styles and raw `font-size`.
 
 > [!NOTE]
 > A project created with `-t next` keeps the template's Geist imports in `app/layout.tsx`. They are unused by the WinLab stacks; delete them to skip the extra download.
