@@ -52,8 +52,9 @@ jobs:
           grep -q '@import "shadcn/tailwind.css"' app/globals.css
           grep -q -- '--font-sans: var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-tc), sans-serif' app/globals.css
           grep -q 'Noto_Sans_JP' app/layout.tsx
-          grep -q -- '--text-sm: 1rem' app/globals.css
-          grep -q -- '--text-4xl: 1.5rem' app/globals.css
+          grep -q -- '--text-\*: initial' app/globals.css
+          grep -q -- '--text-title: 1.5rem' app/globals.css
+          grep -q -- '--text-body: 1rem' app/globals.css
           bun run build
       - if: always()
         run: docker compose logs

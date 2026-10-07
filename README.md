@@ -45,9 +45,16 @@ Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Not
 
 ### Type scale
 
-Two sizes only: **24px** (`text-2xl`, line height 32px) for titles and **16px** (`text-base`, line height 24px) for everything else. Every other `text-*` utility maps onto one of them, so stock components cannot drift: `text-xs` to `text-xl` render at 16px, `text-3xl` and up at 24px. Hierarchy below a page title comes from weight, the muted color, and layout patterns, not size.
+Two sizes, named by role:
 
-`bun run typography:check` rejects arbitrary sizes (`text-[13px]`) and raw `font-size` in this repo.
+| Utility | Size / line height | Use |
+|---------|--------------------|-----|
+| `text-title` | 24px / 32px | Page and container titles |
+| `text-body` | 16px / 24px | Everything else; secondary text uses `text-muted-foreground` |
+
+The base clears Tailwind's default scale (`--text-*: initial`), so `text-sm`, `text-2xl` and the rest generate nothing. Components added to this registry use `text-title` and `text-body` only. Hierarchy below a title comes from weight, the muted color and layout patterns, not size.
+
+`bun run typography:check` rejects the old scale names, arbitrary sizes (`text-[13px]`) and raw `font-size` in this repo.
 
 > [!NOTE]
 > A project created with `-t next` keeps the template's Geist imports in `app/layout.tsx`. They are unused by the WinLab stacks; delete them to skip the extra download.

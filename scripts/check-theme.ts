@@ -16,9 +16,9 @@ function readBlock(selector: string) {
   if (start === -1) throw new Error(`globals.css has no ${selector} block`)
   const body = css.slice(start, css.indexOf("\n}", start))
   return Object.fromEntries(
-    [...body.matchAll(/--([\w-]+):\s*([^;]+);/g)].map((m) => [
+    [...body.matchAll(/--([\w*-]+):\s*([^;]+);/g)].map((m) => [
       m[1],
-      m[2].trim(),
+      m[2].replace(/\s+/g, " ").trim(),
     ])
   )
 }
