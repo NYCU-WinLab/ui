@@ -77,6 +77,9 @@ jobs:
           grep -q 'rounded-menu' components/ui/tabs.tsx
           bunx shadcn@latest add http://localhost:8099/r/sonner.json -y -o
           grep -q 'unstyled: true' components/ui/sonner.tsx
+          bunx shadcn@latest add http://localhost:8099/r/combobox.json -y -o
+          grep -q 'fieldTriggerClassName' components/ui/combobox.tsx components/ui/select.tsx
+          test -f lib/field.ts
           bun run build
       - if: always()
         run: docker compose logs

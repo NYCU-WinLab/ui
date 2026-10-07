@@ -1,9 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { ChevronDownIcon } from "lucide-react"
 
-import { Button } from "@/registry/winlab/ui/button"
+import { ComboboxContent, ComboboxTrigger } from "@/registry/winlab/ui/combobox"
 import {
   Command,
   CommandEmpty,
@@ -12,11 +11,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/registry/winlab/ui/command"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/winlab/ui/popover"
+import { Popover } from "@/registry/winlab/ui/popover"
 
 const members = ["陳怡君", "林志豪", "吳佳穎", "黃冠宇", "蔡宜庭"]
 
@@ -26,15 +21,10 @@ export function ComboboxDemo() {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger
-        render={<Button variant="outline" className="w-full justify-between" />}
-      >
-        <span className={value ? "" : "text-muted-foreground"}>
-          {value ?? "選擇與會者"}
-        </span>
-        <ChevronDownIcon className="text-muted-foreground" />
-      </PopoverTrigger>
-      <PopoverContent className="w-(--anchor-width)">
+      <ComboboxTrigger placeholder="選擇與會者" className="w-full">
+        {value}
+      </ComboboxTrigger>
+      <ComboboxContent>
         <Command>
           <CommandInput placeholder="搜尋成員" />
           <CommandList>
@@ -56,7 +46,7 @@ export function ComboboxDemo() {
             </CommandGroup>
           </CommandList>
         </Command>
-      </PopoverContent>
+      </ComboboxContent>
     </Popover>
   )
 }
