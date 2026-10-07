@@ -6,7 +6,7 @@ export function SiteShell({
   layout,
   children,
 }: {
-  page?: { label: string; href: string }
+  page?: { label: string; href: string; tip: string }
   layout?: "column" | "spotlight" | "wide"
   children: React.ReactNode
 }) {
