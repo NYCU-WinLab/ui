@@ -1,5 +1,7 @@
 import { PlusIcon } from "lucide-react"
 
+import { ComboboxDemo } from "@/app/_components/combobox-demo"
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -143,6 +145,10 @@ export default function Page() {
                 ))}
               </SelectContent>
             </Select>
+          </div>
+          <div className="flex flex-col gap-2">
+            <Label>Attendee</Label>
+            <ComboboxDemo />
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="note">Note</Label>

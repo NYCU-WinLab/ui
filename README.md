@@ -49,6 +49,8 @@ npx shadcn@latest add @winlab/button
 | `alert-dialog` | `registry:ui` | Confirmation with Cancel and an action |
 | `select` | `registry:ui` | Single-choice dropdown, same height as `input` |
 | `table` | `registry:ui` | Data table with muted headers; add `tabular-nums` and `text-right` to number columns |
+| `popover` | `registry:ui` | Frosted menu surface anchored to a trigger; `w-(--anchor-width)` matches the trigger |
+| `command` | `registry:ui` | Searchable list for a combobox inside a `popover` |
 | `badge` | `registry:ui` | Status label; variants `default`, `muted`, `outline`, `destructive`, `success`, `warning` |
 
 Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Noto Sans TC. `font-mono` puts JetBrains Mono in front of the same CJK fonts. Use Inter's `tabular-nums` for amounts and table figures, not `font-mono`.
