@@ -36,6 +36,16 @@ Use `wide` only when the content is a grid that loses meaning when squeezed; tex
 
 In a spotlight, the title and description center above the focal content; text that is the focus itself stays left-aligned when it runs to more than one line.
 
+## Focus and quiet
+
+Every app page has one loud thing and keeps the rest quiet.
+
+- **The focus** is what a member opened the page for: the next meeting, today's lunch order, what waits on their signature. It sits right under the page header, in the `focus` block, and nowhere else on the page.
+- Only the focus may use the primary color for text (`FocusHighlight`), the spring (`duration-spring`, `animate-rise`) and the large type of `FocusTitle`. Numbers in it roll (`number-ticker`, `countdown`); people in it show as an `avatar-stack`.
+- **Everything else is quiet**: lists in `text-body`, secondary facts in `muted-foreground`, motion at `duration-state` / `duration-overlay`. Lists may arrive with `stagger-rise`.
+- A page with nothing pressing (a settings page, a list of records) has no focus. Do not invent one.
+- A row that has more to say opens in place (`expand-row`) instead of sending the member to another page; editing still happens in a dialog.
+
 ## Two layers
 
 The interface is flat and has exactly two layers.
@@ -126,16 +136,24 @@ Focus follows the component's own color. `--ring` is a neutral gray, so inputs, 
 
 ## Motion
 
-Two durations, both ease-out:
+Quiet things move briefly and ease out; the page's one focus moves on a spring.
 
 | Utility | Duration | Use |
 |---------|----------|-----|
 | `duration-state` | 150ms | A control changing state: hover, focus, check, switch, the tab highlight sliding |
 | `duration-overlay` | 200ms | Something appearing or leaving: dialogs, menus, popovers, tooltips, a collapsible opening |
+| `duration-spring` | 500ms, overshooting 10% | Only what the page is about: the `focus` block, digits rolling, an avatar stack spreading, a row opening in place |
+
+| Utility | What it does |
+|---------|--------------|
+| `animate-rise` | The focus rises 8px into place on the spring when the page loads |
+| `stagger-rise` | On a list: its rows rise one after another, 30ms apart, in 200ms each, so a list arrives as a sequence and not as one block |
 
 - Every animation runs the same way in both directions: what zooms in zooms out, what fades in fades out, at the same duration.
 - Overlays fade and zoom from where they open; a select menu that sits over its trigger only fades, opening and closing.
 - Menu rows highlight instantly, so keyboard navigation never lags.
-- When the system asks for reduced motion (`prefers-reduced-motion: reduce`), every zoom and slide is dropped and the fades stay; sliding highlights and height animations jump instead.
+- The spring is for the focus only. A spring on every button makes the page loud everywhere, which is the same as nowhere.
+- When the system asks for reduced motion (`prefers-reduced-motion: reduce`), every zoom and slide is dropped and the fades stay; rising becomes fading, digits change without rolling, sliding highlights and height animations jump instead.
 - `tokens:check` rejects other durations (`duration-300`), easing classes and delays.
 - Toasts keep sonner's own timing, which also follows reduced motion.
+

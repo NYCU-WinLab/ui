@@ -38,6 +38,11 @@ import { Demo as Separator } from "@/app/_docs/demos/separator"
 import { Demo as Collapsible } from "@/app/_docs/demos/collapsible"
 import { Demo as Skeleton } from "@/app/_docs/demos/skeleton"
 import { Demo as Sonner } from "@/app/_docs/demos/sonner"
+import { Demo as FocusDemo } from "@/app/_docs/demos/focus"
+import { Demo as AvatarStackDemo } from "@/app/_docs/demos/avatar-stack"
+import { Demo as CountdownDemo } from "@/app/_docs/demos/countdown"
+import { Demo as ExpandRowDemo } from "@/app/_docs/demos/expand-row"
+import { Demo as NumberTicker } from "@/app/_docs/demos/number-ticker"
 
 export const demos: Record<string, ComponentType> = {
   colors: Colors,
@@ -78,4 +83,9 @@ export const demos: Record<string, ComponentType> = {
   collapsible: Collapsible,
   skeleton: Skeleton,
   sonner: Sonner,
+  focus: FocusDemo,
+  "avatar-stack": AvatarStackDemo,
+  countdown: CountdownDemo,
+  "expand-row": ExpandRowDemo,
+  "number-ticker": NumberTicker,
 }

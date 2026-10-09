@@ -65,6 +65,85 @@
           "--tw-ease": "cubic-bezier(0, 0, 0.2, 1)",
           "transition-timing-function": "cubic-bezier(0, 0, 0.2, 1)"
         },
+        "@utility duration-spring": {
+          "--tw-duration": "500ms",
+          "transition-duration": "500ms",
+          "--tw-ease": "linear(0, 0.04, 0.142, 0.278, 0.429, 0.578, 0.715, 0.833, 0.928, 1.001, 1.051, 1.083, 1.099, 1.103, 1.097, 1.086, 1.072, 1.056, 1.041, 1.027, 1.016, 1.006, 0.999, 0.994, 1)",
+          "transition-timing-function": "linear(0, 0.04, 0.142, 0.278, 0.429, 0.578, 0.715, 0.833, 0.928, 1.001, 1.051, 1.083, 1.099, 1.103, 1.097, 1.086, 1.072, 1.056, 1.041, 1.027, 1.016, 1.006, 0.999, 0.994, 1)"
+        },
+        "@keyframes rise": {
+          "from": {
+            "opacity": "0",
+            "translate": "0 0.5rem"
+          }
+        },
+        "@keyframes appear": {
+          "from": {
+            "opacity": "0"
+          }
+        },
+        "@utility animate-rise": {
+          "animation": "rise 500ms linear(0, 0.04, 0.142, 0.278, 0.429, 0.578, 0.715, 0.833, 0.928, 1.001, 1.051, 1.083, 1.099, 1.103, 1.097, 1.086, 1.072, 1.056, 1.041, 1.027, 1.016, 1.006, 0.999, 0.994, 1) both"
+        },
+        "@utility stagger-rise": {
+          "& > *": {
+            "animation": "rise 200ms cubic-bezier(0, 0, 0.2, 1) both"
+          },
+          "& > :nth-child(2)": {
+            "animation-delay": "30ms"
+          },
+          "& > :nth-child(3)": {
+            "animation-delay": "60ms"
+          },
+          "& > :nth-child(4)": {
+            "animation-delay": "90ms"
+          },
+          "& > :nth-child(5)": {
+            "animation-delay": "120ms"
+          },
+          "& > :nth-child(6)": {
+            "animation-delay": "150ms"
+          },
+          "& > :nth-child(7)": {
+            "animation-delay": "180ms"
+          },
+          "& > :nth-child(8)": {
+            "animation-delay": "210ms"
+          },
+          "& > :nth-child(n + 9)": {
+            "animation-delay": "240ms"
+          }
+        },
+        "@utility digit-roll": {
+          "transition": "translate 500ms linear(0, 0.04, 0.142, 0.278, 0.429, 0.578, 0.715, 0.833, 0.928, 1.001, 1.051, 1.083, 1.099, 1.103, 1.097, 1.086, 1.072, 1.056, 1.041, 1.027, 1.016, 1.006, 0.999, 0.994, 1)",
+          "&[data-digit=\"1\"]": {
+            "translate": "0 -10%"
+          },
+          "&[data-digit=\"2\"]": {
+            "translate": "0 -20%"
+          },
+          "&[data-digit=\"3\"]": {
+            "translate": "0 -30%"
+          },
+          "&[data-digit=\"4\"]": {
+            "translate": "0 -40%"
+          },
+          "&[data-digit=\"5\"]": {
+            "translate": "0 -50%"
+          },
+          "&[data-digit=\"6\"]": {
+            "translate": "0 -60%"
+          },
+          "&[data-digit=\"7\"]": {
+            "translate": "0 -70%"
+          },
+          "&[data-digit=\"8\"]": {
+            "translate": "0 -80%"
+          },
+          "&[data-digit=\"9\"]": {
+            "translate": "0 -90%"
+          }
+        },
         "@media (prefers-reduced-motion: reduce)": {
           "*, ::before, ::after": {
             "--tw-enter-scale": "1 !important",
@@ -73,6 +152,12 @@
             "--tw-enter-translate-y": "0 !important",
             "--tw-exit-translate-x": "0 !important",
             "--tw-exit-translate-y": "0 !important"
+          },
+          ".animate-rise, .stagger-rise > *": {
+            "animation-name": "appear"
+          },
+          ".digit-roll": {
+            "transition": "none"
           }
         }
       },
@@ -541,6 +626,24 @@
       ]
     },
     {
+      "name": "number-ticker",
+      "type": "registry:ui",
+      "title": "Number Ticker",
+      "description": "A whole number whose digits roll to their new value.",
+      "dependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/number-ticker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
+      ]
+    },
+    {
       "name": "tooltip",
       "type": "registry:ui",
       "title": "Tooltip",
@@ -878,6 +981,80 @@
       "files": [
         {
           "path": "registry/winlab/blocks/file-upload/file-upload.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "focus",
+      "type": "registry:block",
+      "title": "Focus",
+      "description": "The one loud thing on a page, under its header: a label, a title with a highlight, and a row of facts.",
+      "dependencies": [
+        "cn"
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/focus/focus.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "avatar-stack",
+      "type": "registry:block",
+      "title": "Avatar Stack",
+      "description": "Several people in the space of one; the avatars spread apart when pointed at.",
+      "dependencies": [
+        "cn"
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json",
+        "https://ui.winlab.tw/r/avatar.json",
+        "https://ui.winlab.tw/r/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/avatar-stack/avatar-stack.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "countdown",
+      "type": "registry:block",
+      "title": "Countdown",
+      "description": "Time left until a moment, to the minute, with rolling digits.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/number-ticker.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/countdown/countdown.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "expand-row",
+      "type": "registry:block",
+      "title": "Expand Row",
+      "description": "A list row that opens in place to show its details.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react",
+        "cn"
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/expand-row/expand-row.tsx",
           "type": "registry:component"
         }
       ]
