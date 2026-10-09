@@ -42,7 +42,7 @@ Every app page has one loud thing and keeps the rest quiet.
 
 - **The focus** is what a member opened the page for: the next meeting, today's lunch order, what waits on their signature. It sits right under the page header, in the `focus` block, and nowhere else on the page.
 - Only the focus may use the primary color for text (`FocusHighlight`), the spring (`duration-spring`, `animate-rise`) and the large type of `FocusTitle`. Numbers in it roll (`number-ticker`, `countdown`); people in it show as an `avatar-stack`.
-- **Everything else is quiet**: lists in `text-body`, secondary facts in `muted-foreground`, motion at `duration-state` / `duration-overlay`. Lists may arrive with `stagger-rise`.
+- **Everything else is quiet**: lists in `text-body`, secondary facts in `muted-foreground`, motion at `duration-state` / `duration-overlay`. Every list arrives with `stagger-rise`, so pages feel the same when they load.
 - A page with nothing pressing (a settings page, a list of records) has no focus. Do not invent one.
 - A row that has more to say opens in place (`expand-row`) instead of sending the member to another page; editing still happens in a dialog.
 
