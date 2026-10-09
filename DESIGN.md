@@ -146,8 +146,8 @@ Quiet things move briefly and ease out; the page's one focus moves on a spring.
 
 | Utility | What it does |
 |---------|--------------|
-| `animate-rise` | The focus rises 8px into place on the spring when the page loads |
-| `stagger-rise` | On a list: its rows rise one after another, 30ms apart, in 200ms each, so a list arrives as a sequence and not as one block |
+| `animate-rise` | A single element rises 8px into place on the spring |
+| `stagger-rise` | On a list or the focus: its rows rise one after another, 30ms apart, in 200ms each, so the page always arrives top to bottom and never as one block |
 
 - Every animation runs the same way in both directions: what zooms in zooms out, what fades in fades out, at the same duration.
 - Overlays fade and zoom from where they open; a select menu that sits over its trigger only fades, opening and closing.
