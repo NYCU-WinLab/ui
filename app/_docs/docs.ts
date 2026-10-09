@@ -56,6 +56,34 @@ export const docs: Doc[] = [
   },
   {
     group: "區塊",
+    slug: "focus",
+    title: "焦點",
+    description: "每頁一個大聲的地方，其他都安靜：標籤、標題與重點、一列資訊。",
+    item: "focus",
+  },
+  {
+    group: "區塊",
+    slug: "avatar-stack",
+    title: "頭像疊",
+    description: "多個人放在一個人的位置，指到時展開。",
+    item: "avatar-stack",
+  },
+  {
+    group: "區塊",
+    slug: "countdown",
+    title: "倒數",
+    description: "距離某個時間還有多久，到分鐘，數字會滾動。",
+    item: "countdown",
+  },
+  {
+    group: "區塊",
+    slug: "expand-row",
+    title: "展開列",
+    description: "清單的一列原地展開細節，不換頁也不開對話框。",
+    item: "expand-row",
+  },
+  {
+    group: "區塊",
     slug: "page-header",
     title: "頁首",
     description: "頁面標題與這頁的動作按鈕。",
@@ -243,6 +271,13 @@ export const docs: Doc[] = [
     title: "頭像",
     description: "成員頭像，沒有圖時顯示名字的第一個字。",
     item: "avatar",
+  },
+  {
+    group: "元件",
+    slug: "number-ticker",
+    title: "數字滾動",
+    description: "整數變動時，每一位數字滾到新的值。",
+    item: "number-ticker",
   },
   {
     group: "元件",
