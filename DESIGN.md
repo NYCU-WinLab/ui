@@ -132,6 +132,8 @@ Charts use the same colors, not chart-specific tokens:
 
 A chart that needs more than two series to be told apart by color is split into small multiples or shown as a table. No Tailwind palette colors and no color literals.
 
+Draw charts with `chart` (recharts underneath). Its config takes only these colors, so a chart cannot drift from the table above. Bars have 4px rounded ends at the top, lines are 2px, the grid is horizontal only, and two or more series always come with a legend so color is never the only label. Values in the tooltip and on axes use the same units the page does (NT$, 次).
+
 Focus follows the component's own color. `--ring` is a neutral gray, so inputs, selects and outline or ghost buttons show a gray focus ring; the primary button shows a primary ring and the destructive button a destructive one. Ultramarine marks the main action, not every focused control.
 
 ## Motion

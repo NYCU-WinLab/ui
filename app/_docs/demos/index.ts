@@ -42,6 +42,7 @@ import { Demo as FocusDemo } from "@/app/_docs/demos/focus"
 import { Demo as AvatarStackDemo } from "@/app/_docs/demos/avatar-stack"
 import { Demo as CountdownDemo } from "@/app/_docs/demos/countdown"
 import { Demo as ExpandRowDemo } from "@/app/_docs/demos/expand-row"
+import { Demo as Chart } from "@/app/_docs/demos/chart"
 import { Demo as NumberTicker } from "@/app/_docs/demos/number-ticker"
 
 export const demos: Record<string, ComponentType> = {
@@ -88,4 +89,5 @@ export const demos: Record<string, ComponentType> = {
   countdown: CountdownDemo,
   "expand-row": ExpandRowDemo,
   "number-ticker": NumberTicker,
+  chart: Chart,
 }
