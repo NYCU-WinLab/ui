@@ -281,6 +281,14 @@ export const docs: Doc[] = [
   },
   {
     group: "元件",
+    slug: "chart",
+    title: "圖表",
+    description:
+      "主要數列用主色，對照用灰色，有意義的數列(收入、支出)用狀態色。",
+    item: "chart",
+  },
+  {
+    group: "元件",
     slug: "tooltip",
     title: "提示",
     description: "滑過圖示時補充說明。",
