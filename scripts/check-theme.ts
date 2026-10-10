@@ -55,5 +55,18 @@ for (const [mode, cssVars, registryVars] of pairs) {
   }
 }
 
+// Utilities and keyframes the registry ships must exist here too, or the
+// site renders an item differently from a project that installed it.
+for (const item of registry.items) {
+  const rules = "css" in item && item.css ? Object.keys(item.css) : []
+  for (const rule of rules) {
+    if (!rule.startsWith("@utility") && !rule.startsWith("@keyframes")) continue
+    if (!css.includes(`${rule} {`)) {
+      console.error(`globals.css is missing ${rule} (from ${item.name})`)
+      failed = true
+    }
+  }
+}
+
 if (failed) process.exit(1)
 console.log("theme in sync")
