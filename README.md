@@ -53,9 +53,9 @@ npx shadcn@latest add @winlab/button
 | `alert-dialog` | `registry:ui` | Confirmation with Cancel and an action |
 | `select` | `registry:ui` | Single-choice dropdown, same height as `input` |
 | `table` | `registry:ui` | Data table with muted headers; add `tabular-nums` and `text-right` to number columns |
-| `popover` | `registry:ui` | Frosted menu surface anchored to a trigger; `w-(--anchor-width)` matches the trigger |
+| `popover` | `registry:ui` | Frosted menu surface anchored to a trigger, 288px wide |
 | `command` | `registry:ui` | Searchable list for a combobox inside a `popover` |
-| `combobox` | `registry:ui` | `ComboboxTrigger` (same field look as `select`) and `ComboboxContent` (as wide as the trigger) around a `command` |
+| `combobox` | `registry:ui` | `ComboboxTrigger` (same field look as `select`) and `ComboboxContent` (at least as wide as the trigger) around a `command` |
 | `dropdown-menu` | `registry:ui` | Action menu: items, labels, separators and submenus |
 | `calendar` | `registry:ui` | One month of 40px days to pick a single date; weeks start on Monday, captions read 2026 年 10 月 |
 | `attachment` | `registry:ui` | One file per row: 40px icon or thumbnail, name, a detail line and actions; states `idle` (dashed), `uploading`, `error`, `done` |
@@ -67,6 +67,8 @@ npx shadcn@latest add @winlab/button
 | `separator` | `registry:ui` | Hairline divider |
 | `collapsible` | `registry:ui` | Unstyled show / hide region |
 | `sonner` | `registry:ui` | Toasts: frosted surface, status-colored icons, action and cancel buttons |
+| `number-ticker` | `registry:ui` | A whole number whose digits roll to their new value |
+| `chart` | `registry:ui` | Recharts in WinLab colors: series take `primary`, `muted-foreground` or a state color; inverted tooltip and a legend |
 | `app-shell` | `registry:block` | The four corners of every WinLab app and the page layouts `column`, `spotlight` and `wide`; set `NEXT_PUBLIC_BUILD_SHA`, `_TIME` and `_URL` at build for the version corner |
 | `confirm-dialog` | `registry:block` | Asks before an action runs; the confirm button names the verb, both buttons lock while it runs, and it closes only when the action finishes |
 | `form-dialog` | `registry:block` | A short form in a dialog; `FormField` puts a label over its control, fields and buttons lock while it submits, and it closes only when the submit finishes |
@@ -79,6 +81,11 @@ npx shadcn@latest add @winlab/button
 | `date-picker` | `registry:block` | A date field with the same closed look as `select`; opens a `calendar`, closes on choice, can block days, and posts yyyy-mm-dd under `name` for `form-dialog` |
 | `action-panel` | `registry:block` | A page whose job is one action, such as opening the door: one 192px round button that locks while it runs, turns `success` for a moment, and says why when it cannot be pressed |
 | `file-upload` | `registry:block` | Drop, paste or pick files; chosen files list as `attachment` rows to remove, files outside `accept` or `maxSize` show as errors with the reason, and `name` posts them inside `form-dialog` |
+| `signature-pad` | `registry:block` | Draw or upload a handwritten signature in a dialog; black ink on white in every theme, exported as a cropped transparent PNG |
+| `focus` | `registry:block` | The one loud thing on a page, under its header: a label, a title with a highlight and a row of facts |
+| `avatar-stack` | `registry:block` | Several people in the space of one; the avatars spread apart when pointed at |
+| `countdown` | `registry:block` | Time left until a moment, to the minute, with rolling digits |
+| `expand-row` | `registry:block` | A list row that opens in place to show its details |
 | `badge` | `registry:ui` | Status label; variants `default`, `muted`, `outline`, `destructive`, `success`, `warning` |
 
 Text falls back in that order: `font-sans` is Inter, then Noto Sans JP, then Noto Sans TC. `font-mono` puts JetBrains Mono in front of the same CJK fonts. Use Inter's `tabular-nums` for amounts and table figures, not `font-mono`.
