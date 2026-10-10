@@ -1004,6 +1004,24 @@
       ]
     },
     {
+      "name": "signature-pad",
+      "type": "registry:block",
+      "title": "Signature Pad",
+      "description": "Draw or upload a handwritten signature in a dialog; black ink on white paper in every theme, exported as a cropped transparent PNG.",
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json",
+        "https://ui.winlab.tw/r/button.json",
+        "https://ui.winlab.tw/r/dialog.json",
+        "https://ui.winlab.tw/r/tabs.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/signature-pad/signature-pad.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "focus",
       "type": "registry:block",
       "title": "Focus",

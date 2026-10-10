@@ -36,6 +36,7 @@ import { Demo as Avatar } from "@/app/_docs/demos/avatar"
 import { Demo as Tooltip } from "@/app/_docs/demos/tooltip"
 import { Demo as Separator } from "@/app/_docs/demos/separator"
 import { Demo as Collapsible } from "@/app/_docs/demos/collapsible"
+import { Demo as SignaturePad } from "@/app/_docs/demos/signature-pad"
 import { Demo as Skeleton } from "@/app/_docs/demos/skeleton"
 import { Demo as Sonner } from "@/app/_docs/demos/sonner"
 import { Demo as FocusDemo } from "@/app/_docs/demos/focus"
@@ -82,6 +83,7 @@ export const demos: Record<string, ComponentType> = {
   tooltip: Tooltip,
   separator: Separator,
   collapsible: Collapsible,
+  "signature-pad": SignaturePad,
   skeleton: Skeleton,
   sonner: Sonner,
   focus: FocusDemo,
