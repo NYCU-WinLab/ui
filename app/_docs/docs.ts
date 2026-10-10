@@ -140,6 +140,13 @@ export const docs: Doc[] = [
     item: "file-upload",
   },
   {
+    group: "區塊",
+    slug: "signature-pad",
+    title: "簽名板",
+    description: "手寫或上傳簽名，任何主題都是白紙黑字，存成裁好邊的透明 PNG。",
+    item: "signature-pad",
+  },
+  {
     group: "元件",
     slug: "button",
     title: "按鈕",
