@@ -5,6 +5,22 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* terminal: Claude Code's dark palette, the same in both themes */
+  --color-terminal: #0d0d0d;
+  --color-terminal-bar: #1a1a1a;
+  --color-terminal-line: #262626;
+  --color-terminal-foreground: #e4e4e4;
+  --color-terminal-claude: #d78787;
+  --color-terminal-shimmer: #ffaf87;
+  --color-terminal-dim: #949494;
+  --color-terminal-rule: #808080;
+  --color-terminal-soft: #a8a8a8;
+  --color-terminal-warn: #ffd700;
+  --color-terminal-select: #afd7ff;
+  --color-terminal-error: #ff87af;
+  --color-terminal-white: #ffffff;
+  --color-terminal-prompt: #3a3a3a;
+  --color-terminal-success: #87d787;
     --text-*: initial;
     --text-title: 1.5rem;
     --text-title--line-height: 2rem;
@@ -197,4 +213,19 @@
   html {
     @apply font-sans;
     }
+}
+/* terminal: widths and indents in character cells */
+@utility indent-* {
+  padding-inline-start: calc(--value(integer) * 1ch);
+}
+@utility cell-wide {
+  display: inline-block;
+  width: 2ch;
+  text-align: center;
+}
+@utility w-cells-* {
+  width: calc(--value(integer) * 1ch);
+}
+@utility gap-cells-* {
+  column-gap: calc(--value(integer) * 1ch);
 }

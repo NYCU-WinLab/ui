@@ -62,6 +62,7 @@ npx shadcn@latest add @winlab/button
 | `checkbox` | `registry:ui` | Round 20px checkbox |
 | `switch` | `registry:ui` | On / off toggle, 40 x 24 |
 | `tabs` | `registry:ui` | Segmented tabs |
+| `terminal` | `registry:ui` | A terminal window: monospace rows of 1.25rem, two-cell East Asian characters, the dark `terminal-*` palette in both themes |
 | `avatar` | `registry:ui` | Round 40px avatar with initials fallback |
 | `tooltip` | `registry:ui` | Short inverted label on hover or focus |
 | `separator` | `registry:ui` | Hairline divider |
@@ -85,6 +86,7 @@ npx shadcn@latest add @winlab/button
 | `focus` | `registry:block` | The one loud thing on a page, under its header: a label, a title with a highlight and a row of facts |
 | `avatar-stack` | `registry:block` | Several people in the space of one; the avatars spread apart when pointed at |
 | `countdown` | `registry:block` | Time left until a moment, to the minute, with rolling digits |
+| `claude-code` | `registry:block` | Claude Code's screen in a `terminal` for demos and install guides: welcome, prompts, MCP calls, permission questions, the `/plugins` and `/mcp` menus; content through props |
 | `expand-row` | `registry:block` | A list row that opens in place to show its details |
 | `badge` | `registry:ui` | Status label; variants `default`, `muted`, `outline`, `destructive`, `success`, `warning` |
 

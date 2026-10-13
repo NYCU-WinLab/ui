@@ -607,6 +607,59 @@
       ]
     },
     {
+      "name": "terminal",
+      "type": "registry:ui",
+      "title": "Terminal",
+      "description": "A terminal window with monospace rows, two-cell East Asian characters and a dark terminal palette in every theme.",
+      "dependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/terminal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
+      ],
+      "cssVars": {
+        "theme": {
+          "color-terminal": "#0d0d0d",
+          "color-terminal-bar": "#1a1a1a",
+          "color-terminal-line": "#262626",
+          "color-terminal-foreground": "#e4e4e4",
+          "color-terminal-claude": "#d78787",
+          "color-terminal-shimmer": "#ffaf87",
+          "color-terminal-dim": "#949494",
+          "color-terminal-rule": "#808080",
+          "color-terminal-soft": "#a8a8a8",
+          "color-terminal-warn": "#ffd700",
+          "color-terminal-select": "#afd7ff",
+          "color-terminal-error": "#ff87af",
+          "color-terminal-white": "#ffffff",
+          "color-terminal-prompt": "#3a3a3a",
+          "color-terminal-success": "#87d787"
+        }
+      },
+      "css": {
+        "@utility indent-*": {
+          "padding-inline-start": "calc(--value(integer) * 1ch)"
+        },
+        "@utility cell-wide": {
+          "display": "inline-block",
+          "width": "2ch",
+          "text-align": "center"
+        },
+        "@utility w-cells-*": {
+          "width": "calc(--value(integer) * 1ch)"
+        },
+        "@utility gap-cells-*": {
+          "column-gap": "calc(--value(integer) * 1ch)"
+        }
+      }
+    },
+    {
       "name": "avatar",
       "type": "registry:ui",
       "title": "Avatar",
@@ -1093,6 +1146,25 @@
           "path": "registry/winlab/blocks/expand-row/expand-row.tsx",
           "type": "registry:component"
         }
+      ]
+    },
+    {
+      "name": "claude-code",
+      "type": "registry:block",
+      "title": "Claude Code",
+      "description": "Claude Code's screen in a terminal for demos and install guides: welcome, prompts, MCP calls, permission questions and the /plugins and /mcp menus.",
+      "dependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/claude-code/claude-code.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json",
+        "https://ui.winlab.tw/r/terminal.json"
       ]
     }
   ]

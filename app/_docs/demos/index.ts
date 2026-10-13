@@ -32,6 +32,8 @@ import { Demo as Popover } from "@/app/_docs/demos/popover"
 import { Demo as Command } from "@/app/_docs/demos/command"
 import { Demo as DropdownMenu } from "@/app/_docs/demos/dropdown-menu"
 import { Demo as Tabs } from "@/app/_docs/demos/tabs"
+import { Demo as TerminalDemo } from "@/app/_docs/demos/terminal"
+import { Demo as ClaudeCodeDemo } from "@/app/_docs/demos/claude-code"
 import { Demo as Avatar } from "@/app/_docs/demos/avatar"
 import { Demo as Tooltip } from "@/app/_docs/demos/tooltip"
 import { Demo as Separator } from "@/app/_docs/demos/separator"
@@ -61,6 +63,7 @@ export const demos: Record<string, ComponentType> = {
   "date-picker": DatePickerDemo,
   "action-panel": ActionPanelDemo,
   "file-upload": FileUploadDemo,
+  "claude-code": ClaudeCodeDemo,
   button: Button,
   badge: Badge,
   input: Input,
@@ -79,6 +82,7 @@ export const demos: Record<string, ComponentType> = {
   command: Command,
   "dropdown-menu": DropdownMenu,
   tabs: Tabs,
+  terminal: TerminalDemo,
   avatar: Avatar,
   tooltip: Tooltip,
   separator: Separator,

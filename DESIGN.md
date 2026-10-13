@@ -161,3 +161,7 @@ Quiet things move briefly and ease out; the page's one focus moves on a spring.
 - `tokens:check` rejects other durations (`duration-300`), easing classes and delays.
 - Toasts keep sonner's own timing, which also follows reduced motion.
 
+
+## Pictures of other programs
+
+`terminal` and `claude-code` draw another program's screen, so they keep that program's look instead of the page's: the dark `terminal-*` colors in both themes, 1.25rem rows and two-cell East Asian characters. Use them only to show what a member will see in a terminal, such as a demo or an install guide, never as page chrome. Change what they say through props, not how they look; check a new screen against a real `claude` run with an empty `CLAUDE_CONFIG_DIR`.
