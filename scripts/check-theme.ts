@@ -8,7 +8,13 @@ const css = await readFile(
   "utf8"
 )
 const base = registry.items.find((item) => item.name === "base")
-const baseVars = base && "cssVars" in base ? base.cssVars : undefined
+// Other items (terminal) carry their own cssVars, so read the base's as the
+// shape it always has.
+type Vars = Record<string, string>
+const baseVars =
+  base && "cssVars" in base
+    ? (base.cssVars as unknown as { theme: Vars; light: Vars; dark: Vars })
+    : undefined
 if (!baseVars) throw new Error("registry.json has no base item with cssVars")
 
 function readBlock(selector: string) {

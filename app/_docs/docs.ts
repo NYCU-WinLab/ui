@@ -134,6 +134,14 @@ export const docs: Doc[] = [
   },
   {
     group: "區塊",
+    slug: "claude-code",
+    title: "Claude Code",
+    description:
+      "示範與安裝說明用的 Claude Code 畫面：歡迎區、提問、MCP 呼叫、權限詢問、/plugins 與 /mcp 選單。",
+    item: "claude-code",
+  },
+  {
+    group: "區塊",
     slug: "file-upload",
     title: "上傳檔案",
     description: "拖放、貼上或點選檔案，送出前可以檢查和移除。",
@@ -271,6 +279,13 @@ export const docs: Doc[] = [
     title: "分頁",
     description: "同一頁內切換幾個區塊。",
     item: "tabs",
+  },
+  {
+    group: "元件",
+    slug: "terminal",
+    title: "終端機",
+    description: "終端機視窗：等寬列、中文佔兩格，兩種主題都用深色配色。",
+    item: "terminal",
   },
   {
     group: "元件",
