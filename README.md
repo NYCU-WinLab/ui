@@ -35,6 +35,8 @@ This writes the WinLab tokens into `app/globals.css` and registers the `@winlab`
 npx shadcn@latest add @winlab/button
 ```
 
+Moving an existing shadcn (Radix) app over: see [MIGRATING.md](MIGRATING.md) for the install steps, what replaces `card` and `sidebar`, the Base UI behavior that changes, and test setup.
+
 ## What is in the registry
 
 | Item | Type | What it gives you |
