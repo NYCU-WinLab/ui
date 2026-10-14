@@ -317,6 +317,13 @@ export const docs: Doc[] = [
   },
   {
     group: "元件",
+    slug: "progress",
+    title: "進度條",
+    description: "已用多少占全部多少，例如額度。",
+    item: "progress",
+  },
+  {
+    group: "元件",
     slug: "chart",
     title: "圖表",
     description:
