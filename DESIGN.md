@@ -14,7 +14,7 @@ Every WinLab app is framed by four fixed corners, 24px in from the viewport. `ap
 | Bottom right | Whose it is | © year; its tip says NYCU WinLab |
 
 - Actions are not navigation: a "新增訂單" button goes in the page header next to the content it changes, never in a corner.
-- There is no theme toggle: the theme follows the system.
+- There is no theme toggle: the theme follows the system (`theme-provider`). D switches themes, outside text fields, so a page can be checked in both.
 - CD passes `BUILD_SHA`, `BUILD_TIME` and `BUILD_URL` to the image build (`NEXT_PUBLIC_BUILD_*`); without them the version reads `dev`.
 - A corner with nothing to show stays empty.
 - Every corner item has a tip (`tip` is required in `app-shell`, so a missing one fails the type check) that says what its label leaves out (where a link goes, what a page holds, who owns the site). A tip never repeats the label. Tips open at once, toward the page, lined up with the corner's outer edge; touch never opens them, so nothing depends on one.

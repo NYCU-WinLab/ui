@@ -73,6 +73,7 @@ npx shadcn@latest add @winlab/button
 | `progress` | `registry:ui` | How much of a whole is used: an 8px muted track with a primary fill |
 | `chart` | `registry:ui` | Recharts in WinLab colors: series take `primary`, `muted-foreground` or a state color; inverted tooltip and a legend |
 | `app-shell` | `registry:block` | The four corners of every WinLab app (pages fold into a menu on narrow screens; the account can be a link or a menu) and the page layouts `column`, `spotlight` and `wide`; set `NEXT_PUBLIC_BUILD_SHA`, `_TIME` and `_URL` at build for the version corner |
+| `theme-provider` | `registry:block` | Wrap the app in it: the theme follows the system (no toggle), D switches themes while checking a page; give `<html>` `suppressHydrationWarning` |
 | `confirm-dialog` | `registry:block` | Asks before an action runs; the confirm button names the verb, both buttons lock while it runs, and it closes only when the action finishes |
 | `form-dialog` | `registry:block` | A short form in a dialog; `FormField` puts a label over its control, fields and buttons lock while it submits, and it closes only when the submit finishes |
 | `empty-state` | `registry:block` | What a list shows with no rows: "還沒有{noun}" or "找不到符合「{query}」的{noun}", with the next action; `TableEmpty` is the same sentence as a table row |

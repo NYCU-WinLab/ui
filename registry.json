@@ -979,6 +979,21 @@
       ]
     },
     {
+      "name": "theme-provider",
+      "type": "registry:block",
+      "title": "Theme Provider",
+      "description": "The theme follows the system, with D to switch while checking a page; wrap the app in it.",
+      "dependencies": [
+        "next-themes"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/theme-provider/theme-provider.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "confirm-dialog",
       "type": "registry:block",
       "title": "Confirm Dialog",
