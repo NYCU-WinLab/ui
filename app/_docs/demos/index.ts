@@ -10,6 +10,7 @@ import { Demo as ListSkeletonDemo } from "@/app/_docs/demos/list-skeleton"
 import { Demo as MemberComboboxDemo } from "@/app/_docs/demos/member-combobox"
 import { Demo as FieldListDemo } from "@/app/_docs/demos/field-list"
 import { Demo as StatusPageDemo } from "@/app/_docs/demos/status-page"
+import { Demo as ConsentDemo } from "@/app/_docs/demos/consent"
 import { Demo as DatePickerDemo } from "@/app/_docs/demos/date-picker"
 import { Demo as Wide } from "@/app/_docs/demos/wide"
 import { Demo as ActionPanelDemo } from "@/app/_docs/demos/action-panel"
@@ -60,6 +61,7 @@ export const demos: Record<string, ComponentType> = {
   "member-combobox": MemberComboboxDemo,
   "field-list": FieldListDemo,
   "status-page": StatusPageDemo,
+  consent: ConsentDemo,
   "date-picker": DatePickerDemo,
   "action-panel": ActionPanelDemo,
   "file-upload": FileUploadDemo,

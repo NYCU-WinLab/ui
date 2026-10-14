@@ -165,3 +165,5 @@ Quiet things move briefly and ease out; the page's one focus moves on a spring.
 ## Pictures of other programs
 
 `terminal` and `claude-code` draw another program's screen, so they keep that program's look instead of the page's: the dark `terminal-*` colors in both themes, 1.25rem rows and two-cell East Asian characters. Use them only to show what a member will see in a terminal, such as a demo or an install guide, never as page chrome. Change what they say through props, not how they look; check a new screen against a real `claude` run with an empty `CLAUDE_CONFIG_DIR`.
+
+A service that signs other programs in, such as an MCP server, asks the member on a `consent` page in the spotlight layout: the title names the service, the client is named as the server received it, and the two buttons are 取消 (outline) and 允許 (primary). A service that renders HTML outside React copies the block's markup and these tokens into its own page, so every WinLab consent page looks the same.

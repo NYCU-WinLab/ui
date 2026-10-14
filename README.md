@@ -79,6 +79,7 @@ npx shadcn@latest add @winlab/button
 | `member-combobox` | `registry:block` | Pick lab members by name or email; one member closes on choice, `multiple` keeps the menu open and toggles |
 | `field-list` | `registry:block` | One record's fields as a `dl`: muted names in a left column, values beside them (under them on a phone), split by dividers |
 | `status-page` | `registry:block` | A spotlight page that says what happened and the way out: not found, an error, no access; the site's own 404 uses it |
+| `consent` | `registry:block` | A spotlight page where a member lets a program act for them, such as an MCP client signing in; a plain form posting `allow=yes` or `allow=no` |
 | `date-picker` | `registry:block` | A date field with the same closed look as `select`; opens a `calendar`, closes on choice, can block days, and posts yyyy-mm-dd under `name` for `form-dialog` |
 | `action-panel` | `registry:block` | A page whose job is one action, such as opening the door: one 192px round button that locks while it runs, turns `success` for a moment, and says why when it cannot be pressed |
 | `file-upload` | `registry:block` | Drop, paste or pick files; chosen files list as `attachment` rows to remove, files outside `accept` or `maxSize` show as errors with the reason, and `name` posts them inside `form-dialog` |
