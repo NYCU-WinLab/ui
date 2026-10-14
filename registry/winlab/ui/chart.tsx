@@ -6,12 +6,44 @@ import * as RechartsPrimitive from "recharts"
 import { cn } from "@/registry/winlab/lib/utils"
 
 /** The only colors a series may take (DESIGN.md, Color): the main series,
- * a comparison, or a series whose meaning is a state. */
+ * a comparison, a series whose meaning is a state, or one of up to six
+ * series of the same kind stacked into one total (primary, then primary-2
+ * to primary-6, each lighter). */
 export type ChartColor =
-  "primary" | "muted-foreground" | "success" | "destructive" | "warning"
+  | "primary"
+  | "muted-foreground"
+  | "success"
+  | "destructive"
+  | "warning"
+  | PrimaryShade
+
+type PrimaryShade = `primary-${2 | 3 | 4 | 5 | 6}`
+
+// How much primary each shade keeps, mixed toward the page background so
+// the steps hold in both themes.
+const shadeMix = { 2: 80, 3: 64, 4: 50, 5: 38, 6: 28 } as const
+
+/** Colors for n stacked series of the same kind, darkest first. Past six,
+ * merge the rest into one series (其他) in muted-foreground. */
+export const primaryShades: ChartColor[] = [
+  "primary",
+  "primary-2",
+  "primary-3",
+  "primary-4",
+  "primary-5",
+  "primary-6",
+]
+
+function colorValue(color: ChartColor) {
+  const shade = /^primary-(\d)$/.exec(color)
+  if (!shade) return `var(--${color})`
+  const mix = shadeMix[Number(shade[1]) as keyof typeof shadeMix]
+  return `color-mix(in oklch, var(--primary) ${mix}%, var(--background))`
+}
 
 /** One entry per series, keyed by its dataKey: what to call it and its
- * color. The key becomes --color-<key> inside the chart. */
+ * color. The key becomes --color-<key> inside the chart, so it must be a
+ * CSS name: key series by position (s0, s1) when names hold "." or spaces. */
 export type ChartConfig = Record<string, { label: string; color: ChartColor }>
 
 const ChartContext = React.createContext<ChartConfig | null>(null)
@@ -38,7 +70,7 @@ function ChartContainer({
 }) {
   const id = React.useId().replace(/:/g, "")
   const variables = Object.entries(config)
-    .map(([key, series]) => `--color-${key}: var(--${series.color});`)
+    .map(([key, series]) => `--color-${key}: ${colorValue(series.color)};`)
     .join(" ")
   return (
     <ChartContext.Provider value={config}>
