@@ -161,6 +161,15 @@ Quiet things move briefly and ease out; the page's one focus moves on a spring.
 - `tokens:check` rejects other durations (`duration-300`), easing classes and delays.
 - Toasts keep sonner's own timing, which also follows reduced motion.
 
+Animation that keeps running, such as a terminal demo or a drawing that plays a story, must stay smooth on a slow phone. Measure it with the CPU slowed 6 times (Chrome DevTools, Performance) before shipping.
+
+- Draw again only when what is shown changes: a keystroke, a new line, a 100ms spinner tick. A clock may run every frame; React state and DOM writes may not.
+- Stop the frame loop once everything has settled, and wake it with a timer for the next step. Stop it when the element is off screen or the tab is hidden.
+- Write an attribute only when its value changed, and round it first (2 decimals for opacity).
+- Give the moving part its own layer (`will-change-transform`, as `terminal` does), so its redraws repaint only itself and not the page.
+- Do not animate a property on an element that CSS also transitions: each write restarts the transition.
+- The CJK fonts arrive as many small files split by character, and each one lays out the whole page again. Load every file the animation will need in one `document.fonts.load()` call before it starts.
+
 
 ## Pictures of other programs
 
