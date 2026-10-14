@@ -70,6 +70,7 @@ npx shadcn@latest add @winlab/button
 | `collapsible` | `registry:ui` | Unstyled show / hide region |
 | `sonner` | `registry:ui` | Toasts: frosted surface, status-colored icons, action and cancel buttons |
 | `number-ticker` | `registry:ui` | A whole number whose digits roll to their new value |
+| `progress` | `registry:ui` | How much of a whole is used: an 8px muted track with a primary fill |
 | `chart` | `registry:ui` | Recharts in WinLab colors: series take `primary`, `muted-foreground` or a state color; inverted tooltip and a legend |
 | `app-shell` | `registry:block` | The four corners of every WinLab app and the page layouts `column`, `spotlight` and `wide`; set `NEXT_PUBLIC_BUILD_SHA`, `_TIME` and `_URL` at build for the version corner |
 | `confirm-dialog` | `registry:block` | Asks before an action runs; the confirm button names the verb, both buttons lock while it runs, and it closes only when the action finishes |
