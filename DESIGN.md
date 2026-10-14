@@ -129,8 +129,9 @@ Charts use the same colors, not chart-specific tokens:
 | The main series | `primary` |
 | A comparison (last year, average) | `muted-foreground` |
 | A series with a meaning (income, expense, overdue) | `success`, `destructive`, `warning` |
+| Several series of one kind stacked into one total (usage by model, by key) | `primary`, then `primary-2` to `primary-6` (`primaryShades`), each lighter; the rest merged into one 其他 in `muted-foreground` |
 
-A chart that needs more than two series to be told apart by color is split into small multiples or shown as a table. No Tailwind palette colors and no color literals.
+A chart that needs more than two series to be told apart by color is split into small multiples or shown as a table, unless the series are parts of one total: then they stack, in shades of `primary` ordered largest first, at most six before 其他. No Tailwind palette colors and no color literals.
 
 One exception: a handwritten signature is black ink on white paper in every theme, because it ends up on printed documents. `signature-pad` keeps both colors inside its canvas and preview; nothing else may use them.
 
