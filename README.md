@@ -63,7 +63,7 @@ npx shadcn@latest add @winlab/button
 | `switch` | `registry:ui` | On / off toggle, 40 x 24 |
 | `tabs` | `registry:ui` | Segmented tabs |
 | `browser` | `registry:ui` | A browser window with the address in its title bar, framing a picture of a web page drawn with the site's tokens; same edge and corners as `terminal` |
-| `terminal` | `registry:ui` | A terminal window: monospace rows of 1.25rem, two-cell East Asian characters, the dark `terminal-*` palette in both themes |
+| `terminal` | `registry:ui` | A terminal window: monospace rows of 1.25rem, two-cell East Asian characters, the dark `terminal-*` palette (window and shell text) in both themes |
 | `avatar` | `registry:ui` | Round 40px avatar with initials fallback |
 | `tooltip` | `registry:ui` | Short inverted label on hover or focus |
 | `separator` | `registry:ui` | Hairline divider |
@@ -88,7 +88,7 @@ npx shadcn@latest add @winlab/button
 | `focus` | `registry:block` | The one loud thing on a page, under its header: a label, a title with a highlight and a row of facts |
 | `avatar-stack` | `registry:block` | Several people in the space of one; the avatars spread apart when pointed at |
 | `countdown` | `registry:block` | Time left until a moment, to the minute, with rolling digits |
-| `claude-code` | `registry:block` | Claude Code's screen in a `terminal` for demos and install guides: welcome, prompts, MCP calls, permission questions, the `/plugins` and `/mcp` menus; content through props |
+| `claude-code` | `registry:block` | Claude Code's screen in a `terminal` for demos and install guides: welcome, prompts, MCP calls, permission questions, the `/plugins` and `/mcp` menus; content through props; colors are `claude-*` tokens from Claude Code's dark theme |
 | `expand-row` | `registry:block` | A list row that opens in place to show its details |
 | `badge` | `registry:ui` | Status label; variants `default`, `muted`, `outline`, `destructive`, `success`, `warning` |
 
