@@ -289,6 +289,13 @@ export const docs: Doc[] = [
   },
   {
     group: "元件",
+    slug: "browser",
+    title: "瀏覽器",
+    description: "瀏覽器視窗：網址列加網頁畫面，外框和終端機一樣。",
+    item: "browser",
+  },
+  {
+    group: "元件",
     slug: "terminal",
     title: "終端機",
     description: "終端機視窗：等寬列、中文佔兩格，兩種主題都用深色配色。",

@@ -607,6 +607,24 @@
       ]
     },
     {
+      "name": "browser",
+      "type": "registry:ui",
+      "title": "Browser",
+      "description": "A browser window with the address in its title bar, framing a picture of a web page; same edge and corners as terminal.",
+      "dependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/browser.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
+      ]
+    },
+    {
       "name": "terminal",
       "type": "registry:ui",
       "title": "Terminal",
