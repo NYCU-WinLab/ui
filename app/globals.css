@@ -5,30 +5,28 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* terminal: Claude Code's dark palette, the same in both themes */
-  --color-terminal: #0d0d0d;
-  --color-terminal-bar: #1a1a1a;
-  --color-terminal-line: #262626;
-  --color-terminal-foreground: #e4e4e4;
-  --color-terminal-dim: #949494;
-  --color-terminal-warn: #ffd700;
-  --color-terminal-select: #afd7ff;
-  --color-terminal-error: #ff87af;
-  --color-terminal-white: #ffffff;
-  --color-terminal-success: #87d787;
-  /* claude: Claude Code 2.1.296's dark theme, for claude-code screens */
-  --color-claude: #d77757;
-  --color-claude-shimmer: #eb9f7f;
-  --color-claude-permission: #b1b9f9;
-  --color-claude-prompt-border: #888888;
-  --color-claude-text: #ffffff;
-  --color-claude-inactive: #999999;
-  --color-claude-inactive-shimmer: #c1c1c1;
-  --color-claude-subtle: #505050;
-  --color-claude-success: #4eba65;
-  --color-claude-error: #ff6b80;
-  --color-claude-warning: #ffc107;
-  --color-claude-user-message: #373737;
+  --color-terminal: var(--terminal);
+  --color-terminal-bar: var(--terminal-bar);
+  --color-terminal-line: var(--terminal-line);
+  --color-terminal-foreground: var(--terminal-foreground);
+  --color-terminal-dim: var(--terminal-dim);
+  --color-terminal-warn: var(--terminal-warn);
+  --color-terminal-select: var(--terminal-select);
+  --color-terminal-error: var(--terminal-error);
+  --color-terminal-white: var(--terminal-white);
+  --color-terminal-success: var(--terminal-success);
+  --color-claude: var(--claude);
+  --color-claude-shimmer: var(--claude-shimmer);
+  --color-claude-permission: var(--claude-permission);
+  --color-claude-prompt-border: var(--claude-prompt-border);
+  --color-claude-text: var(--claude-text);
+  --color-claude-inactive: var(--claude-inactive);
+  --color-claude-inactive-shimmer: var(--claude-inactive-shimmer);
+  --color-claude-subtle: var(--claude-subtle);
+  --color-claude-success: var(--claude-success);
+  --color-claude-error: var(--claude-error);
+  --color-claude-warning: var(--claude-warning);
+  --color-claude-user-message: var(--claude-user-message);
   --text-*: initial;
   --text-title: 1.5rem;
   --text-title--line-height: 2rem;
@@ -89,6 +87,35 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
+}
+
+/* terminal and claude-code draw other programs, so their colors are the
+   same dark ones in both themes: terminal-* for the window and shell text,
+   claude-* for Claude Code 2.1.296's dark theme. */
+:root,
+.dark {
+  --terminal: #0d0d0d;
+  --terminal-bar: #1a1a1a;
+  --terminal-line: #262626;
+  --terminal-foreground: #e4e4e4;
+  --terminal-dim: #949494;
+  --terminal-warn: #ffd700;
+  --terminal-select: #afd7ff;
+  --terminal-error: #ff87af;
+  --terminal-white: #ffffff;
+  --terminal-success: #87d787;
+  --claude: #d77757;
+  --claude-shimmer: #eb9f7f;
+  --claude-permission: #b1b9f9;
+  --claude-prompt-border: #888888;
+  --claude-text: #ffffff;
+  --claude-inactive: #999999;
+  --claude-inactive-shimmer: #c1c1c1;
+  --claude-subtle: #505050;
+  --claude-success: #4eba65;
+  --claude-error: #ff6b80;
+  --claude-warning: #ffc107;
+  --claude-user-message: #373737;
 }
 
 /* Motion: state changes (hover, toggle, tab) take 150ms, overlays 200ms. */

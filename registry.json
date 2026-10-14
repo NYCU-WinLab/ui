@@ -642,17 +642,29 @@
         "https://ui.winlab.tw/r/utils.json"
       ],
       "cssVars": {
-        "theme": {
-          "color-terminal": "#0d0d0d",
-          "color-terminal-bar": "#1a1a1a",
-          "color-terminal-line": "#262626",
-          "color-terminal-foreground": "#e4e4e4",
-          "color-terminal-dim": "#949494",
-          "color-terminal-warn": "#ffd700",
-          "color-terminal-select": "#afd7ff",
-          "color-terminal-error": "#ff87af",
-          "color-terminal-white": "#ffffff",
-          "color-terminal-success": "#87d787"
+        "light": {
+          "terminal": "#0d0d0d",
+          "terminal-bar": "#1a1a1a",
+          "terminal-line": "#262626",
+          "terminal-foreground": "#e4e4e4",
+          "terminal-dim": "#949494",
+          "terminal-warn": "#ffd700",
+          "terminal-select": "#afd7ff",
+          "terminal-error": "#ff87af",
+          "terminal-white": "#ffffff",
+          "terminal-success": "#87d787"
+        },
+        "dark": {
+          "terminal": "#0d0d0d",
+          "terminal-bar": "#1a1a1a",
+          "terminal-line": "#262626",
+          "terminal-foreground": "#e4e4e4",
+          "terminal-dim": "#949494",
+          "terminal-warn": "#ffd700",
+          "terminal-select": "#afd7ff",
+          "terminal-error": "#ff87af",
+          "terminal-white": "#ffffff",
+          "terminal-success": "#87d787"
         }
       },
       "css": {
@@ -1231,19 +1243,33 @@
         "https://ui.winlab.tw/r/terminal.json"
       ],
       "cssVars": {
-        "theme": {
-          "color-claude": "#d77757",
-          "color-claude-shimmer": "#eb9f7f",
-          "color-claude-permission": "#b1b9f9",
-          "color-claude-prompt-border": "#888888",
-          "color-claude-text": "#ffffff",
-          "color-claude-inactive": "#999999",
-          "color-claude-inactive-shimmer": "#c1c1c1",
-          "color-claude-subtle": "#505050",
-          "color-claude-success": "#4eba65",
-          "color-claude-error": "#ff6b80",
-          "color-claude-warning": "#ffc107",
-          "color-claude-user-message": "#373737"
+        "light": {
+          "claude": "#d77757",
+          "claude-shimmer": "#eb9f7f",
+          "claude-permission": "#b1b9f9",
+          "claude-prompt-border": "#888888",
+          "claude-text": "#ffffff",
+          "claude-inactive": "#999999",
+          "claude-inactive-shimmer": "#c1c1c1",
+          "claude-subtle": "#505050",
+          "claude-success": "#4eba65",
+          "claude-error": "#ff6b80",
+          "claude-warning": "#ffc107",
+          "claude-user-message": "#373737"
+        },
+        "dark": {
+          "claude": "#d77757",
+          "claude-shimmer": "#eb9f7f",
+          "claude-permission": "#b1b9f9",
+          "claude-prompt-border": "#888888",
+          "claude-text": "#ffffff",
+          "claude-inactive": "#999999",
+          "claude-inactive-shimmer": "#c1c1c1",
+          "claude-subtle": "#505050",
+          "claude-success": "#4eba65",
+          "claude-error": "#ff6b80",
+          "claude-warning": "#ffc107",
+          "claude-user-message": "#373737"
         }
       },
       "css": {
