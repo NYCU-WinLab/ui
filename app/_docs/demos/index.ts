@@ -34,6 +34,7 @@ import { Demo as Command } from "@/app/_docs/demos/command"
 import { Demo as DropdownMenu } from "@/app/_docs/demos/dropdown-menu"
 import { Demo as Tabs } from "@/app/_docs/demos/tabs"
 import { Demo as TerminalDemo } from "@/app/_docs/demos/terminal"
+import { Demo as BrowserDemo } from "@/app/_docs/demos/browser"
 import { Demo as ClaudeCodeDemo } from "@/app/_docs/demos/claude-code"
 import { Demo as Avatar } from "@/app/_docs/demos/avatar"
 import { Demo as Tooltip } from "@/app/_docs/demos/tooltip"
@@ -85,6 +86,7 @@ export const demos: Record<string, ComponentType> = {
   "dropdown-menu": DropdownMenu,
   tabs: Tabs,
   terminal: TerminalDemo,
+  browser: BrowserDemo,
   avatar: Avatar,
   tooltip: Tooltip,
   separator: Separator,

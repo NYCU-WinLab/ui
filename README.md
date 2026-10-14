@@ -62,6 +62,7 @@ npx shadcn@latest add @winlab/button
 | `checkbox` | `registry:ui` | Round 20px checkbox |
 | `switch` | `registry:ui` | On / off toggle, 40 x 24 |
 | `tabs` | `registry:ui` | Segmented tabs |
+| `browser` | `registry:ui` | A browser window with the address in its title bar, framing a picture of a web page drawn with the site's tokens; same edge and corners as `terminal` |
 | `terminal` | `registry:ui` | A terminal window: monospace rows of 1.25rem, two-cell East Asian characters, the dark `terminal-*` palette in both themes |
 | `avatar` | `registry:ui` | Round 40px avatar with initials fallback |
 | `tooltip` | `registry:ui` | Short inverted label on hover or focus |
