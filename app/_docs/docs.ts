@@ -119,6 +119,13 @@ export const docs: Doc[] = [
   },
   {
     group: "區塊",
+    slug: "consent",
+    title: "授權頁",
+    description: "讓其他程式代替成員操作前的允許與取消。",
+    item: "consent",
+  },
+  {
+    group: "區塊",
     slug: "date-picker",
     title: "日期選擇",
     description: "外觀跟其他欄位一樣，點開是月曆，選了就關。",

@@ -996,6 +996,22 @@
       ]
     },
     {
+      "name": "consent",
+      "type": "registry:block",
+      "title": "Consent",
+      "description": "The page where a member lets a program act for them, such as an MCP client signing in: a plain form that posts allow=yes or allow=no.",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/consent/consent.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/button.json"
+      ]
+    },
+    {
       "name": "date-picker",
       "type": "registry:block",
       "title": "Date Picker",
