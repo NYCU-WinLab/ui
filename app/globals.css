@@ -10,71 +10,85 @@
   --color-terminal-bar: #1a1a1a;
   --color-terminal-line: #262626;
   --color-terminal-foreground: #e4e4e4;
-  --color-terminal-claude: #d77757;
-  --color-terminal-shimmer: #eb9f7f;
   --color-terminal-dim: #949494;
-  --color-terminal-rule: #808080;
-  --color-terminal-soft: #a8a8a8;
   --color-terminal-warn: #ffd700;
   --color-terminal-select: #afd7ff;
   --color-terminal-error: #ff87af;
   --color-terminal-white: #ffffff;
-  --color-terminal-prompt: #3a3a3a;
   --color-terminal-success: #87d787;
-    --text-*: initial;
-    --text-title: 1.5rem;
-    --text-title--line-height: 2rem;
-    --text-body: 1rem;
-    --text-body--line-height: 1.5rem;
-    --font-sans: var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-tc), sans-serif;
-    --font-heading: var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-tc), sans-serif;
-    --font-mono: var(--font-jetbrains-mono), var(--font-noto-sans-jp), var(--font-noto-sans-tc), monospace;
-    --color-ring: var(--ring);
-    --color-input: var(--input);
-    --color-border: var(--border);
-    --color-destructive: var(--destructive);
-    --color-success: var(--success);
-    --color-warning: var(--warning);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-muted: var(--muted);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-primary: var(--primary);
-    --color-foreground: var(--foreground);
-    --color-background: var(--background);
-    --radius-control: var(--radius);
-    --radius-menu: calc(var(--radius) + 0.25rem);
-    --radius-surface: calc(var(--radius) + 1.5rem);
+  /* claude: Claude Code 2.1.296's dark theme, for claude-code screens */
+  --color-claude: #d77757;
+  --color-claude-shimmer: #eb9f7f;
+  --color-claude-permission: #b1b9f9;
+  --color-claude-prompt-border: #888888;
+  --color-claude-text: #ffffff;
+  --color-claude-inactive: #999999;
+  --color-claude-inactive-shimmer: #c1c1c1;
+  --color-claude-subtle: #505050;
+  --color-claude-success: #4eba65;
+  --color-claude-error: #ff6b80;
+  --color-claude-warning: #ffc107;
+  --color-claude-user-message: #373737;
+  --text-*: initial;
+  --text-title: 1.5rem;
+  --text-title--line-height: 2rem;
+  --text-body: 1rem;
+  --text-body--line-height: 1.5rem;
+  --font-sans:
+    var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-tc),
+    sans-serif;
+  --font-heading:
+    var(--font-inter), var(--font-noto-sans-jp), var(--font-noto-sans-tc),
+    sans-serif;
+  --font-mono:
+    var(--font-jetbrains-mono), var(--font-noto-sans-jp),
+    var(--font-noto-sans-tc), monospace;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-control: var(--radius);
+  --radius-menu: calc(var(--radius) + 0.25rem);
+  --radius-surface: calc(var(--radius) + 1.5rem);
 }
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --primary: oklch(0.378 0.182 262.5);
-    --primary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --success: oklch(0.52 0.09 185);
-    --warning: oklch(0.55 0.112 85);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --radius: 1rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --primary: oklch(0.378 0.182 262.5);
+  --primary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --success: oklch(0.52 0.09 185);
+  --warning: oklch(0.55 0.112 85);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 1rem;
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --primary: oklch(0.68 0.168 262.5);
-    --primary-foreground: oklch(0.145 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --success: oklch(0.78 0.1 185);
-    --warning: oklch(0.84 0.12 85);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --primary: oklch(0.68 0.168 262.5);
+  --primary-foreground: oklch(0.145 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --success: oklch(0.78 0.1 185);
+  --warning: oklch(0.84 0.12 85);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
 }
 
 /* Motion: state changes (hover, toggle, tab) take 150ms, overlays 200ms. */
@@ -96,8 +110,60 @@
 @utility duration-spring {
   --tw-duration: 500ms;
   transition-duration: 500ms;
-  --tw-ease: linear(0, 0.04, 0.142, 0.278, 0.429, 0.578, 0.715, 0.833, 0.928, 1.001, 1.051, 1.083, 1.099, 1.103, 1.097, 1.086, 1.072, 1.056, 1.041, 1.027, 1.016, 1.006, 0.999, 0.994, 1);
-  transition-timing-function: linear(0, 0.04, 0.142, 0.278, 0.429, 0.578, 0.715, 0.833, 0.928, 1.001, 1.051, 1.083, 1.099, 1.103, 1.097, 1.086, 1.072, 1.056, 1.041, 1.027, 1.016, 1.006, 0.999, 0.994, 1);
+  --tw-ease: linear(
+    0,
+    0.04,
+    0.142,
+    0.278,
+    0.429,
+    0.578,
+    0.715,
+    0.833,
+    0.928,
+    1.001,
+    1.051,
+    1.083,
+    1.099,
+    1.103,
+    1.097,
+    1.086,
+    1.072,
+    1.056,
+    1.041,
+    1.027,
+    1.016,
+    1.006,
+    0.999,
+    0.994,
+    1
+  );
+  transition-timing-function: linear(
+    0,
+    0.04,
+    0.142,
+    0.278,
+    0.429,
+    0.578,
+    0.715,
+    0.833,
+    0.928,
+    1.001,
+    1.051,
+    1.083,
+    1.099,
+    1.103,
+    1.097,
+    1.086,
+    1.072,
+    1.056,
+    1.041,
+    1.027,
+    1.016,
+    1.006,
+    0.999,
+    0.994,
+    1
+  );
 }
 
 /* Arriving on the page: the focus rises on the spring, a list's rows
@@ -116,7 +182,35 @@
 }
 
 @utility animate-rise {
-  animation: rise 500ms linear(0, 0.04, 0.142, 0.278, 0.429, 0.578, 0.715, 0.833, 0.928, 1.001, 1.051, 1.083, 1.099, 1.103, 1.097, 1.086, 1.072, 1.056, 1.041, 1.027, 1.016, 1.006, 0.999, 0.994, 1) both;
+  animation: rise 500ms
+    linear(
+      0,
+      0.04,
+      0.142,
+      0.278,
+      0.429,
+      0.578,
+      0.715,
+      0.833,
+      0.928,
+      1.001,
+      1.051,
+      1.083,
+      1.099,
+      1.103,
+      1.097,
+      1.086,
+      1.072,
+      1.056,
+      1.041,
+      1.027,
+      1.016,
+      1.006,
+      0.999,
+      0.994,
+      1
+    )
+    both;
 }
 
 @utility stagger-rise {
@@ -151,7 +245,34 @@
 
 /* A number-ticker digit column; data-digit picks the row. */
 @utility digit-roll {
-  transition: translate 500ms linear(0, 0.04, 0.142, 0.278, 0.429, 0.578, 0.715, 0.833, 0.928, 1.001, 1.051, 1.083, 1.099, 1.103, 1.097, 1.086, 1.072, 1.056, 1.041, 1.027, 1.016, 1.006, 0.999, 0.994, 1);
+  transition: translate 500ms
+    linear(
+      0,
+      0.04,
+      0.142,
+      0.278,
+      0.429,
+      0.578,
+      0.715,
+      0.833,
+      0.928,
+      1.001,
+      1.051,
+      1.083,
+      1.099,
+      1.103,
+      1.097,
+      1.086,
+      1.072,
+      1.056,
+      1.041,
+      1.027,
+      1.016,
+      1.006,
+      0.999,
+      0.994,
+      1
+    );
   &[data-digit="1"] {
     translate: 0 -10%;
   }
@@ -182,7 +303,9 @@
 }
 /* Reduced motion keeps the fades and drops every zoom and slide. */
 @media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
+  *,
+  ::before,
+  ::after {
     --tw-enter-scale: 1 !important;
     --tw-exit-scale: 1 !important;
     --tw-enter-translate-x: 0 !important;
@@ -190,7 +313,8 @@
     --tw-exit-translate-x: 0 !important;
     --tw-exit-translate-y: 0 !important;
   }
-  .animate-rise, .stagger-rise > * {
+  .animate-rise,
+  .stagger-rise > * {
     animation-name: appear;
   }
   .digit-roll {
@@ -206,13 +330,13 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    }
+  }
   body {
     @apply bg-background text-foreground;
-    }
+  }
   html {
     @apply font-sans;
-    }
+  }
 }
 /* terminal: widths and indents in character cells */
 @utility indent-* {
@@ -239,9 +363,17 @@
   background-repeat: no-repeat;
 }
 @utility cell-quad {
-  background-image: linear-gradient(var(--cell-tl, transparent) 0 0), linear-gradient(var(--cell-tr, transparent) 0 0), linear-gradient(var(--cell-bl, transparent) 0 0), linear-gradient(var(--cell-br, transparent) 0 0);
+  background-image:
+    linear-gradient(var(--cell-tl, transparent) 0 0),
+    linear-gradient(var(--cell-tr, transparent) 0 0),
+    linear-gradient(var(--cell-bl, transparent) 0 0),
+    linear-gradient(var(--cell-br, transparent) 0 0);
   background-size: 50% 50%;
-  background-position: left top, right top, left bottom, right bottom;
+  background-position:
+    left top,
+    right top,
+    left bottom,
+    right bottom;
 }
 @utility cell-tl {
   --cell-tl: currentColor;
@@ -265,27 +397,31 @@
   background-size: 1px 100%;
   background-position: center;
 }
-/* terminal: Claude Code's pulses (a running tool's verb, the thinking label) */
-@keyframes terminal-claude {
+/* claude-code: a running tool's verb and the thinking label pulse */
+@keyframes claude-pulse {
   50% {
-    color: var(--color-terminal-shimmer);
+    color: var(--color-claude-shimmer);
   }
 }
-@keyframes terminal-thinking {
+@keyframes claude-thinking {
   50% {
-    color: #b9b9b9;
+    color: color-mix(
+      in srgb,
+      var(--color-claude-inactive-shimmer) 80%,
+      var(--color-claude-inactive)
+    );
   }
 }
-@utility animate-terminal-claude {
-  color: var(--color-terminal-claude);
-  animation: terminal-claude 2s ease-in-out infinite;
+@utility animate-claude-pulse {
+  color: var(--color-claude);
+  animation: claude-pulse 2s ease-in-out infinite;
   @media (prefers-reduced-motion: reduce) {
     animation: none;
   }
 }
-@utility animate-terminal-thinking {
-  color: #999999;
-  animation: terminal-thinking 2s ease-in-out infinite;
+@utility animate-claude-thinking {
+  color: var(--color-claude-inactive);
+  animation: claude-thinking 2s ease-in-out infinite;
   @media (prefers-reduced-motion: reduce) {
     animation: none;
   }

@@ -647,16 +647,11 @@
           "color-terminal-bar": "#1a1a1a",
           "color-terminal-line": "#262626",
           "color-terminal-foreground": "#e4e4e4",
-          "color-terminal-claude": "#d77757",
-          "color-terminal-shimmer": "#eb9f7f",
           "color-terminal-dim": "#949494",
-          "color-terminal-rule": "#808080",
-          "color-terminal-soft": "#a8a8a8",
           "color-terminal-warn": "#ffd700",
           "color-terminal-select": "#afd7ff",
           "color-terminal-error": "#ff87af",
           "color-terminal-white": "#ffffff",
-          "color-terminal-prompt": "#3a3a3a",
           "color-terminal-success": "#87d787"
         }
       },
@@ -709,30 +704,6 @@
           "background-image": "linear-gradient(currentColor 0 0)",
           "background-size": "1px 100%",
           "background-position": "center"
-        },
-        "@keyframes terminal-claude": {
-          "50%": {
-            "color": "var(--color-terminal-shimmer)"
-          }
-        },
-        "@keyframes terminal-thinking": {
-          "50%": {
-            "color": "#b9b9b9"
-          }
-        },
-        "@utility animate-terminal-claude": {
-          "color": "var(--color-terminal-claude)",
-          "animation": "terminal-claude 2s ease-in-out infinite",
-          "@media (prefers-reduced-motion: reduce)": {
-            "animation": "none"
-          }
-        },
-        "@utility animate-terminal-thinking": {
-          "color": "#999999",
-          "animation": "terminal-thinking 2s ease-in-out infinite",
-          "@media (prefers-reduced-motion: reduce)": {
-            "animation": "none"
-          }
         }
       }
     },
@@ -1245,7 +1216,7 @@
       "name": "claude-code",
       "type": "registry:block",
       "title": "Claude Code",
-      "description": "Claude Code's screen in a terminal for demos and install guides: welcome, prompts, MCP calls, permission questions and the /plugins and /mcp menus.",
+      "description": "Claude Code's screen in a terminal for demos and install guides: welcome, prompts, MCP calls, permission questions and the /plugins and /mcp menus; colors are claude-* tokens from Claude Code's dark theme.",
       "dependencies": [
         "cn"
       ],
@@ -1258,7 +1229,49 @@
       "registryDependencies": [
         "https://ui.winlab.tw/r/utils.json",
         "https://ui.winlab.tw/r/terminal.json"
-      ]
+      ],
+      "cssVars": {
+        "theme": {
+          "color-claude": "#d77757",
+          "color-claude-shimmer": "#eb9f7f",
+          "color-claude-permission": "#b1b9f9",
+          "color-claude-prompt-border": "#888888",
+          "color-claude-text": "#ffffff",
+          "color-claude-inactive": "#999999",
+          "color-claude-inactive-shimmer": "#c1c1c1",
+          "color-claude-subtle": "#505050",
+          "color-claude-success": "#4eba65",
+          "color-claude-error": "#ff6b80",
+          "color-claude-warning": "#ffc107",
+          "color-claude-user-message": "#373737"
+        }
+      },
+      "css": {
+        "@keyframes claude-pulse": {
+          "50%": {
+            "color": "var(--color-claude-shimmer)"
+          }
+        },
+        "@keyframes claude-thinking": {
+          "50%": {
+            "color": "color-mix(in srgb, var(--color-claude-inactive-shimmer) 80%, var(--color-claude-inactive))"
+          }
+        },
+        "@utility animate-claude-pulse": {
+          "color": "var(--color-claude)",
+          "animation": "claude-pulse 2s ease-in-out infinite",
+          "@media (prefers-reduced-motion: reduce)": {
+            "animation": "none"
+          }
+        },
+        "@utility animate-claude-thinking": {
+          "color": "var(--color-claude-inactive)",
+          "animation": "claude-thinking 2s ease-in-out infinite",
+          "@media (prefers-reduced-motion: reduce)": {
+            "animation": "none"
+          }
+        }
+      }
     }
   ]
 }

@@ -2,8 +2,9 @@
 
 import * as React from "react"
 
-import { Terminal, TerminalText } from "@/registry/winlab/ui/terminal"
+import { Terminal } from "@/registry/winlab/ui/terminal"
 import {
+  ClaudeText,
   Done,
   InputBox,
   McpCall,
@@ -56,12 +57,12 @@ export function Demo() {
           lines={[
             <>
               sandbox 開好了：
-              <TerminalText bold>Debian 13 minimal</TerminalText>
+              <ClaudeText bold>Debian 13 minimal</ClaudeText>
               ，1 vCPU、1 GiB RAM、10 GiB 硬碟。
             </>,
-            <TerminalText key="ssh" tone="select">
+            <ClaudeText key="ssh" tone="permission">
               ssh sandbox.alice
-            </TerminalText>,
+            </ClaudeText>,
           ]}
         />
         <Done seed="demo" seconds={34} time="10:18 PM" />
