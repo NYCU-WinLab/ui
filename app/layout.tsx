@@ -7,7 +7,7 @@ import {
 } from "next/font/google"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/registry/winlab/blocks/theme-provider/theme-provider"
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/registry/winlab/ui/sonner"
 
