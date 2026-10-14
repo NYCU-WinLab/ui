@@ -89,6 +89,7 @@ npx shadcn@latest add @winlab/button
 | `avatar-stack` | `registry:block` | Several people in the space of one; the avatars spread apart when pointed at |
 | `countdown` | `registry:block` | Time left until a moment, to the minute, with rolling digits |
 | `claude-code` | `registry:block` | Claude Code's screen in a `terminal` for demos and install guides: welcome, prompts, MCP calls, permission questions, the `/plugins` and `/mcp` menus; content through props; colors are `claude-*` tokens from Claude Code's dark theme |
+| `typing` | `registry:lib` | Timed keystrokes for typing animations: a steady pace (150ms a key, about 80 WPM) with jitter; Chinese typed as zhuyin that turns into the character on its tone key; `InputBox` shows the zhuyin with `composing` |
 | `expand-row` | `registry:block` | A list row that opens in place to show its details |
 | `badge` | `registry:ui` | Status label; variants `default`, `muted`, `outline`, `destructive`, `success`, `warning` |
 

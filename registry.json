@@ -296,6 +296,18 @@
       ]
     },
     {
+      "name": "typing",
+      "type": "registry:lib",
+      "title": "Typing",
+      "description": "Timed keystrokes for typing animations: a steady pace with jitter, Chinese typed as zhuyin that turns into the character on its tone key.",
+      "files": [
+        {
+          "path": "registry/winlab/lib/typing.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
@@ -1240,7 +1252,8 @@
       ],
       "registryDependencies": [
         "https://ui.winlab.tw/r/utils.json",
-        "https://ui.winlab.tw/r/terminal.json"
+        "https://ui.winlab.tw/r/terminal.json",
+        "https://ui.winlab.tw/r/typing.json"
       ],
       "cssVars": {
         "light": {
