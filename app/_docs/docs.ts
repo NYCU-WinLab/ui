@@ -84,6 +84,13 @@ export const docs: Doc[] = [
   },
   {
     group: "區塊",
+    slug: "section",
+    title: "區塊分組",
+    description: "頁面上的一組內容：上方一條分隔線與標題，不用卡片。",
+    item: "section",
+  },
+  {
+    group: "區塊",
     slug: "page-header",
     title: "頁首",
     description: "頁面標題與這頁的動作按鈕。",

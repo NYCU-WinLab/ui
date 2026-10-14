@@ -1044,6 +1044,24 @@
       ]
     },
     {
+      "name": "section",
+      "type": "registry:block",
+      "title": "Section",
+      "description": "One group on a page instead of a card: a divider above it, a title and the group's actions.",
+      "dependencies": [
+        "cn"
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/section/section.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "list-skeleton",
       "type": "registry:block",
       "title": "List Skeleton",

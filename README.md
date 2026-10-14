@@ -77,6 +77,7 @@ npx shadcn@latest add @winlab/button
 | `form-dialog` | `registry:block` | A short form in a dialog; `FormField` puts a label over its control, fields and buttons lock while it submits, and it closes only when the submit finishes |
 | `empty-state` | `registry:block` | What a list shows with no rows: "還沒有{noun}" or "找不到符合「{query}」的{noun}", with the next action; `TableEmpty` is the same sentence as a table row |
 | `page-header` | `registry:block` | The top of a page: `text-title` title, and the page's own actions on the right (under the title on a phone); `SectionHeader` is the same one level down |
+| `section` | `registry:block` | One group on a page instead of a card: a `border-t` divider, a title (h2) and the group's actions |
 | `list-skeleton` | `registry:block` | Placeholder rows for a list (`ListSkeleton`) or a table body (`TableSkeleton`) on first load only, split by the same dividers as the real rows |
 | `member-combobox` | `registry:block` | Pick lab members by name or email; one member closes on choice, `multiple` keeps the menu open and toggles |
 | `field-list` | `registry:block` | One record's fields as a `dl`: muted names in a left column, values beside them (under them on a phone), split by dividers |
