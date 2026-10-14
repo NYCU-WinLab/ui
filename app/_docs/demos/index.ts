@@ -6,6 +6,7 @@ import { Demo as ConfirmDialog } from "@/app/_docs/demos/confirm-dialog"
 import { Demo as FormDialogDemo } from "@/app/_docs/demos/form-dialog"
 import { Demo as EmptyStateDemo } from "@/app/_docs/demos/empty-state"
 import { Demo as PageHeaderDemo } from "@/app/_docs/demos/page-header"
+import { Demo as SectionDemo } from "@/app/_docs/demos/section"
 import { Demo as ListSkeletonDemo } from "@/app/_docs/demos/list-skeleton"
 import { Demo as MemberComboboxDemo } from "@/app/_docs/demos/member-combobox"
 import { Demo as FieldListDemo } from "@/app/_docs/demos/field-list"
@@ -59,6 +60,7 @@ export const demos: Record<string, ComponentType> = {
   "form-dialog": FormDialogDemo,
   "empty-state": EmptyStateDemo,
   "page-header": PageHeaderDemo,
+  section: SectionDemo,
   "list-skeleton": ListSkeletonDemo,
   "member-combobox": MemberComboboxDemo,
   "field-list": FieldListDemo,

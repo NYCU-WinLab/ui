@@ -55,7 +55,7 @@ The interface is flat and has exactly two layers.
 | 1. Page | Everything that is on the page when it loads: titles, text, lists, tables, long forms | None. No borders around groups, no shadows, no card backgrounds |
 | 2. Overlay | Anything called up on top of the page: `dialog`, `alert-dialog`, the `select` menu, popovers and menus | No fill: frosted glass (`bg-transparent backdrop-blur-md`, 12px), a border, a shadow, `rounded-surface` or `rounded-menu`. The dialog overlay is the same frosted glass with no tint |
 
-- Group page content with spacing and, where a line helps, a divider (`border-t` / `border-b`). Never wrap a group in a frame.
+- Group page content with spacing and, where a line helps, a divider (`border-t` / `border-b`). Never wrap a group in a frame. Where another kit would use a card, use `section`: a divider above, the group's title and its actions.
 - Every pick-a-value control (select, combobox) looks like an input when closed: one shared trigger class. Never use a button as a field.
 - Controls keep their own outline: inputs, selects and outline buttons are controls, not containers. A segmented tab list may use the `muted` fill: it is one control.
 - Tooltips are the one inverted overlay (`bg-foreground text-background`): a few words over any content must stay legible, so they are not frosted.
