@@ -4,12 +4,12 @@ These rules hold for every WinLab app. `bun run tokens:check` enforces the parts
 
 ## App shell
 
-Every WinLab app is framed by four fixed corners, 24px in from the viewport. `app-shell` draws them. By default each corner has the job below; an app that needs something else in a corner replaces it through `corners`, built from `CornerLink` and `CornerTip` so it keeps the corner's type, color and tips.
+Every WinLab app is framed by four fixed corners, 24px in from the viewport. `app-shell` draws them. By default each corner has the job below; an app that needs something else in a corner replaces it through `corners`, built from `CornerLink`, `CornerTip` and `cornerLinkClassName` (for a corner item that is not a link) so it keeps the corner's type, color and tips.
 
 | Corner | Default job | Default content |
 |--------|-----|---------|
 | Top left | Where you are | Breadcrumb: the lab (portal home), then the app (its home) |
-| Top right | Where you can go | The app's pages, the current one in `foreground`; last, the account: "登入" when signed out, the member's name when signed in |
+| Top right | Where you can go | The app's pages, the current one in `foreground`; last, the account: "登入" when signed out, the member's name when signed in (a link to their page, or a menu with items such as 登出) |
 | Bottom left | Which build | The short commit of this build, linking to its CD run, with the build time (Asia/Taipei) as its tip |
 | Bottom right | Whose it is | © year; its tip says NYCU WinLab |
 
@@ -20,7 +20,7 @@ Every WinLab app is framed by four fixed corners, 24px in from the viewport. `ap
 - Every corner item has a tip (`tip` is required in `app-shell`, so a missing one fails the type check) that says what its label leaves out (where a link goes, what a page holds, who owns the site). A tip never repeats the label. Tips open at once, toward the page, lined up with the corner's outer edge; touch never opens them, so nothing depends on one.
 - Corner text is `text-body` in `muted-foreground`, links turn `foreground` on hover and when current.
 - Content that scrolls under the corners fades into a 64px band of frosted glass at the top and bottom edges.
-- No menu button: an app keeps its pages few enough to fit beside the breadcrumb on a phone.
+- Below `md` the pages fold into one menu button (頁面選單) holding the same links; the breadcrumb and the account stay. Keep an app to about five pages per area, so the wide layout still fits on one line. An app with a second area (such as `/admin`) shows that area's pages there instead, with one more breadcrumb.
 
 ## Page layouts
 

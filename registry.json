@@ -960,13 +960,16 @@
       "name": "app-shell",
       "type": "registry:block",
       "title": "App Shell",
-      "description": "The four corners of a WinLab app: breadcrumb, page nav and account, build version, copyright year.",
+      "description": "The four corners of a WinLab app: breadcrumb, page nav (a menu on narrow screens) and account, build version, copyright year.",
       "dependencies": [
-        "cn"
+        "cn",
+        "lucide-react"
       ],
       "registryDependencies": [
         "https://ui.winlab.tw/r/utils.json",
-        "https://ui.winlab.tw/r/tooltip.json"
+        "https://ui.winlab.tw/r/tooltip.json",
+        "https://ui.winlab.tw/r/popover.json",
+        "https://ui.winlab.tw/r/dropdown-menu.json"
       ],
       "files": [
         {
