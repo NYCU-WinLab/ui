@@ -42,9 +42,12 @@ function SelectTrigger({
       {...props}
     >
       {children}
-      <SelectPrimitive.Icon
-        render={<ChevronDownIcon className="text-muted-foreground" />}
-      />
+      {/* Icon's default content is the text "▼"; passing the svg as children
+          replaces it, while render would keep "▼" inside the svg and in the
+          trigger's text. */}
+      <SelectPrimitive.Icon className="flex text-muted-foreground">
+        <ChevronDownIcon />
+      </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   )
 }
