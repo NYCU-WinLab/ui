@@ -38,9 +38,11 @@ type AccountMenu = { label: string; tip: string; menu: React.ReactNode }
 // in a corner passes it in `corners`, built from CornerLink and CornerTip so
 // it keeps the corner's look.
 //   top left     where you are: breadcrumb back to the lab and the app
-//   top right    where you can go: this app's pages, then the account (登入
-//                when signed out, the member's name when signed in). Below
-//                md the pages fold into one menu button; the account stays.
+//   top right    where you can go: this app's pages, then its actions (such
+//                as 搜尋 or 上傳, opening over any page), then the account
+//                (登入 when signed out, the member's name when signed in).
+//                Below md the pages fold into one menu button; the actions
+//                and the account stay.
 //   bottom left  which build: the commit this build came from
 //   bottom right the copyright year; the tip names the owner
 // Every item can carry a tip, opening toward the page and lined up with the
@@ -54,6 +56,7 @@ type AccountMenu = { label: string; tip: string; menu: React.ReactNode }
 function AppShell({
   breadcrumb = [],
   nav = [],
+  actions,
   account,
   layout = "column",
   corners,
@@ -61,6 +64,9 @@ function AppShell({
 }: {
   breadcrumb?: Crumb[]
   nav?: NavItem[]
+  /** After the pages in the top right: buttons that work on any page, built
+   * from cornerLinkClassName. */
+  actions?: React.ReactNode
   /** Last in the top right: { label: "登入", href: "/sign-in" } signed out;
    * signed in, the member's name linking to their page, or opening `menu`. */
   account?: NavItem | AccountMenu
@@ -125,6 +131,7 @@ function AppShell({
         {corners?.topRight ?? (
           <>
             {nav.length > 0 && <PageNav nav={nav} isCurrent={isCurrent} />}
+            {actions}
             {account && <Account account={account} isCurrent={isCurrent} />}
           </>
         )}
@@ -330,4 +337,4 @@ function CornerLink({
   return <Link className={cn(cornerLinkClassName, className)} {...props} />
 }
 
-export { AppShell, CornerLink, CornerTip, cornerLinkClassName }
+export { AppShell, BuildVersion, CornerLink, CornerTip, cornerLinkClassName }
