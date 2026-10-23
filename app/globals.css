@@ -53,6 +53,7 @@
   --color-primary: var(--primary);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
+  --color-overlay: var(--overlay);
   --radius-control: var(--radius);
   --radius-menu: calc(var(--radius) + 0.25rem);
   --radius-surface: calc(var(--radius) + 1.5rem);
@@ -60,6 +61,7 @@
 
 :root {
   --background: oklch(1 0 0);
+  --overlay: oklch(1 0 0 / 85%);
   --foreground: oklch(0.145 0 0);
   --primary: oklch(0.378 0.182 262.5);
   --primary-foreground: oklch(0.985 0 0);
@@ -76,6 +78,7 @@
 
 .dark {
   --background: oklch(0.145 0 0);
+  --overlay: oklch(0.145 0 0 / 85%);
   --foreground: oklch(0.985 0 0);
   --primary: oklch(0.68 0.168 262.5);
   --primary-foreground: oklch(0.145 0 0);

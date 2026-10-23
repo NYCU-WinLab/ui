@@ -53,7 +53,7 @@ The interface is flat and has exactly two layers.
 | Layer | What lives there | Surface |
 |-------|------------------|---------|
 | 1. Page | Everything that is on the page when it loads: titles, text, lists, tables, long forms | None. No borders around groups, no shadows, no card backgrounds |
-| 2. Overlay | Anything called up on top of the page: `dialog`, `alert-dialog`, the `select` menu, popovers and menus | No fill: frosted glass (`bg-transparent backdrop-blur-md`, 12px), a border, a shadow, `rounded-surface` or `rounded-menu`. The dialog overlay is the same frosted glass with no tint |
+| 2. Overlay | Anything called up on top of the page: `dialog`, `alert-dialog`, the `select` menu, popovers and menus | The `overlay` fill (the background at 85%) over frosted glass (`bg-overlay backdrop-blur-md`, 12px), a border, a shadow, `rounded-surface` or `rounded-menu`, so fields stay legible over any page. The dialog backdrop is frosted glass with no fill |
 
 - Group page content with spacing and, where a line helps, a divider (`border-t` / `border-b`). Never wrap a group in a frame. Where another kit would use a card, use `section`: a divider above, the group's title and its actions.
 - Every pick-a-value control (select, combobox) looks like an input when closed: one shared trigger class. Never use a button as a field.
@@ -120,7 +120,7 @@ A new container picks its radius from this rule, not by eye. If its padding is n
 
 ## Color
 
-Use the theme tokens only: `background` / `foreground`, `primary`, `muted` (the one neutral fill and the secondary text color), `border` / `input` / `ring`, `destructive`, `success`, `warning`. There is no `secondary`, `accent` or `card` (they duplicated `muted` or `background`), no `popover` (overlays are frosted glass) and no `sidebar-*`: a sidebar needs a second surface color, which layer 1 does not have. Navigation lives in the app shell's corners or in an overlay.
+Use the theme tokens only: `background` / `foreground`, `primary`, `muted` (the one neutral fill and the secondary text color), `border` / `input` / `ring`, `destructive`, `success`, `warning`. There is no `secondary`, `accent` or `card` (they duplicated `muted` or `background`), no `popover` (overlays use `overlay`, the background at 85%) and no `sidebar-*`: a sidebar needs a second surface color, which layer 1 does not have. Navigation lives in the app shell's corners or in an overlay.
 
 Charts use the same colors, not chart-specific tokens:
 
