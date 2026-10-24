@@ -24,9 +24,10 @@ import {
   TooltipTrigger,
 } from "@/registry/winlab/ui/tooltip"
 
-// Every corner item has a tip, required so none is forgotten. It says what
-// the label leaves out (where a link goes, what a page holds, whose account
-// it is); it never repeats the label.
+// Breadcrumb, page and account items require a tip, so none is forgotten. It
+// says what the label leaves out (where a link goes, what a page holds, whose
+// account it is); it never repeats the label. Only custom corner content
+// built from CornerTip may leave `tip` out.
 type Crumb = { label: string; href: string; tip: string }
 type NavItem = { label: string; href: string; tip: string }
 // Signed in, the account can open a menu instead of a page: the member's
@@ -45,8 +46,8 @@ type AccountMenu = { label: string; tip: string; menu: React.ReactNode }
 //                and the account stay.
 //   bottom left  which build: the commit this build came from
 //   bottom right the copyright year; the tip names the owner
-// Every item can carry a tip, opening toward the page and lined up with the
-// corner's outer edge so it never leaves the viewport.
+// A tip opens toward the page and lines up with the corner's outer edge so it
+// never leaves the viewport.
 // Three page layouts:
 //   column     read top to bottom: home, lists, tables, long forms
 //   spotlight  one thing, centered between the corners: a detail, sign-in,
@@ -111,7 +112,13 @@ function AppShell({
                     <Link
                       href={crumb.href}
                       prefetch
-                      aria-current={last ? "page" : undefined}
+                      // Only the page you are on is current. The last crumb is
+                      // emphasized, but when it is a parent of the page (or
+                      // the nav marks another item) it is not announced as
+                      // current, so one page is never announced twice.
+                      aria-current={
+                        pathname === crumb.href ? "page" : undefined
+                      }
                       className={cn(
                         cornerLinkClassName,
                         last && "text-foreground"
@@ -300,9 +307,10 @@ function CornerTip({
 const cornerLinkClassName =
   "relative inline-flex h-6 items-center text-muted-foreground transition-colors duration-state outline-none after:absolute after:-inset-2 hover:text-foreground focus-visible:text-foreground"
 
-// Which build is running: the short commit, linking to the CD run that built
-// it, with the build time as its tip. CD sets these at build time; without
-// them (local dev) the corner says "dev".
+// Which build is running. Reads NEXT_PUBLIC_BUILD_SHA (the short commit) and
+// NEXT_PUBLIC_BUILD_TIME (the tip), both set by the consuming app's own
+// build, and optional NEXT_PUBLIC_BUILD_URL, which makes the SHA a link. With
+// no SHA the corner says "dev".
 function BuildVersion() {
   const sha = process.env.NEXT_PUBLIC_BUILD_SHA
   const time = process.env.NEXT_PUBLIC_BUILD_TIME
