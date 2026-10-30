@@ -26,7 +26,7 @@ function Section({
       {...props}
     >
       {title && (
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center justify-between gap-4">
           <h2 id={id} className="min-w-0 font-semibold">
             {title}
           </h2>
