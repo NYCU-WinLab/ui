@@ -116,6 +116,8 @@ Radii are concentric: an outer corner equals the inner corner plus the padding b
 | `rounded-surface` | control + 24px | Dialogs and toasts with `p-6` around controls |
 | `rounded-full` | pill / circle | Badges, switches, checkboxes, avatars |
 
+Every corner is a squircle (`corner-shape: squircle` in the base layer), the continuous curve Apple uses, except `rounded-full`, which stays round. Browsers without `corner-shape` draw ordinary round corners.
+
 A new container picks its radius from this rule, not by eye. If its padding is not 4px or 24px, it either changes padding or adds a token here.
 
 ## Color
