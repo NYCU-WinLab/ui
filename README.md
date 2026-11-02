@@ -150,6 +150,8 @@ cp .env.example .env   # pin UI_VERSION to a sha- tag in production
 docker compose pull && docker compose up -d
 ```
 
+ui.winlab.tw deploys on every push to `main`. The release workflow pushes the image, then sends a Carrel app release (`winfra/ui`). On the machine, carrel-deployd runs [deploy/carrel-start.sh](deploy/carrel-start.sh): it sets `UI_VERSION` in `/opt/winlab-ui/.env` and waits until web is healthy. A failed health check rolls back to the previous release. The app unit has a drop-in with `Type=notify`, `NotifyAccess=all` and `TimeoutStartSec=300`, so the check waits for the new container.
+
 ## Contributing
 
 Issues and PRs welcome: start with [CONTRIBUTING.md](https://github.com/zyx1121/.github/blob/main/CONTRIBUTING.md).
