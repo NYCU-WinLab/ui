@@ -122,6 +122,8 @@ A new container picks its radius from this rule, not by eye. If its padding is n
 
 ## Color
 
+The neutrals are a soft grayscale, never pure black or white: light is warm paper (`oklch(0.97 0.005 85)`) with dark gray text, dark is deep gray (`oklch(0.17 0 0)`) with light gray text. Full-contrast black and white glare on screens and tire the eyes.
+
 Use the theme tokens only: `background` / `foreground`, `primary`, `muted` (the one neutral fill and the secondary text color), `border` / `input` / `ring`, `destructive`, `success`, `warning`. There is no `secondary`, `accent` or `card` (they duplicated `muted` or `background`), no `popover` (overlays use `overlay`, the background at 85%) and no `sidebar-*`: a sidebar needs a second surface color, which layer 1 does not have. Navigation lives in the app shell's corners or in an overlay.
 
 Charts use the same colors, not chart-specific tokens:
