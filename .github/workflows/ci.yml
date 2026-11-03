@@ -21,34 +21,13 @@ jobs:
       - run: bun run format:check
       - run: bun run build
 
-  smoke:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
-      - name: Start the image with compose
-        run: docker compose up -d --build --wait
-      - name: Serve the site and registry
-        run: |
-          curl -sf localhost:8080/ | grep -q "WinLab UI"
-          curl -sf localhost:8080/button | grep -q "npx shadcn@latest add @winlab/button"
-          curl -sf localhost:8080/colors | grep -q "primary"
-          curl -sf localhost:8080/r/registry.json | grep -q '"name": "winlab"'
-          curl -sfI localhost:8080/r/base.json | grep -qi "content-type: application/json"
-          test "$(curl -s -o /dev/null -w '%{http_code}' localhost:8080/missing)" = 404
-          curl -s localhost:8080/missing | grep -q '找不到這個頁面'
-          test "$(curl -s -o /dev/null -w '%{http_code}' localhost:8080/404)" = 404
-          test "$(curl -s -o /dev/null -w '%{http_code}' localhost:8080/404.html)" = 404
-          curl -s localhost:8080/404 | grep -q '找不到這個頁面'
-          ! curl -sI localhost:8080/ | grep -qi "server: nginx/"
-
       # Install the base into a fresh project, the same way a WinLab app would.
       # Items depend on each other by absolute URL; point those at the files
-      # inside this image so unreleased items resolve.
+      # just built so unreleased items resolve.
       - name: Smoke test shadcn init
         run: |
           mkdir -p "$RUNNER_TEMP/registry"
-          docker compose cp web:/usr/share/nginx/html/r "$RUNNER_TEMP/registry/r"
+          cp -r out/r "$RUNNER_TEMP/registry/r"
           sed -i 's#https://ui.winlab.tw/r/\([a-z-]*\)\.json#http://localhost:8099/r/\1.json#g' "$RUNNER_TEMP"/registry/r/*.json
           (cd "$RUNNER_TEMP/registry" && python3 -m http.server 8099 > /dev/null 2>&1 &)
           for i in $(seq 1 10); do curl -sf localhost:8099/r/base.json > /dev/null && break; sleep 1; done
@@ -132,5 +111,24 @@ jobs:
           items=$(python3 -c 'import json; print(" ".join(f"http://localhost:8099/r/{i["name"]}.json" for i in json.load(open("../../registry/r/registry.json"))["items"] if i["type"] in ("registry:ui", "registry:component", "registry:block")))')
           bunx shadcn@latest add $items -y -o
           bun run build
-      - if: always()
-        run: docker compose logs
+
+  # Builds the image once, runs deploy/smoke.sh against it and pushes it
+  # as candidate-<tree>. promote makes it tree-<tree> once every job passed,
+  # and release ships only a tree- image.
+  image:
+    uses: zyx1121/.github/.github/workflows/image.yml@main
+    permissions:
+      contents: read
+      packages: write
+    with:
+      images: '[{"name": "ghcr.io/nycu-winlab/ui"}]'
+      smoke: bash deploy/smoke.sh
+
+  promote:
+    needs: [check, image]
+    uses: zyx1121/.github/.github/workflows/promote.yml@main
+    permissions:
+      contents: read
+      packages: write
+    with:
+      images: '["ghcr.io/nycu-winlab/ui"]'
