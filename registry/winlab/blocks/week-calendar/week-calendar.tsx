@@ -21,7 +21,8 @@ const weekday = (day: string) => new Date(`${day}T00:00:00Z`).getUTCDay()
 
 // One week of days in columns, each listing its events the way a month view
 // of Calendar does: all-day events as pills on top, timed ones under them
-// with a bar, the title and the start time (the whole span in the tip). Today's date sits in a primary circle.
+// with a bar, the title and the start time (the whole span in the tip).
+// Today's date sits in a primary circle.
 // Below md the columns fold into one row per day.
 function WeekCalendar({
   from,
