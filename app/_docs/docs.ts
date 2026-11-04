@@ -79,7 +79,7 @@ export const docs: Doc[] = [
     group: "區塊",
     slug: "week-calendar",
     title: "單週行事曆",
-    description: "一週七天並排，每天列出行程：整天的在上，有時間的在下。",
+    description: "一週七天並排，時間往下排，行程從開始畫到結束。",
     item: "week-calendar",
     layout: "wide",
   },

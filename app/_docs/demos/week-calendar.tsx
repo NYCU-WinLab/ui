@@ -4,6 +4,7 @@ const at = (day: string, time: string) => `2026-11-${day}T${time}:00+08:00`
 
 const events = [
   { title: "Lab Meeting", start: at("02", "15:30"), end: at("02", "17:30") },
+  { title: "實驗討論", start: at("02", "16:00"), end: at("02", "17:00") },
   { title: "專題討論", start: at("02", "19:30"), end: at("02", "20:30") },
   { title: "6G 雙週會議", start: at("03", "10:00"), end: at("03", "11:00") },
   {
