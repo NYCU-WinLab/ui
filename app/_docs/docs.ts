@@ -77,6 +77,14 @@ export const docs: Doc[] = [
   },
   {
     group: "區塊",
+    slug: "week-calendar",
+    title: "單週行事曆",
+    description: "一週七天並排，每天列出行程：整天的在上，有時間的在下。",
+    item: "week-calendar",
+    layout: "wide",
+  },
+  {
+    group: "區塊",
     slug: "expand-row",
     title: "展開列",
     description: "清單的一列原地展開細節，不換頁也不開對話框。",

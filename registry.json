@@ -1294,6 +1294,24 @@
       ]
     },
     {
+      "name": "week-calendar",
+      "type": "registry:block",
+      "title": "Week Calendar",
+      "description": "One week of days side by side, each listing its events: all-day ones on top, timed ones under them.",
+      "dependencies": [
+        "cn"
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/week-calendar/week-calendar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "expand-row",
       "type": "registry:block",
       "title": "Expand Row",

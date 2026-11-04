@@ -93,6 +93,7 @@ Moving an existing shadcn (Radix) app over: see [MIGRATING.md](MIGRATING.md) for
 | `focus` | `registry:block` | The one loud thing on a page, under its header: a label, a title with a highlight and a row of facts |
 | `avatar-stack` | `registry:block` | Several people in the space of one; the avatars spread apart when pointed at |
 | `countdown` | `registry:block` | Time left until a moment, to the minute, with rolling digits |
+| `week-calendar` | `registry:block` | One week in 7 columns like a month view of Calendar: all-day events as pills, timed ones with a bar and the start time, today circled; one row per day below `md` |
 | `claude-code` | `registry:block` | Claude Code's screen in a `terminal` for demos and install guides: welcome, prompts, MCP calls, permission questions, the `/plugins` menus (marketplaces, the plugin list with its search box, plugin details) and `/mcp`; content through props; colors are `claude-*` tokens from Claude Code's dark theme |
 | `typing` | `registry:lib` | Timed keystrokes for typing animations: a steady pace (100ms a key, about 120 WPM) with jitter; Chinese typed as zhuyin that turns into the character on its tone key; `InputBox` shows the zhuyin with `composing` |
 | `expand-row` | `registry:block` | A list row that opens in place to show its details |
