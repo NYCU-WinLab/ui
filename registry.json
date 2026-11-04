@@ -1302,7 +1302,8 @@
         "cn"
       ],
       "registryDependencies": [
-        "https://ui.winlab.tw/r/utils.json"
+        "https://ui.winlab.tw/r/utils.json",
+        "https://ui.winlab.tw/r/tooltip.json"
       ],
       "files": [
         {
