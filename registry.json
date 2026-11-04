@@ -1297,7 +1297,7 @@
       "name": "week-calendar",
       "type": "registry:block",
       "title": "Week Calendar",
-      "description": "One week of days side by side, each listing its events: all-day ones on top, timed ones under them.",
+      "description": "One week as a time grid: days in columns, hours down the side, timed events as blocks from start to end, all-day events above.",
       "dependencies": [
         "cn"
       ],
