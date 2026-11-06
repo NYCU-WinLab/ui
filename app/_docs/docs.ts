@@ -85,6 +85,13 @@ export const docs: Doc[] = [
   },
   {
     group: "區塊",
+    slug: "markdown",
+    title: "Markdown",
+    description: "成員或模型寫的文字：粗體、連結、清單、表格，圖片改成連結。",
+    item: "markdown",
+  },
+  {
+    group: "區塊",
     slug: "expand-row",
     title: "展開列",
     description: "清單的一列原地展開細節，不換頁也不開對話框。",

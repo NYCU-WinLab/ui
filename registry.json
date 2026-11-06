@@ -1313,6 +1313,27 @@
       ]
     },
     {
+      "name": "markdown",
+      "type": "registry:block",
+      "title": "Markdown",
+      "description": "Text a member or a model wrote, rendered as Markdown: bold, italics, links (bare URLs too), lists, quotes, code and GFM tables at body size; raw HTML never renders, links keep only safe schemes, and images become links to click.",
+      "dependencies": [
+        "lucide-react",
+        "react-markdown",
+        "remark-gfm",
+        "cn"
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/blocks/markdown/markdown.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "expand-row",
       "type": "registry:block",
       "title": "Expand Row",
