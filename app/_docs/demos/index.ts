@@ -47,6 +47,7 @@ import { Demo as Sonner } from "@/app/_docs/demos/sonner"
 import { Demo as FocusDemo } from "@/app/_docs/demos/focus"
 import { Demo as AvatarStackDemo } from "@/app/_docs/demos/avatar-stack"
 import { Demo as CountdownDemo } from "@/app/_docs/demos/countdown"
+import { Demo as MarkdownDemo } from "@/app/_docs/demos/markdown"
 import { Demo as WeekCalendarDemo } from "@/app/_docs/demos/week-calendar"
 import { Demo as ExpandRowDemo } from "@/app/_docs/demos/expand-row"
 import { Demo as Chart } from "@/app/_docs/demos/chart"
@@ -102,6 +103,7 @@ export const demos: Record<string, ComponentType> = {
   "avatar-stack": AvatarStackDemo,
   countdown: CountdownDemo,
   "week-calendar": WeekCalendarDemo,
+  markdown: MarkdownDemo,
   "expand-row": ExpandRowDemo,
   "number-ticker": NumberTicker,
   progress: Progress,
