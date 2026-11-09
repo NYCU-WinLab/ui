@@ -290,6 +290,13 @@ export const docs: Doc[] = [
   },
   {
     group: "元件",
+    slug: "toolbar",
+    title: "工具列",
+    description: "浮在畫面上的工具列，面板從工具列本身展開。",
+    item: "toolbar",
+  },
+  {
+    group: "元件",
     slug: "command",
     title: "指令清單",
     description: "可搜尋的清單，下拉搜尋選單的內容。",

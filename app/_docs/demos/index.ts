@@ -31,6 +31,7 @@ import { Demo as Table } from "@/app/_docs/demos/table"
 import { Demo as Dialog } from "@/app/_docs/demos/dialog"
 import { Demo as AlertDialog } from "@/app/_docs/demos/alert-dialog"
 import { Demo as Popover } from "@/app/_docs/demos/popover"
+import { Demo as Toolbar } from "@/app/_docs/demos/toolbar"
 import { Demo as Command } from "@/app/_docs/demos/command"
 import { Demo as DropdownMenu } from "@/app/_docs/demos/dropdown-menu"
 import { Demo as Tabs } from "@/app/_docs/demos/tabs"
@@ -87,6 +88,7 @@ export const demos: Record<string, ComponentType> = {
   dialog: Dialog,
   "alert-dialog": AlertDialog,
   popover: Popover,
+  toolbar: Toolbar,
   command: Command,
   "dropdown-menu": DropdownMenu,
   tabs: Tabs,

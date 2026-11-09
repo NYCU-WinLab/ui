@@ -528,6 +528,25 @@
       ]
     },
     {
+      "name": "toolbar",
+      "type": "registry:ui",
+      "title": "Toolbar",
+      "description": "Floating tool bar whose panels open out of the bar: same width, same radius.",
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/toolbar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
+      ]
+    },
+    {
       "name": "command",
       "type": "registry:ui",
       "title": "Command",

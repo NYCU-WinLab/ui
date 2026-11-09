@@ -4,7 +4,7 @@ These rules hold for every WinLab app. `bun run tokens:check` enforces the parts
 
 ## App shell
 
-Every WinLab app is framed by four fixed corners, 24px in from the viewport. `app-shell` draws them. By default each corner has the job below; an app that needs something else in a corner replaces it through `corners`, built from `CornerLink`, `CornerTip` and `cornerLinkClassName` (for a corner item that is not a link) so it keeps the corner's type, color and tips.
+Every WinLab app is framed by four fixed corners, 16px in from the viewport. `app-shell` draws them. By default each corner has the job below; an app that needs something else in a corner replaces it through `corners`, built from `CornerLink`, `CornerTip` and `cornerLinkClassName` (for a corner item that is not a link) so it keeps the corner's type, color and tips.
 
 | Corner | Default job | Default content |
 |--------|-----|---------|
@@ -29,7 +29,7 @@ Three, chosen per page with `app-shell`'s `layout`:
 | Layout | For | Shape |
 |--------|-----|-------|
 | `column` | Pages read top to bottom: home, lists, tables, long forms | One centered column (`max-w-4xl`) starting under the top corners |
-| `wide` | A grid that needs the whole screen: a two-week timetable, a room schedule | The full width between the corners' outer edges (24px in from the viewport), starting under the top corners |
+| `wide` | A grid that needs the whole screen: a two-week timetable, a room schedule | The full width between the corners' outer edges (16px in from the viewport), starting under the top corners |
 | `spotlight` | Pages about one thing: a single item, sign-in, a result, an empty state, a not-found, a component's doc page | The content centered horizontally and vertically between the corners (`max-w-2xl`); taller content scrolls as a column |
 
 Use `wide` only when the content is a grid that loses meaning when squeezed; text and lists stay in `column`, so lines never run across a whole monitor.
@@ -58,6 +58,7 @@ The interface is flat and has exactly two layers.
 - Group page content with spacing and, where a line helps, a divider (`border-t` / `border-b`). Never wrap a group in a frame. Where another kit would use a card, use `section`: a divider above, the group's title and its actions.
 - Every pick-a-value control (select, combobox) looks like an input when closed: one shared trigger class. Never use a button as a field.
 - Controls keep their own outline: inputs, selects and outline buttons are controls, not containers. A segmented tab list may use the `muted` fill: it is one control.
+- A floating tool bar (`toolbar`) opens its panels out of the bar itself: the bar's width and radius, 8px away, so the bar seems to grow. Never a separate popover beside one of its buttons.
 - Tooltips are the one inverted overlay (`bg-foreground text-background`): a few words over any content must stay legible, so they are not frosted.
 - A form either is the page (layer 1, no frame) or is called up in a `dialog` (layer 2). Short edits, such as adding one item or changing one field of a row, go in a dialog; a form that is the purpose of the page stays on the page.
 - No helper text under a field. If a field needs explaining, its label says it ("備註（簽核人看得到）"); errors go in a toast.
