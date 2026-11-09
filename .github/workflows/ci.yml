@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - run: bun run theme:check
@@ -24,7 +26,19 @@ jobs:
       # Install the base into a fresh project, the same way a WinLab app would.
       # Items depend on each other by absolute URL; point those at the files
       # just built so unreleased items resolve.
+      # The smoke test pulls create-next-app and shadcn from npm (about 54 s).
+      # A pull request runs it only when what the registry ships can change.
+      - name: Registry changed?
+        id: registry
+        run: |
+          if [ "${{ github.event_name }}" != pull_request ] || git diff --name-only "origin/${{ github.base_ref }}...HEAD" | grep -qE '^(registry/|registry\.json|components\.json|scripts/|package\.json|bun\.lock|\.github/)'; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No registry change: smoke test skipped."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
       - name: Smoke test shadcn init
+        if: steps.registry.outputs.run == 'true'
         run: |
           mkdir -p "$RUNNER_TEMP/registry"
           cp -r out/r "$RUNNER_TEMP/registry/r"
