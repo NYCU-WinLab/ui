@@ -262,6 +262,13 @@ export const docs: Doc[] = [
   },
   {
     group: "元件",
+    slug: "toggle",
+    title: "切換按鈕",
+    description: "按下去就維持開或關的圖示按鈕。",
+    item: "toggle",
+  },
+  {
+    group: "元件",
     slug: "table",
     title: "表格",
     description: "資料列表，數字欄靠右對齊。",

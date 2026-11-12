@@ -27,6 +27,7 @@ import { Demo as Calendar } from "@/app/_docs/demos/calendar"
 import { Demo as Attachment } from "@/app/_docs/demos/attachment"
 import { Demo as Checkbox } from "@/app/_docs/demos/checkbox"
 import { Demo as Switch } from "@/app/_docs/demos/switch"
+import { Demo as Toggle } from "@/app/_docs/demos/toggle"
 import { Demo as Table } from "@/app/_docs/demos/table"
 import { Demo as Dialog } from "@/app/_docs/demos/dialog"
 import { Demo as AlertDialog } from "@/app/_docs/demos/alert-dialog"
@@ -84,6 +85,7 @@ export const demos: Record<string, ComponentType> = {
   attachment: Attachment,
   checkbox: Checkbox,
   switch: Switch,
+  toggle: Toggle,
   table: Table,
   dialog: Dialog,
   "alert-dialog": AlertDialog,
