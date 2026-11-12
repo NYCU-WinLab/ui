@@ -625,7 +625,7 @@
       "name": "toggle",
       "type": "registry:ui",
       "title": "Toggle",
-      "description": "Icon button that stays on or off: the fill changes and the icon can change with it; variants default and alert.",
+      "description": "Button that stays on or off: the fill changes and the icon can change with it; variants default and alert, sizes icon and text.",
       "dependencies": [
         "@base-ui/react",
         "class-variance-authority",

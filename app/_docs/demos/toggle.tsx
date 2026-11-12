@@ -31,6 +31,10 @@ export function Demo() {
       <Toggle aria-label="舉手">
         <HandIcon />
       </Toggle>
+      <Toggle size="text" defaultPressed>
+        週一
+      </Toggle>
+      <Toggle size="text">週二</Toggle>
     </div>
   )
 }

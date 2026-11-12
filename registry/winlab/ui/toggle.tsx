@@ -5,7 +5,8 @@ import { Toggle as TogglePrimitive } from "@base-ui/react/toggle"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/registry/winlab/lib/utils"
 
-// An icon button that stays on or off, the size of an icon button. Its state
+// A button that stays on or off: an icon (the default size) or a word, such
+// as a weekday or a tag (size "text"). Its state
 // never rests on color alone: the fill changes, and with `offIcon` the icon
 // changes too, one icon shrinking out as the other grows in.
 //
@@ -15,7 +16,7 @@ import { cn } from "@/registry/winlab/lib/utils"
 // looks like an outline button; off is the destructive tint, so "you are
 // muted" is the state that stands out.
 const toggleVariants = cva(
-  "group/toggle inline-flex size-10 shrink-0 items-center justify-center rounded-control border transition-colors duration-state outline-none select-none focus-visible:ring-3 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "group/toggle inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-control border text-body font-medium whitespace-nowrap transition-colors duration-state outline-none select-none focus-visible:ring-3 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -24,8 +25,12 @@ const toggleVariants = cva(
         alert:
           "border-transparent bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:ring-destructive/20 data-pressed:border-border data-pressed:bg-background data-pressed:text-foreground data-pressed:hover:bg-muted data-pressed:focus-visible:ring-ring/50",
       },
+      size: {
+        icon: "w-10",
+        text: "px-4",
+      },
     },
-    defaultVariants: { variant: "default" },
+    defaultVariants: { variant: "default", size: "icon" },
   }
 )
 
@@ -35,6 +40,7 @@ const face =
 function Toggle({
   className,
   variant,
+  size,
   offIcon,
   children,
   ...props
@@ -46,7 +52,7 @@ function Toggle({
   return (
     <TogglePrimitive
       data-slot="toggle"
-      className={cn(toggleVariants({ variant, className }))}
+      className={cn(toggleVariants({ variant, size, className }))}
       {...props}
     >
       {offIcon === undefined ? (
