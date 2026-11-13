@@ -66,6 +66,7 @@ Moving an existing shadcn (Radix) app over: see [MIGRATING.md](MIGRATING.md) for
 | `tabs` | `registry:ui` | Segmented tabs |
 | `browser` | `registry:ui` | A browser window with the address in its title bar, framing a picture of a web page drawn with the site's tokens; same edge and corners as `terminal` |
 | `terminal` | `registry:ui` | A terminal window: monospace rows of 1.25rem, two-cell East Asian characters, the dark `terminal-*` palette (window and shell text) in both themes |
+| `code-block` | `registry:ui` | Text to copy and run or paste (a command, a request, a config file): a 2.5rem bar with a title and a copy button over monospace text that keeps its line breaks and scrolls sideways; the page's colors, the same edge and corners as `terminal` |
 | `avatar` | `registry:ui` | Round 40px avatar with initials fallback |
 | `tooltip` | `registry:ui` | Short inverted label on hover or focus |
 | `separator` | `registry:ui` | Hairline divider |

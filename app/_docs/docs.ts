@@ -339,6 +339,13 @@ export const docs: Doc[] = [
   },
   {
     group: "元件",
+    slug: "code-block",
+    title: "程式碼區塊",
+    description: "可以複製的指令、請求或設定檔。",
+    item: "code-block",
+  },
+  {
+    group: "元件",
     slug: "avatar",
     title: "頭像",
     description: "成員頭像，沒有圖時顯示名字的第一個字。",
