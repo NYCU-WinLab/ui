@@ -28,6 +28,7 @@ import { Demo as Attachment } from "@/app/_docs/demos/attachment"
 import { Demo as Checkbox } from "@/app/_docs/demos/checkbox"
 import { Demo as Switch } from "@/app/_docs/demos/switch"
 import { Demo as Toggle } from "@/app/_docs/demos/toggle"
+import { Demo as CodeBlock } from "@/app/_docs/demos/code-block"
 import { Demo as Table } from "@/app/_docs/demos/table"
 import { Demo as Dialog } from "@/app/_docs/demos/dialog"
 import { Demo as AlertDialog } from "@/app/_docs/demos/alert-dialog"
@@ -86,6 +87,7 @@ export const demos: Record<string, ComponentType> = {
   checkbox: Checkbox,
   switch: Switch,
   toggle: Toggle,
+  "code-block": CodeBlock,
   table: Table,
   dialog: Dialog,
   "alert-dialog": AlertDialog,
