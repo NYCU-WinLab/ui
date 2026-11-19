@@ -346,6 +346,13 @@ export const docs: Doc[] = [
   },
   {
     group: "元件",
+    slug: "card",
+    title: "卡片",
+    description: "一格一格、逐一操作的同類物件，例如交換機的埠。",
+    item: "card",
+  },
+  {
+    group: "元件",
     slug: "avatar",
     title: "頭像",
     description: "成員頭像，沒有圖時顯示名字的第一個字。",
