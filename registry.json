@@ -809,6 +809,25 @@
       ]
     },
     {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "One of a grid of equal things a member acts on one at a time, such as the ports of a switch: a border and control corners, no fill, no shadow.",
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "registryDependencies": [
+        "https://ui.winlab.tw/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/winlab/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "avatar",
       "type": "registry:ui",
       "title": "Avatar",
